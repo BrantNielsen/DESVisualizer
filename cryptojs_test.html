@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CryptoJS</title>
+		
+		<meta charset="utf-8">
+		
+		<script src="cryptojs/components/core.js"></script>
+		<script src="cryptojs/components/cipher-core.js"></script>
+		<script src="cryptojs/components/pad-nopadding.js"></script>
+		<script src="cryptojs/components/mode-ecb.js"></script>
+		<script src="cryptojs/components/tripledes.js"></script>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			var keyHex = CryptoJS.enc.Hex.parse("342db5a81ddb9004");
+			var message = CryptoJS.enc.Hex.parse("48656c6c6f20576f");
+			
+			console.log(keyHex);
+			
+			var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+				mode: CryptoJS.mode.ECB,
+				padding: CryptoJS.pad.NoPadding
+			})
+			
+			console.log(encrypted);
+			console.log(encrypted.toString());
+			
+			var myThing = new Uint8Array(2);
+			
+			myThing[0] = 8;
+			
+			console.log(myThing);
+			console.log(myThing[0] ^ 1);
+			
+			myThing[1] = myThing[0] ^ 1;
+		</script>
+	</body>
+</html>

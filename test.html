@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DES Test</title>
+		
+		<meta charset="utf-8">
+		
+		<script src="utils.js"></script>
+		<script src="des.js"></script>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			console.log(Utils.octetToBinaryString(8));
+			console.log(Utils.octetToBinaryString(4));
+			console.log(Utils.octetToBinaryString(2));
+			console.log(Utils.octetToBinaryString(1));
+
+			var myThing = new Uint8Array(3);
+			myThing[0] = 5;
+			myThing[1] = 0x880;
+
+			console.log(myThing instanceof Uint8Array);
+
+			console.log(myThing);
+			console.log(Utils.octetToBinaryString(myThing[0]));
+
+			console.log(typeof myThing);
+			console.log(typeof myThing[0]);
+			console.log(myThing[2]);
+
+			console.log(Utils.asciiToOctetArr("Hello, World!"));
+
+			var myObject = {};
+
+			myObject[0] = "Yar!";
+
+			console.log(myObject[0]);
+
+			var octetArr = Utils.hexStringToOctetArr("48656c6c6f20576f");
+			console.log(octetArr);
+
+			console.log(Utils.octetArrToHexString(octetArr));
+            console.log(Utils.octetArrToBinaryString(octetArr));
+            console.log(Utils.octetArrToAscii(octetArr));
+
+            var myArr = [];
+            myArr[35] = 9;
+
+            console.log(myArr.length);
+
+            var octetArrPermutation = DES.prototype.permute(octetArr, DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION);
+
+            console.log(Utils.octetArrToBinaryString(octetArrPermutation));
+
+            console.log(Utils.octetArrToBinaryString(Utils.sliceFromOctetArray(octetArrPermutation, 8, 32)));
+
+            console.log(Utils.octetArrToBinaryString(Utils.rotateBitsLeft(octetArrPermutation, 1)));
+            console.log(Utils.octetArrToBinaryString(Utils.rotateBitsLeft(octetArrPermutation, 2)));
+		</script>
+	</body>
+</html>

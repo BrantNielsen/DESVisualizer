@@ -1,0 +1,16 @@
+{
+  "name": "cryptojslib",
+  "version": "3.1.2",
+  "homepage": "https://github.com/sytelus/cryptojs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sytelus/cryptojs.git"
+  },
+  "ignore": [
+    "*.bat"
+  ],  
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
