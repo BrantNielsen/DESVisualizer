@@ -151,17 +151,12 @@ Utils.rotateBitsLeft = function(octetArr, shift) {
 	let numBits = octetArr.length * 8;
 
 	for (let resultBitIndex = 0; resultBitIndex < numBits; resultBitIndex++) {
-		let resultOctetIndex = Math.floor(resultBitIndex / 8);
-		let resultSubBitIndex = resultBitIndex % 8;
+		let resultIndices = Utils.getSubIndices(resultBitIndex);
 
 		let dataBitIndex = (resultBitIndex + shift) % numBits;
+		let dataBit = Utils.getBitFromOctetArray(octetArr, dataBitIndex);
 
-		let dataOctetIndex = Math.floor(dataBitIndex / 8);
-		let dataSubBitIndex = dataBitIndex % 8;
-
-		let dataBit = Utils.getOctetBitFromLeft(octetArr[dataOctetIndex], dataSubBitIndex);
-
-		result[resultOctetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultOctetIndex], dataBit, resultSubBitIndex);
+		result[resultIndices.octetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultIndices.octetIndex], dataBit, resultIndices.bitIndex);
 	}
 
 	return result;
@@ -175,22 +170,61 @@ Utils.sliceFromOctetArray = function (octetArray, startBitIndex, endBitIndex) {
 	let resultBitIndex = 0;
 
 	for (let dataBitIndex = startBitIndex; dataBitIndex < endBitIndex; dataBitIndex++) {
-		let dataOctetIndex = Math.floor(dataBitIndex / 8);
-		let dataSubBitIndex = dataBitIndex % 8;
+        let dataBit = Utils.getBitFromOctetArray(dataBitIndex);
 
-        let dataBit = Utils.getOctetBitFromLeft(octetArray[dataOctetIndex], dataSubBitIndex);
+		let resultIndices = Utils.getSubIndices(resultBitIndex);
 
-		let resultOctetIndex = Math.floor(resultBitIndex / 8);
-		let resultSubBitIndex = resultBitIndex % 8;
-
-		result[resultOctetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultOctetIndex], dataBit, resultSubBitIndex);
+		result[resultIndices.octetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultIndices.octetIndex], dataBit, resultIndices.bitIndex);
 
 		resultBitIndex++;
 	}
 
 	return result;
-}
+};
+
+Utils.getSubIndices = function(bitIndex) {
+	let result = {};
+
+	result.octetIndex = Math.floor(bitIndex / 8);
+	result.bitIndex = bitIndex % 8;
+
+	return result;
+};
+
+Utils.getBitFromOctetArray = function(octetArr, bitIndex) {
+	let indices = Utils.getSubIndices(bitIndex);
+
+	return Utils.getOctetBitFromLeft(octetArr[indices.octetIndex], indices.bitIndex);
+};
+
+Utils.xorOctetArrays = function(octetArr1, octetArr2) {
+	let result = (octetArr1.length > octetArr2.length)? Utils.cloneArray(octetArr1) : Utils.cloneArray(octetArr2);
+	let smallerArrayLen = Math.min(octetArr1.length, octetArr2.length);
+
+	for (let i = 0; i < smallerArrayLen; i++) {
+		result[i] = octetArr1[i] ^ octetArr2[i];
+	}
+
+	return result;
+};
 
 Utils.cloneArray = function(arr) {
 	return arr.slice(0);
-}
+};
+
+Utils.concatOctetArrays = function(octetArr1, octetArr2) {
+	let result = new Uint8Array(octetArr1.length + octetArr2.length);
+	let resultIndex = 0;
+
+	for (let i = 0; i < octetArr1.length; i++) {
+		result[resultIndex] = octetArr1[i];
+		resultIndex++;
+	}
+
+    for (let i = 0; i < octetArr2.length; i++) {
+        result[resultIndex] = octetArr2[i];
+        resultIndex++;
+    }
+
+    return result;
+};

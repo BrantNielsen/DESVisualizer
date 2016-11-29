@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Implementation</title>
+
+    <script src="utils.js"></script>
+    <script src="des.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var key = Utils.hexStringToOctetArr("342db5a81ddb9004");
+        var message = Utils.hexStringToOctetArr("48656c6c6f20576f");
+
+        var des = new DES(key, message);
+
+        des.doFinal();
+
+        console.log(Utils.octetArrToHexString(des.final));
+    </script>
+</body>
+</html>
