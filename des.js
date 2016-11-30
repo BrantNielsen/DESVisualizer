@@ -4,7 +4,7 @@ var DES = function(key, message) {
 };
 
 /**
- * Size inputs to 64 bits exactly. Will add padding with zeros if necessary.
+ * Sizes an input to 64 bits exactly. Will add padding with zeros to the end if necessary.
  */
 DES.prototype._sizeInput = function(input) {
 	let result = new Uint8Array(8);
@@ -17,7 +17,10 @@ DES.prototype._sizeInput = function(input) {
 	return result;
 };
 
-DES.prototype.doFinal = function() {
+/**
+ * Encrypts the message with the key. Result will be accessible on this instance with the variable 'final'.
+ */
+DES.prototype.encrypt = function() {
 	this.initialInputPermutation = this.permute(this.message, DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION);
 
 	this._generateKeys();
@@ -26,15 +29,22 @@ DES.prototype.doFinal = function() {
 	this.final = this.permute(this.rounds[DES.NUM_ROUNDS - 1].finalOutput, DES.PERMUTATION_MAPPINGS.FINAL_PERMUTATION);
 };
 
+/**
+ * Performs a data permutation. Permutes data according to a permutation mapping, which maps input bit indexes to output bit indexes.
+ */
 DES.prototype.permute = function(data, permutationMapping) {
 	let result = new Uint8Array(Math.floor(permutationMapping.length / 8));
 
+	//i corresponds to the bit index in the result, and the current array index in the permutation mapping
 	for (let i = 0; i < permutationMapping.length; i++) {
+		//Get the octet and sub-bit index of this bit index.
 		let resultIndices = Utils.getSubIndices(i);
 
+		//The appropriate bit index in the input data
 		let dataBitIndex = permutationMapping[i] - 1;
 		let dataBit = Utils.getBitFromOctetArray(data, dataBitIndex);
 
+		//Set the appropriate bit in the result
 		result[resultIndices.octetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultIndices.octetIndex], dataBit, resultIndices.bitIndex);
 	}
 
@@ -171,6 +181,10 @@ DES.prototype._getSBoxRowAndColumn = function(input) {
 };
 
 
+//Permutation mappings map input bit indices to output bit indices
+//Each value in a mapping corresponds to the input bit index (plus 1), and each value's index in the array corresponds with
+//the appropriate bit index in the resulting permutation.
+//These mappings are structured the same way as in the book and in online sources.
 DES.PERMUTATION_MAPPINGS = {};
 
 DES.PERMUTATION_MAPPINGS.PC1_C = [

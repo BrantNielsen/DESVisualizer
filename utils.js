@@ -1,6 +1,9 @@
 var Utils = {};
 
+//Array to convert binary (number) values into hexadecimal string digits. Max of 4 bits (values 0 - 15).
 Utils._binaryToHexArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+
+//Object to convert a hexadecimal string digit into a 4-bit binary (number) value.
 Utils._hexToBinaryObj = {
     "0": 0,
     "1": 1,
@@ -20,9 +23,11 @@ Utils._hexToBinaryObj = {
     "f": 15
 };
 
+//Converts an integer input into a binary string for a specific number of bits from the right side.
 Utils.toBinaryString = function(value, numBits) {
 	let result = "";
 
+	//Build up the result from the left to the right
 	for (let i = numBits - 1; i >= 0; i--) {
 		if ((value >>> i) & 1) {
 			result += "1";
@@ -32,12 +37,14 @@ Utils.toBinaryString = function(value, numBits) {
 	}
 
 	return result;
-}
+};
 
+//Converts an octet (8-bit number value) to a binary string.
 Utils.octetToBinaryString = function (value) {
 	return Utils.toBinaryString(value, 8);
-}
+};
 
+//Converts an ASCII string into an array of bytes. Throws an exception if the input string contains non-ASCII values.
 Utils.asciiToOctetArr = function(asciiString) {
 	let bytes = [];
 
@@ -52,8 +59,9 @@ Utils.asciiToOctetArr = function(asciiString) {
 	}
 
 	return bytes;
-}
+};
 
+//
 Utils.octetArrToAscii = function(arr) {
 	let result = "";
 
@@ -62,7 +70,7 @@ Utils.octetArrToAscii = function(arr) {
 	}
 
 	return result;
-}
+};
 
 Utils.hexStringToOctetArr = function(hexString) {
 	let result = [];
@@ -91,7 +99,7 @@ Utils.hexStringToOctetArr = function(hexString) {
 	}
 
 	return result;
-}
+};
 
 Utils.octetArrToHexString = function(arr) {
 	let result = "";
@@ -107,7 +115,7 @@ Utils.octetArrToHexString = function(arr) {
 	}
 
 	return result;
-}
+};
 
 Utils.octetArrToBinaryString = function(arr) {
 	let result = "";
@@ -121,7 +129,7 @@ Utils.octetArrToBinaryString = function(arr) {
 	}
 
 	return result;
-}
+};
 
 Utils.getOctetBitFromLeft = function(octet, bitIndex) {
 	return (octet >>> (7 - bitIndex)) & 1;

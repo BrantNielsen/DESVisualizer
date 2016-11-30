@@ -14,7 +14,7 @@
 
         var des = new DES(key, message);
 
-        des.doFinal();
+        des.encrypt();
 
         console.log(Utils.octetArrToHexString(des.final));
     </script>
