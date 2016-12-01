@@ -3,6 +3,32 @@ var DES = function(key, message) {
 	this.message = this._sizeInput(message);
 };
 
+DES.generateRandomKey = function () {
+	let result = Utils.generateRandomOctetArray(8);
+
+	DES.setParityBits(result);
+
+	return result;
+};
+
+DES.generateRandomMessage = function() {
+	return Utils.generateRandomOctetArray(8);
+};
+
+DES.setParityBits = function(octetArray) {
+	for (let i = 0; i < octetArray.length; i++) {
+		let num1Bits = 0;
+
+		for (let bitIndex = 0; bitIndex < 7; bitIndex++) {
+			num1Bits += Utils.getOctetBitFromLeft(octetArray[i], bitIndex);
+		}
+
+		let parityBit = (num1Bits % 2 === 0)? 1 : 0;
+
+		octetArray[i] = Utils.insertBitIntoOctetFromLeft(octetArray[i], parityBit, 7);
+	}
+};
+
 /**
  * Sizes an input to 64 bits exactly. Will add padding with zeros to the end if necessary.
  */

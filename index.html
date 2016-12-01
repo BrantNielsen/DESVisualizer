@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DES Visualizer</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="js/utils.js"></script>
+    <script src="js/des.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/application.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/application.css" rel="stylesheet">
+</head>
+<body>
+    <header id="mainHeader">
+        <h1>DES Visualizer</h1>
+        
+        <form id="jsMainForm" action="#">
+            <div class="inputSection">
+                <label for="jsInputMessage" class="primaryLabel">Input</label>
+                <div class="inputs">
+                    <div class="upperRow">
+                        <input id="jsInputMessage" type="text" class="form-control" placeholder="Message" maxlength="8" name="messageValue">
+                        
+                        <a href="#" id="jsRandomMessage">Random</a>
+                    </div>
+                    <label>
+                        <input type="radio" name="messageType" value="ascii" checked>
+                        ASCII
+                    </label>
+                    <label>
+                        <input type="radio" name="messageType" value="hex">
+                        Hex
+                    </label>
+                </div>
+            </div>
+            <div class="inputSection">
+                <label for="jsInputKey" class="primaryLabel">Key</label>
+                <div class="inputs">
+                    <div class="upperRow">
+                        <input id="jsInputKey" type="text" class="form-control" placeholder="Key" maxlength="8" name="keyValue">
+                        
+                        <a href="#" id="jsRandomKey">Random</a>
+                    </div>
+                    <label>
+                        <input type="radio" name="keyType" value="ascii" checked>
+                        ASCII
+                    </label>
+                    <label>
+                        <input type="radio" name="keyType" value="hex">
+                        Hex
+                    </label>
+                </div>
+            </div>
+            
+            <div class="buttonWrapper">
+                <button type="button" class="btn btn-default">?</button>
+                <button type="submit" class="btn btn-success">Encrypt</button>
+            </div>
+        </form>
+    </header>
+</body>
+</html>

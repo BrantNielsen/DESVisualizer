@@ -1,0 +1,60 @@
+#mainHeader {
+    background-color: #5E77C1;
+    color: #FFF;
+    
+    display: flex;
+    align-items: center;
+    
+    form {
+        display: flex;
+        
+        .inputSection {
+            display: flex;
+            
+            margin-left: 30px;
+            
+            .primaryLabel {
+                font-size: 16px;
+                padding-top: 4px;
+            }
+            
+            input[type="text"] {
+                width: 170px;
+            }
+            
+            .inputs {
+                margin-left: 10px;
+                
+                label {
+                    padding-top: 6px;
+                    padding-right: 6px;
+                }
+                
+                .upperRow {
+                    display: flex;
+                    
+                    a {
+                        margin-left: 5px;
+                        margin-top: 8px;
+                        color: #CCF;
+                        font-size: 12px;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+        .buttonWrapper {
+            margin-left: 20px;
+            
+            & > button:last-child {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+h1 {
+    margin: 0;
+    padding: 20px;
+}

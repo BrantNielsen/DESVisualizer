@@ -1,0 +1,38 @@
+#mainHeader {
+  background-color: #5E77C1;
+  color: #FFF;
+  display: flex;
+  align-items: center; }
+  #mainHeader form {
+    display: flex; }
+    #mainHeader form .inputSection {
+      display: flex;
+      margin-left: 30px; }
+      #mainHeader form .inputSection .primaryLabel {
+        font-size: 16px;
+        padding-top: 4px; }
+      #mainHeader form .inputSection input[type="text"] {
+        width: 170px; }
+      #mainHeader form .inputSection .inputs {
+        margin-left: 10px; }
+        #mainHeader form .inputSection .inputs label {
+          padding-top: 6px;
+          padding-right: 6px; }
+        #mainHeader form .inputSection .inputs .upperRow {
+          display: flex; }
+          #mainHeader form .inputSection .inputs .upperRow a {
+            margin-left: 5px;
+            margin-top: 8px;
+            color: #CCF;
+            font-size: 12px;
+            text-decoration: underline; }
+    #mainHeader form .buttonWrapper {
+      margin-left: 20px; }
+      #mainHeader form .buttonWrapper > button:last-child {
+        margin-left: 10px; }
+
+h1 {
+  margin: 0;
+  padding: 20px; }
+
+/*# sourceMappingURL=application.css.map */

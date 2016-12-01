@@ -236,3 +236,23 @@ Utils.concatOctetArrays = function(octetArr1, octetArr2) {
 
     return result;
 };
+
+/**
+ * Generates a random octet array of a specified length.
+ */
+Utils.generateRandomOctetArray = function(numOctets) {
+	let result = new Uint8Array(numOctets);
+
+	for (let i = 0; i < numOctets; i++) {
+		result[i] = Utils.getRandomInt(0, 255);
+	}
+
+	return result;
+};
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ */
+Utils.getRandomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
