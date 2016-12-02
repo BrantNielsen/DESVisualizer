@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test New Implementation</title>
+
+    <script src="utils.js"></script>
+    <script src="des.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    /*var key = Utils.hexStringToOctetArr("342db5a81ddb9004");
+    var message = Utils.hexStringToOctetArr("48656c6c6f20576f");*/
+
+    var key = Utils.hexStringToOctetArr("133457799BBCDFF1");
+    var message = Utils.hexStringToOctetArr("0123456789ABCDEF");
+
+    console.log(Utils.octetArrToHexString(key));
+    console.log(Utils.octetArrToHexString(message));
+
+    var encrypted = DES.encrypt(key, message);
+
+    console.log(Utils.octetArrToHexString(encrypted.final));
+
+    /*var decrypted = DES.encrypt(encrypted.key, encrypted.final);
+
+    console.log(Utils.octetArrToHexString(decrypted.final));
+
+    console.log(encrypted);
+
+    console.log(Utils.octetArrToBinaryString(message));
+
+    let thing = "";
+    for (let i = 0; i < 8; i++) {
+        thing += Utils.getOctetBitFromLeft(message[0], i);
+    }
+
+    console.log(thing);
+
+    console.log(Utils.octetArrToBinaryString(Utils.sliceFromOctetArray(message, 0, 8)));*/
+</script>
+</body>
+</html>

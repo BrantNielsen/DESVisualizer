@@ -1,4 +1,7 @@
-let DES = {};
+let DES = function(key, message) {
+	this.key = this._sizeInput(key);
+	this.message = this._sizeInput(message);
+};
 
 DES.generateRandomKey = function () {
 	let result = Utils.generateRandomOctetArray(8);
@@ -29,83 +32,58 @@ DES.setParityBits = function(octetArray) {
 /**
  * Sizes an input to 64 bits exactly. Will add padding with zeros to the end if necessary.
  */
-DES._sizeInput = function(input) {
-    let result = new Uint8Array(8);
-    let loopTimes = Math.min(result.length, input.length);
+DES.prototype._sizeInput = function(input) {
+	let result = new Uint8Array(8);
+	let loopTimes = Math.min(result.length, input.length);
 
-    for (let i = 0; i < loopTimes; i++) {
-        result[i] = input[i];
-    }
+	for (let i = 0; i < loopTimes; i++) {
+		result[i] = input[i];
+	}
 
-    return result;
+	return result;
 };
 
 /**
- * Encrypts the given input with the given key. Will return a result containing data from each step of the encryption.
+ * Encrypts the message with the key. Result will be accessible on this instance with the variable 'final'.
  */
-DES.encrypt = function(key, input) {
-	return DES._encryptOrDecrypt(key, input, DES.MODE.ENCRYPTION);
-};
+DES.prototype.encrypt = function() {
+	this.initialInputPermutation = this.permute(this.message, DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION);
 
-DES.decrypt = function(key, input) {
-	return DES._encryptOrDecrypt(key, input, DES.MODE.DECRYPTION);
-};
+	this._generateKeys();
+	this._doRounds();
 
-DES._encryptOrDecrypt = function(key, input, mode) {
-    let result = {};
-
-    result.key = DES._sizeInput(key);
-    result.input = DES._sizeInput(input);
-
-    result.initialInputPermutation = DES.permute(result.input, DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION);
-
-    result.roundKeys = DES._generateKeys(result.key);
-
-    if (mode === DES.MODE.DECRYPTION) {
-        result.roundKeys.roundKeyParts = result.roundKeys.roundKeyParts.reverse();
-    }
-
-    result.rounds = DES._doRounds(result.roundKeys.roundKeyParts, result.initialInputPermutation, mode);
-
-    result.final = DES.permute(result.rounds[DES.NUM_ROUNDS - 1].finalOutput, DES.PERMUTATION_MAPPINGS.FINAL_PERMUTATION);
-
-    return result;
+	this.final = this.permute(this.rounds[DES.NUM_ROUNDS - 1].finalOutput, DES.PERMUTATION_MAPPINGS.FINAL_PERMUTATION);
 };
 
 /**
  * Performs a data permutation. Permutes data according to a permutation mapping, which maps input bit indexes to output bit indexes.
  */
-DES.permute = function(data, permutationMapping) {
-    let result = new Uint8Array(Math.floor(permutationMapping.length / 8));
+DES.prototype.permute = function(data, permutationMapping) {
+	let result = new Uint8Array(Math.floor(permutationMapping.length / 8));
 
-    //i corresponds to the bit index in the result, and the current array index in the permutation mapping
-    for (let i = 0; i < permutationMapping.length; i++) {
-        //Get the octet and sub-bit index of this bit index.
-        let resultIndices = Utils.getSubIndices(i);
+	//i corresponds to the bit index in the result, and the current array index in the permutation mapping
+	for (let i = 0; i < permutationMapping.length; i++) {
+		//Get the octet and sub-bit index of this bit index.
+		let resultIndices = Utils.getSubIndices(i);
 
-        //The appropriate bit index in the input data
-        let dataBitIndex = permutationMapping[i] - 1;
-        let dataBit = Utils.getBitFromOctetArray(data, dataBitIndex);
+		//The appropriate bit index in the input data
+		let dataBitIndex = permutationMapping[i] - 1;
+		let dataBit = Utils.getBitFromOctetArray(data, dataBitIndex);
 
-        //Set the appropriate bit in the result
-        result[resultIndices.octetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultIndices.octetIndex], dataBit, resultIndices.bitIndex);
-    }
+		//Set the appropriate bit in the result
+		result[resultIndices.octetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultIndices.octetIndex], dataBit, resultIndices.bitIndex);
+	}
 
-    return result;
+	return result;
 };
 
-/**
- * Generates per-round keys from an input key. Done in order for encryption; use in reverse for decryption.
- */
-DES._generateKeys = function(inputKey) {
-	let result = {};
+DES.prototype._generateKeys = function() {
+	this.roundKeyParts = [];
 
-	result.roundKeyParts = [];
+	this.initialKeyPermutations = {'c': this.permute(this.key, DES.PERMUTATION_MAPPINGS.PC1_C), 'd': this.permute(this.key, DES.PERMUTATION_MAPPINGS.PC1_D)};
 
-	result.initialKeyPermutations = {'c': DES.permute(inputKey, DES.PERMUTATION_MAPPINGS.PC1_C), 'd': DES.permute(inputKey, DES.PERMUTATION_MAPPINGS.PC1_D)};
-
-	let lastC = result.initialKeyPermutations.c;
-	let lastD = result.initialKeyPermutations.d;
+	let lastC = this.initialKeyPermutations.c;
+	let lastD = this.initialKeyPermutations.d;
 
 	for (let i = 0; i < DES.NUM_ROUNDS; i++) {
 		let keyParts = {};
@@ -118,82 +96,61 @@ DES._generateKeys = function(inputKey) {
 
 		keyParts.combinedCD = Utils.concatOctetArrays(keyParts.shiftedC, keyParts.shiftedD);
 
-		keyParts.pc2C = DES.permute(keyParts.combinedCD, DES.PERMUTATION_MAPPINGS.PC2_C);
-		keyParts.pc2D = DES.permute(keyParts.combinedCD, DES.PERMUTATION_MAPPINGS.PC2_D);
+		keyParts.pc2C = this.permute(keyParts.combinedCD, DES.PERMUTATION_MAPPINGS.PC2_C);
+		keyParts.pc2D = this.permute(keyParts.combinedCD, DES.PERMUTATION_MAPPINGS.PC2_D);
 
 		keyParts.key = Utils.concatOctetArrays(keyParts.pc2C, keyParts.pc2D);
 
-		result.roundKeyParts[i] = keyParts;
+		this.roundKeyParts[i] = keyParts;
 	}
-
-	return result;
 };
 
-DES._doRounds = function(roundKeys, permutedInput, mode) {
-    let result = [];
+DES.prototype._doRounds = function() {
+	this.rounds = [];
 
-    let lastRoundOutput = permutedInput;
+	let lastRoundOutput = this.initialInputPermutation;
 
-    for (let roundIndex = 0; roundIndex < DES.NUM_ROUNDS; roundIndex++) {
-        let thisRound = {};
+	for (let roundIndex = 0; roundIndex < DES.NUM_ROUNDS; roundIndex++) {
+		let thisRound = {};
 
-        thisRound.input = Utils.cloneArray(lastRoundOutput);
+		thisRound.input = Utils.cloneArray(lastRoundOutput);
 
-        thisRound.leftInitial = thisRound.input.slice(0, 4);
-        thisRound.rightInitial = thisRound.input.slice(4, 8);
+		thisRound.leftInitial = thisRound.input.slice(0, 4);
+		thisRound.rightInitial = thisRound.input.slice(4, 8);
 
-        if (mode === DES.MODE.ENCRYPTION) {
-            thisRound.manglerData = DES._mangle(roundKeys[roundIndex].key, thisRound.rightInitial);
+		this._mangle(thisRound, roundIndex);
 
-            thisRound.rightFinal = Utils.xorOctetArrays(thisRound.manglerData.finalOutput, thisRound.leftInitial);
-            thisRound.leftFinal = Utils.cloneArray(thisRound.rightInitial);
-        } else {
-        	thisRound.manglerData = DES._mangle(roundKeys[roundIndex].key, thisRound.leftInitial);
+		thisRound.rightFinal = Utils.xorOctetArrays(thisRound.manglerData.finalOutput, thisRound.leftInitial);
+		thisRound.leftFinal = Utils.cloneArray(thisRound.rightInitial);
 
-        	thisRound.rightFinal = Utils.cloneArray(thisRound.leftInitial);
-        	thisRound.leftFinal = Utils.xorOctetArrays(thisRound.manglerData.finalOutput, thisRound.rightInitial);
-		}
+		thisRound.finalOutput = Utils.concatOctetArrays(thisRound.leftFinal, thisRound.rightFinal);
 
-        thisRound.finalOutput = Utils.concatOctetArrays(thisRound.leftFinal, thisRound.rightFinal);
+		lastRoundOutput = thisRound.finalOutput;
 
-        lastRoundOutput = thisRound.finalOutput;
-        //console.log(Utils.octetArrToHexString(lastRoundOutput));
-
-        result[roundIndex] = thisRound;
-    }
-
-    return result;
+		this.rounds[roundIndex] = thisRound;
+	}
 };
 
-DES._mangle = function(roundKey, input) {
-	let manglerData = {};
+DES.prototype._mangle = function(roundObject, roundIndex) {
+	roundObject.manglerData = {};
 
-    manglerData.expandedData = DES.permute(input, DES.PERMUTATION_MAPPINGS.MANGLER_EXPAND_PERMUTATION);
+	//Shortcut
+	let manglerData = roundObject.manglerData;
 
-    //console.log("Mangler expanded data: " + Utils.octetArrToHexString(manglerData.expandedData));
+	manglerData.expandedData = this.permute(roundObject.rightInitial, DES.PERMUTATION_MAPPINGS.MANGLER_EXPAND_PERMUTATION);
 
-	manglerData.sBoxDataInputs = DES._getSboxInputs(manglerData.expandedData);
-	manglerData.sBoxKeyInputs = DES._getSboxInputs(roundKey);
-
-    /*console.log("Mangler data input: " + Utils.octetArrToBinaryString(manglerData.sBoxDataInputs));
-    console.log("Mangler key input: " + Utils.octetArrToBinaryString(manglerData.sBoxKeyInputs));*/
+	manglerData.sBoxDataInputs = this._getSboxInputs(manglerData.expandedData);
+	manglerData.sBoxKeyInputs = this._getSboxInputs(this.roundKeyParts[roundIndex].key);
 
 	manglerData.sboxFinalInputs = Utils.xorOctetArrays(manglerData.sBoxDataInputs, manglerData.sBoxKeyInputs);
 
-	//console.log("Mangler final input: " + Utils.octetArrToBinaryString(manglerData.sboxFinalInputs));
+	this._processSBoxChunks(manglerData);
 
-	DES._processSBoxChunks(manglerData);
-
-	/*console.log("All mangler outputs: " + Utils.octetArrToBinaryString(manglerData.sboxOutputs));
-    console.log(manglerData.sboxOutputs.length);*/
-
-	manglerData.combinedOutputs = DES._combineSboxOutputs(manglerData);
-	manglerData.finalOutput = DES.permute(manglerData.combinedOutputs, DES.PERMUTATION_MAPPINGS.SBOX_PERMUTATION);
-
-	return manglerData;
+	manglerData.combinedOutputs = this._combineSboxOutputs(manglerData);
+	manglerData.finalOutput = this.permute(manglerData.combinedOutputs, DES.PERMUTATION_MAPPINGS.SBOX_PERMUTATION);
 };
 
-DES._getSboxInputs = function(expandedData) {
+DES.prototype._getSboxInputs = function(expandedData) {
 	let result = new Uint8Array(8);
 
 	for (let i = 0; i < 8; i++) {
@@ -206,12 +163,12 @@ DES._getSboxInputs = function(expandedData) {
 	return result;
 };
 
-DES._processSBoxChunks = function(manglerData) {
+DES.prototype._processSBoxChunks = function(manglerData) {
 	manglerData.rowColumnData = [];
 	manglerData.sboxOutputs = new Uint8Array(8);
 
 	for (let sboxIndex = 0; sboxIndex < 8; sboxIndex++) {
-		let rowColumn = DES._getSBoxRowAndColumn(manglerData.sboxFinalInputs[sboxIndex]);
+		let rowColumn = this._getSBoxRowAndColumn(manglerData.sboxFinalInputs[sboxIndex]);
 
 		let sboxDataIndex = rowColumn.row * 16 + rowColumn.column;
 
@@ -220,7 +177,7 @@ DES._processSBoxChunks = function(manglerData) {
 	}
 };
 
-DES._combineSboxOutputs = function(manglerData) {
+DES.prototype._combineSboxOutputs = function(manglerData) {
 	let result = new Uint8Array(4);
 
 	result[0] = (manglerData.sboxOutputs[0] << 4) | manglerData.sboxOutputs[1];
@@ -231,7 +188,7 @@ DES._combineSboxOutputs = function(manglerData) {
 	return result;
 };
 
-DES._getSBoxRowAndColumn = function(input) {
+DES.prototype._getSBoxRowAndColumn = function(input) {
 	let result = {};
 
 	let rowBit1 = Utils.getOctetBitFromLeft(input, 2);
@@ -379,7 +336,3 @@ DES.SBOXES[7] = [
 
 DES.PER_ROUND_KEY_SHIFTS = [1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1];
 DES.NUM_ROUNDS = DES.PER_ROUND_KEY_SHIFTS.length;
-
-DES.MODE = {};
-DES.MODE.ENCRYPTION = 1;
-DES.MODE.DECRYPTION = 2;

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Correctness Test</title>
+
+    <script src="utils.js"></script>
+    <script src="des.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    var key = Utils.hexStringToOctetArr("133457799BBCDFF1");
+    var message = Utils.hexStringToOctetArr("0123456789ABCDEF");
+
+    var encrypted = DES.encrypt(key, message);
+
+    var expectedC = Utils.binaryStringToOctetArray("1111000 0110011 0010101 0101111");
+    var expectedD = Utils.binaryStringToOctetArray("0101010 1011001 1001111 0001111");
+
+    console.log(Utils.octetArrToBinaryString(expectedC));
+    console.log(Utils.octetArrToBinaryString(encrypted.roundKeys.initialKeyPermutations.c));
+
+    console.assert(Utils.arraysEqual(encrypted.roundKeys.initialKeyPermutations.c, expectedC), "C is not equal!");
+    console.assert(Utils.arraysEqual(encrypted.roundKeys.initialKeyPermutations.d, expectedD), "D is not equal!");
+</script>
+</body>
+</html>

@@ -23,6 +23,31 @@ Utils._hexToBinaryObj = {
     "f": 15
 };
 
+Utils.binaryStringToOctetArray = function(binaryString) {
+	let result = [0];
+
+	let resultOctetIndex = 7;
+
+	for (let binaryStringIndex = binaryString.length - 1; binaryStringIndex > 0; binaryStringIndex--) {
+		let thisBit = binaryString.charAt(binaryStringIndex);
+
+		if (thisBit === "1" || thisBit === "0") {
+			if (thisBit === "1") {
+                result[0] = Utils.insertBitIntoOctetFromLeft(result[0], 1, resultOctetIndex);
+			}
+
+			resultOctetIndex--;
+
+			if (resultOctetIndex < 0) {
+				resultOctetIndex = 7;
+				result.unshift(0);
+			}
+		}
+	}
+
+	return result;
+};
+
 //Converts an integer input into a binary string for a specific number of bits from the right side.
 Utils.toBinaryString = function(value, numBits) {
 	let result = "";
@@ -77,7 +102,7 @@ Utils.hexStringToOctetArr = function(hexString) {
 	let addToExisting = false;
 
 	for (let i = hexString.length - 1; i >= 0; i--) {
-		let char = hexString.charAt(i);
+		let char = hexString.charAt(i).toLowerCase();
 
 		if (char === " ") {
 			continue;
@@ -178,7 +203,7 @@ Utils.sliceFromOctetArray = function (octetArray, startBitIndex, endBitIndex) {
 	let resultBitIndex = 0;
 
 	for (let dataBitIndex = startBitIndex; dataBitIndex < endBitIndex; dataBitIndex++) {
-        let dataBit = Utils.getBitFromOctetArray(dataBitIndex);
+        let dataBit = Utils.getBitFromOctetArray(octetArray, dataBitIndex);
 
 		let resultIndices = Utils.getSubIndices(resultBitIndex);
 
@@ -255,4 +280,26 @@ Utils.generateRandomOctetArray = function(numOctets) {
  */
 Utils.getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+Utils.arraysEqual = function(a, b) {
+    if (a === b) {
+    	return true;
+    }
+
+    if (a == null || b == null) {
+        return false;
+	}
+
+    if (a.length != b.length) {
+    	return false;
+    }
+
+    for (let i = 0; i < a.length; ++i) {
+        if (a[i] !== b[i]) {
+        	return false;
+        }
+    }
+
+    return true;
 };
