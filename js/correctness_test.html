@@ -5,24 +5,159 @@
     <title>Correctness Test</title>
 
     <script src="utils.js"></script>
+    <script src="bit-array-typed.js"></script>
     <script src="des.js"></script>
 </head>
 <body>
 <script type="text/javascript">
 
-    var key = Utils.hexStringToOctetArr("133457799BBCDFF1");
-    var message = Utils.hexStringToOctetArr("0123456789ABCDEF");
+    var keyHex = "133457799BBCDFF1";
+    var messageHex = "0123456789ABCDEF";
+
+    var key = BitArray.fromHex(keyHex);
+    var message = BitArray.fromHex(messageHex);
+
+    console.log(keyHex);
+    console.log(messageHex);
+
+    console.log(key.toBinaryString(8));
+    console.log(message.toBinaryString(8));
 
     var encrypted = DES.encrypt(key, message);
 
-    var expectedC = Utils.binaryStringToOctetArray("1111000 0110011 0010101 0101111");
-    var expectedD = Utils.binaryStringToOctetArray("0101010 1011001 1001111 0001111");
+    var expectedC = BitArray.fromBinary("1111000 0110011 0010101 0101111");
+    var expectedD = BitArray.fromBinary("0101010 1011001 1001111 0001111");
 
-    console.log(Utils.octetArrToBinaryString(expectedC));
-    console.log(Utils.octetArrToBinaryString(encrypted.roundKeys.initialKeyPermutations.c));
+    console.log(expectedC.toBinaryString(7));
+    console.log(encrypted.roundKeys.initialKeyPermutations.c.toBinaryString(7));
 
-    console.assert(Utils.arraysEqual(encrypted.roundKeys.initialKeyPermutations.c, expectedC), "C is not equal!");
-    console.assert(Utils.arraysEqual(encrypted.roundKeys.initialKeyPermutations.d, expectedD), "D is not equal!");
+    console.log(expectedD.toBinaryString(7));
+    console.log(encrypted.roundKeys.initialKeyPermutations.d.toBinaryString(7));
+
+    console.assert(expectedC.equals(encrypted.roundKeys.initialKeyPermutations.c), "C is not equal!");
+    console.assert(expectedD.equals(encrypted.roundKeys.initialKeyPermutations.d), "D is not equal!");
+
+    var expectedCRoundVals = [
+        BitArray.fromBinary("1110000110011001010101011111"),
+        BitArray.fromBinary("1100001100110010101010111111"),
+        BitArray.fromBinary("0000110011001010101011111111"),
+        BitArray.fromBinary("0011001100101010101111111100"),
+        BitArray.fromBinary("1100110010101010111111110000"),
+        BitArray.fromBinary("0011001010101011111111000011"),
+        BitArray.fromBinary("1100101010101111111100001100"),
+        BitArray.fromBinary("0010101010111111110000110011"),
+        BitArray.fromBinary("0101010101111111100001100110"),
+        BitArray.fromBinary("0101010111111110000110011001"),
+        BitArray.fromBinary("0101011111111000011001100101"),
+        BitArray.fromBinary("0101111111100001100110010101"),
+        BitArray.fromBinary("0111111110000110011001010101"),
+        BitArray.fromBinary("1111111000011001100101010101"),
+        BitArray.fromBinary("1111100001100110010101010111"),
+        BitArray.fromBinary("1111000011001100101010101111")
+    ];
+
+    var expectedDRoundVals = [
+        BitArray.fromBinary("1010101011001100111100011110"),
+        BitArray.fromBinary("0101010110011001111000111101"),
+        BitArray.fromBinary("0101011001100111100011110101"),
+        BitArray.fromBinary("0101100110011110001111010101"),
+        BitArray.fromBinary("0110011001111000111101010101"),
+        BitArray.fromBinary("1001100111100011110101010101"),
+        BitArray.fromBinary("0110011110001111010101010110"),
+        BitArray.fromBinary("1001111000111101010101011001"),
+        BitArray.fromBinary("0011110001111010101010110011"),
+        BitArray.fromBinary("1111000111101010101011001100"),
+        BitArray.fromBinary("1100011110101010101100110011"),
+        BitArray.fromBinary("0001111010101010110011001111"),
+        BitArray.fromBinary("0111101010101011001100111100"),
+        BitArray.fromBinary("1110101010101100110011110001"),
+        BitArray.fromBinary("1010101010110011001111000111"),
+        BitArray.fromBinary("0101010101100110011110001111")
+    ];
+
+    for (let roundIndex = 0; roundIndex < DES.NUM_ROUNDS; roundIndex++) {
+        console.assert(encrypted.roundKeys.roundKeyParts[roundIndex].shiftedC.equals(expectedCRoundVals[roundIndex]));
+        console.assert(encrypted.roundKeys.roundKeyParts[roundIndex].shiftedD.equals(expectedDRoundVals[roundIndex]));
+    }
+
+    var expectedRoundKeys = [
+        BitArray.fromBinary("000110 110000 001011 101111 111111 000111 000001 110010"),
+        BitArray.fromBinary("011110 011010 111011 011001 110110 111100 100111 100101"),
+        BitArray.fromBinary("010101 011111 110010 001010 010000 101100 111110 011001"),
+        BitArray.fromBinary("011100 101010 110111 010110 110110 110011 010100 011101"),
+        BitArray.fromBinary("011111 001110 110000 000111 111010 110101 001110 101000"),
+        BitArray.fromBinary("011000 111010 010100 111110 010100 000111 101100 101111"),
+        BitArray.fromBinary("111011 001000 010010 110111 111101 100001 100010 111100"),
+        BitArray.fromBinary("111101 111000 101000 111010 110000 010011 101111 111011"),
+        BitArray.fromBinary("111000 001101 101111 101011 111011 011110 011110 000001"),
+        BitArray.fromBinary("101100 011111 001101 000111 101110 100100 011001 001111"),
+        BitArray.fromBinary("001000 010101 111111 010011 110111 101101 001110 000110"),
+        BitArray.fromBinary("011101 010111 000111 110101 100101 000110 011111 101001"),
+        BitArray.fromBinary("100101 111100 010111 010001 111110 101011 101001 000001"),
+        BitArray.fromBinary("010111 110100 001110 110111 111100 101110 011100 111010"),
+        BitArray.fromBinary("101111 111001 000110 001101 001111 010011 111100 001010"),
+        BitArray.fromBinary("110010 110011 110110 001011 000011 100001 011111 110101")
+    ];
+
+    for (let roundIndex = 0; roundIndex < DES.NUM_ROUNDS; roundIndex++) {
+        console.assert(encrypted.roundKeys.roundKeyParts[roundIndex].key.equals(expectedRoundKeys[roundIndex]));
+    }
+
+    var expectedInitialPermutation = BitArray.fromBinary("1100 1100 0000 0000 1100 1100 1111 1111 1111 0000 1010 1010 1111 0000 1010 1010");
+
+    console.assert(encrypted.initialInputPermutation.equals(expectedInitialPermutation));
+
+    var expectedFirstRoundL = BitArray.fromBinary("1100 1100 0000 0000 1100 1100 1111 1111");
+    var expectedFirstRoundR = BitArray.fromBinary("1111 0000 1010 1010 1111 0000 1010 1010");
+
+    console.assert(encrypted.rounds[0].leftInitial.equals(expectedFirstRoundL));
+    console.assert(encrypted.rounds[0].rightInitial.equals(expectedFirstRoundR));
+
+    var expectedFirstMangleExpansion = BitArray.fromBinary("011110 100001 010101 010101 011110 100001 010101 010101");
+
+    console.assert(encrypted.rounds[0].manglerData.expandedData.equals(expectedFirstMangleExpansion));
+
+    var expectedFirstMangleInput = BitArray.fromBinary("011000 010001 011110 111010 100001 100110 010100 100111");
+
+    var combinedFirstMangleInput = encrypted.rounds[0].manglerData.sBoxFinalInputs[0].copy();
+
+    for (let i = 1; i < 8; i++) {
+        combinedFirstMangleInput = combinedFirstMangleInput.concat(encrypted.rounds[0].manglerData.sBoxFinalInputs[i]);
+    }
+
+    console.assert(combinedFirstMangleInput.equals(expectedFirstMangleInput));
+
+    var expectedFirstMangleSBoxOutput = BitArray.fromBinary("0101 1100 1000 0010 1011 0101 1001 0111");
+
+    console.assert(encrypted.rounds[0].manglerData.combinedOutputs.equals(expectedFirstMangleSBoxOutput));
+
+    /*for (let i = 0; i <= 15; i++) {
+        console.log(BitArray.fromNumber(i, 4).toBinaryString());
+    }*/
+
+    var expectedFirstRoundFinalR = BitArray.fromBinary("1110 1111 0100 1010 0110 0101 0100 0100");
+
+    console.assert(encrypted.rounds[0].rightFinal.equals(expectedFirstRoundFinalR));
+
+    var expectedLastRoundFinalL = BitArray.fromBinary("0100 0011 0100 0010 0011 0010 0011 0100");
+    var expectedLastRoundFinalR = BitArray.fromBinary("0000 1010 0100 1100 1101 1001 1001 0101");
+
+    console.assert(encrypted.rounds[15].leftFinal.equals(expectedLastRoundFinalL));
+    console.assert(encrypted.rounds[15].rightFinal.equals(expectedLastRoundFinalR));
+
+    var expectedFinalRoundSwitch = BitArray.fromBinary("00001010 01001100 11011001 10010101 01000011 01000010 00110010 00110100");
+
+    console.assert(encrypted.finalRoundSwitch.equals(expectedFinalRoundSwitch));
+
+    var expectedFinal = BitArray.fromBinary("10000101 11101000 00010011 01010100 00001111 00001010 10110100 00000101");
+
+    console.assert(encrypted.final.equals(expectedFinal));
+
+    console.log(encrypted.final.toBinaryString(8));
+
+    console.log(DES.decrypt(key, encrypted.final).final.toBinaryString(8));
+
+
 </script>
 </body>
 </html>

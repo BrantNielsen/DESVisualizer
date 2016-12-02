@@ -5,6 +5,7 @@
     <title>Test New Implementation</title>
 
     <script src="utils.js"></script>
+    <script src="bit-array-typed.js"></script>
     <script src="des.js"></script>
 </head>
 <body>
@@ -12,15 +13,15 @@
     /*var key = Utils.hexStringToOctetArr("342db5a81ddb9004");
     var message = Utils.hexStringToOctetArr("48656c6c6f20576f");*/
 
-    var key = Utils.hexStringToOctetArr("133457799BBCDFF1");
-    var message = Utils.hexStringToOctetArr("0123456789ABCDEF");
+    var key = BitArray.fromHex("133457799BBCDFF1");
+    var message = BitArray.fromHex("0123456789ABCDEF");
 
-    console.log(Utils.octetArrToHexString(key));
-    console.log(Utils.octetArrToHexString(message));
+    console.log(key.toBinaryString(8));
+    console.log(message.toBinaryString(8));
 
-    var encrypted = DES.encrypt(key, message);
+    //var encrypted = DES.encrypt(key, message);
 
-    console.log(Utils.octetArrToHexString(encrypted.final));
+    //console.log(Utils.octetArrToHexString(encrypted.final));
 
     /*var decrypted = DES.encrypt(encrypted.key, encrypted.final);
 

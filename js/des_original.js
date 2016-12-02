@@ -139,18 +139,18 @@ DES.prototype._mangle = function(roundObject, roundIndex) {
 
 	manglerData.expandedData = this.permute(roundObject.rightInitial, DES.PERMUTATION_MAPPINGS.MANGLER_EXPAND_PERMUTATION);
 
-	manglerData.sBoxDataInputs = this._getSboxInputs(manglerData.expandedData);
-	manglerData.sBoxKeyInputs = this._getSboxInputs(this.roundKeyParts[roundIndex].key);
+	manglerData.sBoxDataInputs = this._getSBoxInputs(manglerData.expandedData);
+	manglerData.sBoxKeyInputs = this._getSBoxInputs(this.roundKeyParts[roundIndex].key);
 
-	manglerData.sboxFinalInputs = Utils.xorOctetArrays(manglerData.sBoxDataInputs, manglerData.sBoxKeyInputs);
+	manglerData.sBoxFinalInputs = Utils.xorOctetArrays(manglerData.sBoxDataInputs, manglerData.sBoxKeyInputs);
 
 	this._processSBoxChunks(manglerData);
 
-	manglerData.combinedOutputs = this._combineSboxOutputs(manglerData);
+	manglerData.combinedOutputs = this._combineSBoxOutputs(manglerData);
 	manglerData.finalOutput = this.permute(manglerData.combinedOutputs, DES.PERMUTATION_MAPPINGS.SBOX_PERMUTATION);
 };
 
-DES.prototype._getSboxInputs = function(expandedData) {
+DES.prototype._getSBoxInputs = function(expandedData) {
 	let result = new Uint8Array(8);
 
 	for (let i = 0; i < 8; i++) {
@@ -168,7 +168,7 @@ DES.prototype._processSBoxChunks = function(manglerData) {
 	manglerData.sboxOutputs = new Uint8Array(8);
 
 	for (let sboxIndex = 0; sboxIndex < 8; sboxIndex++) {
-		let rowColumn = this._getSBoxRowAndColumn(manglerData.sboxFinalInputs[sboxIndex]);
+		let rowColumn = this._getSBoxRowAndColumn(manglerData.sBoxFinalInputs[sboxIndex]);
 
 		let sboxDataIndex = rowColumn.row * 16 + rowColumn.column;
 
@@ -177,7 +177,7 @@ DES.prototype._processSBoxChunks = function(manglerData) {
 	}
 };
 
-DES.prototype._combineSboxOutputs = function(manglerData) {
+DES.prototype._combineSBoxOutputs = function(manglerData) {
 	let result = new Uint8Array(4);
 
 	result[0] = (manglerData.sboxOutputs[0] << 4) | manglerData.sboxOutputs[1];
