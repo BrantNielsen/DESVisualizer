@@ -19,14 +19,14 @@ let BitArray = function (size, hex) {
     if (hex) {
         hex = hex.slice(/^0x/.exec(hex) ? 2 : 0);
 
-        if (hex.length * 4 > this.length) {
+        /*if (hex.length * 4 > this.length) {
             throw 'Hex value is too large for this bit array.'
         } else if (hex.length * 4 < this.length) {
             // pad it
             while(hex.length * 4 < this.length) {
                 hex = '0' + hex;
             }
-        }
+        }*/
 
         for (let i = 0; i < hex.length; i++) {
             let hexDigit = hex.charAt(i);
@@ -42,6 +42,18 @@ let BitArray = function (size, hex) {
                 this.set(bitIndex, (intVal >>> intShift) & 1);
             }
         }
+
+        /*let bitIndex = this.length - 1;
+        for (let hexIndex = hex.length - 1; hexIndex >= 0 && bitIndex >= 0; hexIndex--) {
+            let hexDigit = hex.charAt(hexIndex);
+            let intVal = BitArray._hexToBinaryObj[hexDigit];
+
+            if (typeof intVal === "undefined") {
+                continue;
+            }
+
+
+        }*/
 
     }
 };
@@ -112,6 +124,36 @@ BitArray.fromNumber = function(value, numBits) {
         let bit = (value >>> shiftAmount) & 1;
 
         result.set(resultBitIndex, bit);
+    }
+
+    return result;
+};
+
+BitArray.fromAscii = function(ascii) {
+    let asciiCodes = [];
+
+    for (let i = 0; i < ascii.length; i++) {
+        let thisAsciiCode = ascii.charCodeAt(i);
+
+        //Just skip non-Ascii characters
+        if (thisAsciiCode < 256) {
+            asciiCodes.push(thisAsciiCode);
+        }
+    }
+
+    let result = new BitArray(asciiCodes.length * 8);
+    let bitIndex = 0;
+
+    for (let asciiIndex = 0; asciiIndex < ascii.length; asciiIndex++) {
+        let byte = asciiCodes[asciiIndex];
+
+        for (let i = 0; i < 8; i++) {
+            let bit = (byte >> (7 - i)) & 1;
+
+            result.set(bitIndex, bit);
+
+            bitIndex++;
+        }
     }
 
     return result;
@@ -222,7 +264,8 @@ BitArray.prototype.equals = function(x) {
  * Returns the JSON representation of this BitArray.
  */
 BitArray.prototype.toJSON = function() {
-    return JSON.stringify(this.toArray());
+    //return JSON.stringify(this.toArray());
+    return "new BitArray(" + this.length + ", '" + this.toHexString() + "')";
 };
 
 /**
@@ -239,26 +282,71 @@ BitArray.prototype.toBinaryString = function(spaceFrequency) {
         result += (arr[i])? "1" : "0";
 
         //Insert a space if space frequency was specified, this isn't the last index, and this is the nth character since the last time a space was added
-        if (spaceFrequency > 0 && i < arr.length - 1 && (i + 1) % spaceFrequency === 0) {
+        if (spaceFrequency > 0 && (i + 1) % spaceFrequency === 0) {
             result += " ";
         }
     }
 
-    return result;
+    return result.trim();
 };
 
 /**
  * Returns a hexadecimal string representation of the BitArray
  * with bits in logical order.
  */
-BitArray.prototype.toHexString = function() {
-    let result = [];
+BitArray.prototype.toHexString = function(spaceFrequency) {
+    /*let result = [];
 
     for (let i = 0; i < this.wordArray.length; i += 1) {
         result.push(('00000000' + (this.wordArray[i] >>> 0).toString(16)).slice(-8));
     }
 
-    return result.join("");
+    return result.join("");*/
+    let result = "";
+
+    let hexNum = 0;
+
+    for (let rightIndex = this.length - 1; rightIndex >= 0; rightIndex -= 4) {
+        hexNum++;
+
+        let thisNibble = 0;
+
+        for (let bitIndex = rightIndex;  bitIndex > rightIndex - 4 && bitIndex >= 0; bitIndex--) {
+            let thisBit = this.get(bitIndex)? 1 : 0;
+
+            let bitMoved = thisBit << (rightIndex - bitIndex);
+
+            thisNibble = thisNibble | bitMoved;
+        }
+
+        result = BitArray._binaryToHexArr[thisNibble] + result;
+
+        if (spaceFrequency > 0 && hexNum % spaceFrequency === 0) {
+            result = " " + result;
+        }
+    }
+
+    return result.trim();
+};
+
+BitArray.prototype.toAsciiString = function() {
+    let result = "";
+
+    for (let rightIndex = this.length - 1; rightIndex >= 0; rightIndex -= 8) {
+        let thisByte = 0;
+
+        for (let bitIndex = rightIndex; bitIndex > rightIndex - 8 && bitIndex >= 0; bitIndex--) {
+            let thisBit = this.get(bitIndex)? 1 : 0;
+
+            let bitMoved = thisBit << (rightIndex - bitIndex);
+
+            thisByte = thisByte | bitMoved;
+        }
+
+        result = String.fromCharCode(thisByte) + result;
+    }
+
+    return result;
 };
 
 /**

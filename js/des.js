@@ -78,22 +78,6 @@ DES._encryptOrDecrypt = function(key, input, mode) {
  * Performs a data permutation. Permutes data according to a permutation mapping, which maps input bit indexes to output bit indexes.
  */
 DES.permute = function(data, permutationMapping, doLog) {
-    /*let result = new Uint8Array(Math.floor(permutationMapping.length / 8));
-
-    //i corresponds to the bit index in the result, and the current array index in the permutation mapping
-    for (let i = 0; i < permutationMapping.length; i++) {
-        //Get the octet and sub-bit index of this bit index.
-        let resultIndices = Utils.getSubIndices(i);
-
-        //The appropriate bit index in the input data
-        let dataBitIndex = permutationMapping[i] - 1;
-        let dataBit = Utils.getBitFromOctetArray(data, dataBitIndex);
-
-        //Set the appropriate bit in the result
-        result[resultIndices.octetIndex] = Utils.insertBitIntoOctetFromLeft(result[resultIndices.octetIndex], dataBit, resultIndices.bitIndex);
-    }
-
-    return result;*/
     let result = new BitArray(permutationMapping.length);
 
     for (let i = 0; i < permutationMapping.length; i++) {

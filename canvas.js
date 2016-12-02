@@ -24,7 +24,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	}
 
 
-(lib.Somethign = function(mode,startPosition,loop) {
+(lib.something = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer 1
@@ -38,7 +38,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.Somethign, new cjs.Rectangle(-1,-1,251,251), null);
+}).prototype = getMCSymbolPrototype(lib.something, new cjs.Rectangle(-1,-1,251,251), null);
 
 
 // stage content:
@@ -47,7 +47,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	// timeline functions:
 	this.frame_0 = function() {
+		stage.enableMouseOver();
+		
 		this.myButton.addEventListener("click", onClick.bind(this)); 
+		this.myButton.cursor = "pointer";
 		
 		function onClick() {
 			alert("You clicked it!");
@@ -58,7 +61,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer 1
-	this.myButton = new lib.Somethign();
+	this.myButton = new lib.something();
 	this.myButton.parent = this;
 	this.myButton.setTransform(600,300,1,1,0,0,0,124.5,124.5);
 
