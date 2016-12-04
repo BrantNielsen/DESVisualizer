@@ -16,9 +16,11 @@ $(document).ready(function() {
         
         let encryptionObject = DES.encrypt(key, message);
         
-        console.log(encryptionObject.final.toHexString(2));
+        //console.log(encryptionObject.final.toHexString(2));
         
-        console.log(JSON.stringify(encryptionObject));
+        //console.log(JSON.stringify(encryptionObject));
+        
+        document.initializeEncryptionObject(encryptionObject);
         
         event.preventDefault(); 
     });
