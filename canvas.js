@@ -1849,7 +1849,9 @@ p.nominalBounds = new cjs.Rectangle(0,0,16.4,16.4);
 		document.initializeEncryptionObject = function(encryptionObject) {
 			canvas.encryptionObject=encryptionObject;
 			canvas.des.key.valueText.text=canvas.encryptionObject.key.toHexString(2);
-			console.log(canvas.encryptionObject.key.toHexString(2));
+			canvas.des.initPlaintext.valueText.text=canvas.encryptionObject.input.toHexString(2);
+			canvas.des.ciphertext.valueText.text=canvas.encryptionObject.final.toHexString(2);
+			canvas.des.key2.valueText.text=canvas.encryptionObject.key.toHexString(2);
 		}
 		
 		// ================== Testing Code ====================
@@ -1890,6 +1892,11 @@ p.nominalBounds = new cjs.Rectangle(0,0,16.4,16.4);
 		}
 	}
 	this.frame_1 = function() {
+		// Set text:
+		this.des2.key.valueText.text=this.encryptionObject.key.toHexString(2);
+		this.des2.plaintext.valueText.text=this.encryptionObject.input.toHexString(2);
+		this.des2.ciphertext.valueText.text=this.encryptionObject.final.toHexString(2);
+		
 		// Hide Tables
 		
 		this.keyTable.visible=false;
