@@ -28,7 +28,7 @@ let BitArray = function (size, hex) {
             }
         }*/
 
-        for (let i = 0; i < hex.length; i++) {
+        /*for (let i = 0; i < hex.length; i++) {
             let hexDigit = hex.charAt(i);
             let intVal = BitArray._hexToBinaryObj[hexDigit];
 
@@ -41,9 +41,9 @@ let BitArray = function (size, hex) {
 
                 this.set(bitIndex, (intVal >>> intShift) & 1);
             }
-        }
+        }*/
 
-        /*let bitIndex = this.length - 1;
+        let bitIndex = this.length - 1;
         for (let hexIndex = hex.length - 1; hexIndex >= 0 && bitIndex >= 0; hexIndex--) {
             let hexDigit = hex.charAt(hexIndex);
             let intVal = BitArray._hexToBinaryObj[hexDigit];
@@ -52,8 +52,11 @@ let BitArray = function (size, hex) {
                 continue;
             }
 
-
-        }*/
+            for (let shiftAmount = 0; shiftAmount < 4 && bitIndex >= 0; shiftAmount++) {
+                this.set(bitIndex, (intVal >>> shiftAmount) & 1);
+                bitIndex--;
+            }
+        }
 
     }
 };
