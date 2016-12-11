@@ -25,9 +25,6 @@
 
     var encrypted = DES.encrypt(key, message);
 
-    /**/
-
-
     var expectedC = BitArray.fromBinary("1111000 0110011 0010101 0101111");
     var expectedD = BitArray.fromBinary("0101010 1011001 1001111 0001111");
 
@@ -108,7 +105,7 @@
 
     var expectedInitialPermutation = BitArray.fromBinary("1100 1100 0000 0000 1100 1100 1111 1111 1111 0000 1010 1010 1111 0000 1010 1010");
 
-    console.assert(encrypted.initialInputPermutation.equals(expectedInitialPermutation));
+    console.assert(encrypted.initialPermutation.equals(expectedInitialPermutation));
 
     var expectedFirstRoundL = BitArray.fromBinary("1100 1100 0000 0000 1100 1100 1111 1111");
     var expectedFirstRoundR = BitArray.fromBinary("1111 0000 1010 1010 1111 0000 1010 1010");

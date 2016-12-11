@@ -1,7 +1,7 @@
 var encryptionObject = {
     "key": new BitArray(64, '133457799bbcdff1'),
     "input": new BitArray(64, '0123456789abcdef'),
-    "initialInputPermutation": new BitArray(64, 'cc00ccfff0aaf0aa'),
+    "initialPermutation": new BitArray(64, 'cc00ccfff0aaf0aa'),
     "roundKeys": {
         "roundKeyParts": [
             {

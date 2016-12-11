@@ -57,7 +57,7 @@ DES._encryptOrDecrypt = function(key, input, mode) {
     result.key = DES._sizeInput(key);
     result.input = DES._sizeInput(input);
 
-    result.initialInputPermutation = DES.permute(result.input, DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION);
+    result.initialPermutation = DES.permute(result.input, DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION);
 
     result.roundKeys = DES._generateKeys(result.key);
 
@@ -65,7 +65,7 @@ DES._encryptOrDecrypt = function(key, input, mode) {
         result.roundKeys.roundKeyParts = result.roundKeys.roundKeyParts.reverse();
     }
 
-    result.rounds = DES._doRounds(result.roundKeys.roundKeyParts, result.initialInputPermutation, DES.MODE.ENCRYPTION);
+    result.rounds = DES._doRounds(result.roundKeys.roundKeyParts, result.initialPermutation, DES.MODE.ENCRYPTION);
 
     result.finalRoundSwitch = result.rounds[DES.NUM_ROUNDS - 1].rightFinal.concat(result.rounds[DES.NUM_ROUNDS - 1].leftFinal);
 

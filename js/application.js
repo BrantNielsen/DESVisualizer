@@ -15,12 +15,9 @@ $(document).ready(function() {
         let key = getProperBitArray($keyInput.val(), keyTypeSelection);
         
         let encryptionObject = DES.encrypt(key, message);
+        let decryptionObject = DES.decrypt(key, encryptionObject.final);
         
-        //console.log(encryptionObject.final.toHexString(2));
-        
-        //console.log(JSON.stringify(encryptionObject));
-        
-        document.initializeEncryptionObject(encryptionObject);
+        document.initializeVisualization(encryptionObject, decryptionObject);
         
         event.preventDefault(); 
     });
