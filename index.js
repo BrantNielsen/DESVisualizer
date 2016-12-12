@@ -90,7 +90,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	// Layer 1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAAAIAABIABIAAIhIAAAAAhHIAABHIhHAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAAAIhHAAAAAhHIAABHABIAAIhIAAIAABI");
 	this.shape.setTransform(12.2,12);
 
 	this.shape_1 = new cjs.Shape();
@@ -382,7 +382,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Aye8NMAuuAAAIAADiMAAAA05MguuAAAIpsAAIAAi5IAAgsIAAhqIAAh4IAAhuIAAhzIAAhpIAAh4IAAhQIAAiSIAAiRIAAhQIAAjIIAAgaIAAhyA8KxoIAAiDIAAhfIAAjhIAAjiIJsAAIAADiIAADhIAADiIAADhIAADiIAADhIAADiMAupAAAA8PzrIAFAAA8KqlIAAjiIAAjhIJsAAMAupAAAA8PqTIAFAAIAAgSIJsAAMAupAAAA8KjiIAAijA8PjbIAFAAIAAgHIJsAAIAADiIAADgIAADiIAADhIAADiIAADhIAADhIAADiIAADlA8PmFIAFAAIAAg/IAAjPA8K1KIJsAAMAupAAAA8K4rIJsAAMAuuAAAA8KuHIJsAAMAupAAAA8KnEIJsAAMAupAAAA8KAAIAAgJIAAhGIAAiMA8PBuIAFAAIAAhuIJsAAMAupAAAA8PgJIAFAAA8PhPIAFAAA8PD6IAFAAA8PM1IAFAAA8PISIAFAAA8PTZIAFAAA8PP9IAFAAA8PZVIAFAAA8PW/IAFAAA8KYpIJsAAMAupAAAA8KRmIJsAAMAupAAAA8KOFIJsAAMAupAAAA8KDgIJsAAMAupAAAA8KHCIJsAAMAupAAAA8KKjIJsAAMAupAAAA8KVHIJsAAMAupAAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Aye8NMAuuAAAIAADiMAAAA05MguuAAAIpsAAIAAi5IAAgsIAAhqIAAh4IAAhuA8K1KIAAjhIAAjiIJsAAIAADiIAADhIAADiIAADhIAADiIAADhIAADiIAADiIAADgIAADiIAADhIAADiIAADhIAADhIAADiIAADlA8PzrIAFAAIAAhfIJsAAMAupAAAA8KxoIAAiDA8KqTIAAgSIAAjiIAAjhIJsAAMAupAAAA8PqTIAFAAA8KmFIAAg/IAAjPA8PmFIAFAAA8KjbIAAgHIAAijA8PjbIAFAAA8KnEIJsAAMAupAAAA8KqlIJsAAMAupAAAA8KuHIJsAAMAupAAAA8K4rIJsAAMAuuAAAA8KjiIJsAAMAupAAAA8KAAIAAgJIAAhGIAAiMA8PBuIAFAAIAAhuIJsAAMAupAAAA8PgJIAFAAA8PhPIAFAAA8KD6IAAgaIAAhyA8PD6IAFAAA8PISIAFAAIAAhQIAAjIA8KKjIAAiRA8PM1IAFAAIAAiSIJsAAMAupAAAA8PP9IAFAAA8KRmIAAhpIAAh4IAAhQA8PTZIAFAAIAAhzIJsAAMAupAAAA8PW/IAFAAA8PZVIAFAAA8KVHIJsAAMAupAAAA8KHCIJsAAMAupAAAA8KDgIJsAAMAupAAAA8KOFIJsAAMAupAAAA8KYpIJsAAMAupAAA");
 	this.shape.setTransform(0.3,11.1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.text_16},{t:this.text_15},{t:this.text_14},{t:this.text_13},{t:this.text_12},{t:this.text_11},{t:this.text_10},{t:this.text_9},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text},{t:this.title}]}).wait(1));
@@ -619,7 +619,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field5 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field5.name = "field5";
 	this.field5.textAlign = "center";
-	this.field5.lineHeight = 17;
+	this.field5.lineHeight = 14;
 	this.field5.lineWidth = 15;
 	this.field5.parent = this;
 	this.field5.setTransform(105.9,7.1);
@@ -631,7 +631,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field4 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field4.name = "field4";
 	this.field4.textAlign = "center";
-	this.field4.lineHeight = 17;
+	this.field4.lineHeight = 14;
 	this.field4.lineWidth = 15;
 	this.field4.parent = this;
 	this.field4.setTransform(86.6,7.1);
@@ -643,7 +643,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field3 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field3.name = "field3";
 	this.field3.textAlign = "center";
-	this.field3.lineHeight = 17;
+	this.field3.lineHeight = 14;
 	this.field3.lineWidth = 15;
 	this.field3.parent = this;
 	this.field3.setTransform(67.4,7.1);
@@ -655,7 +655,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field2 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field2.name = "field2";
 	this.field2.textAlign = "center";
-	this.field2.lineHeight = 17;
+	this.field2.lineHeight = 14;
 	this.field2.lineWidth = 15;
 	this.field2.parent = this;
 	this.field2.setTransform(48.1,7.1);
@@ -667,7 +667,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field1 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field1.name = "field1";
 	this.field1.textAlign = "center";
-	this.field1.lineHeight = 17;
+	this.field1.lineHeight = 14;
 	this.field1.lineWidth = 15;
 	this.field1.parent = this;
 	this.field1.setTransform(28.9,7.1);
@@ -679,7 +679,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field0 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field0.name = "field0";
 	this.field0.textAlign = "center";
-	this.field0.lineHeight = 17;
+	this.field0.lineHeight = 14;
 	this.field0.lineWidth = 15;
 	this.field0.parent = this;
 	this.field0.setTransform(9.6,7.1);
@@ -696,7 +696,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(77.2,14);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("AGCiLIAAEXAGCiLIDBAAIAAEXIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIAAkXIDBAAIAAEXAAAiLIAAEXAAAiLIDBAAIDBAAAjAiLIAAEXAmBiLIDBAAIDAAA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("AGCiLIDBAAIAAEXIjBAAIjBAAIjBAAIjAAAAGCiLIAAEXAAAiLIDBAAIDBAAAAAiLIAAEXAmBCMIjBAAIAAkXIDBAAIDBAAIAAEXgAmBiLIAAEXAjAiLIDAAA");
 	this.shape_1.setTransform(57.9,14);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1023,7 +1023,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(7.6,35.7);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#000000").s().p("AhKg4IBLAAIAAADIAAgDIBKAAIhLBxgAABg4g");
+	this.shape_1.graphics.f("#000000").s().p("AhKg4IBLAAIBKAAIhLBxgAABg1IAAgDg");
 	this.shape_1.setTransform(7.5,51.9);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1489,7 +1489,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape_2.setTransform(308.8,14);
 
 	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f().s("#000000").ss(1,1,1).p("EAqOgCLIDBAAIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAEAqOgCLIAAEXEAwQACMIjBAAEAtPgCLIDBAAEAnNgCLIAAEXEAhLgCLIDBAAIDBAAIDBAAAeKiLIAAEXAeKiLIDBAAIAAEXAbJiLIAAEXAVHiLIDBAAIDBAAIDBAAAPFiLIDBAAIDBAAIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAAPFiLIAAEXASGiLIAAEXAJDiLIDBAAIDBAAAJDiLIAAEXADBiLIDBAAIAAEXADBiLIAAEXAGCiLIDBAAAjAiLIDAAAIDBAAAjAiLIAAEXApCiLIDBAAIAAEXApCiLIAAEXAmBiLIDBAAAvEiLIDBAAIDBAAAvEiLIAAEXA1GiLIDBAAIAAEXA1GiLIAAEXAyFiLIDBAAA7IiLIAAEXA7IiLIDBAAIDBAAA+JiLIAAEXEghKgCLIDBAAIDBAAEghKgCLIAAEXEgnMgCLIAAEXEgnMgCLIDBAAIDBAAEgqNgCLIAAEXEgtOgCLIDBAAIDBAAEgtOgCLIAAEXIjBAAIAAkXg");
+	this.shape_3.graphics.f().s("#000000").ss(1,1,1).p("EAtPgCLIAAEXIjBAAIjBAAIjBAAIjBAAEAqOgCLIAAEXEAqOgCLIDBAAIDBAAEAwQACMIjBAAEAhLgCLIDBAAIDBAAIAAEXEAhLgCLIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIAAkXIDBAAIAAEXAeKiLIDBAAAeKiLIAAEXEAnNgCLIDBAAAVHiLIDBAAIDBAAIAAEXASGiLIAAEXASGiLIDBAAIAAEXAPFiLIAAEXAPFiLIDBAAAJDiLIAAEXAJDiLIDBAAIDBAAAGCiLIAAEXADBiLIAAEXADBiLIDBAAIDBAAAbJiLIDBAAAjAiLIAAEXAjAiLIDAAAIDBAAAmBiLIAAEXApCiLIAAEXApCiLIDBAAIDBAAAvEiLIAAEXAvEiLIDBAAIDBAAAyFiLIAAEXA1GiLIAAEXA1GiLIDBAAIDBAAA7IiLIDBAAIDBAAA7IiLIAAEXEghKgCLIAAEXEghKgCLIDBAAIAAEXA+JiLIDBAAEgnMgCLIDBAAIDBAAEgnMgCLIAAEXEgtOgCLIDBAAIAAEXEgqNgCLIDBAA");
 	this.shape_3.setTransform(308.8,14);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1569,7 +1569,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(77.2,14);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("ADBiLIDBAAADBiLIAAEXIjBAAIjAAAAGCCMIjBAAAjAiLIAAEXIjBAAIAAkXIDBAAIDAAAIAAEXAAAiLIDBAA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("AGCCMIjBAAIjBAAIjAAAIjBAAIAAkXIDBAAIAAEXADBiLIAAEXADBiLIDBAAAjAiLIDAAAIAAEXAAAiLIDBAA");
 	this.shape_1.setTransform(38.6,14);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1985,7 +1985,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(308.8,14);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAqOgCLIDBAAIAAEXIjBAAIjBAAEAqOgCLIAAEXEAtPgCLIDBAAEAwQACMIjBAAEAnNgCLIAAEXIjBAAIjBAAEAhLgCLIDBAAIDBAAIDBAAAeKiLIAAEXIjBAAEAhLgCLIAAEXIjBAAAeKiLIDBAAAbJiLIAAEXIjBAAIjBAAAVHiLIDBAAIDBAAIDBAAAPFiLIDBAAIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAAPFiLIAAEXAVHiLIAAEXIjBAAASGiLIDBAAAJDiLIDBAAIDBAAAJDiLIAAEXAGCiLIAAEXADBiLIAAEXADBiLIDBAAIDBAAAjAiLIAAEXAjAiLIDAAAIDBAAApCiLIAAEXIjBAAIjBAAIjBAAAmBiLIAAEXIjBAAApCiLIDBAAIDBAAAvEiLIDBAAIDBAAAvEiLIAAEXA1GiLIAAEXIjCAAIjAAAIjBAAAyFiLIAAEXIjBAAA1GiLIDBAAIDBAAA7IiLIDAAAIDCAAA7IiLIAAEXEghKgCLIAAEXIjBAAIjBAAIjBAAIjBAAA+JiLIAAEXIjBAAEghKgCLIDBAAIDBAAEgnMgCLIAAEXEgnMgCLIDBAAIDBAAEgqNgCLIAAEXEgtOgCLIAAEXIjBAAIAAkXIDBAAIDBAAIDBAA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAqOgCLIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjCAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIAAkXIDBAAIAAEXEAtPgCLIAAEXIjBAAEAqOgCLIDBAAIDBAAEAwQACMIjBAAEAhLgCLIDBAAIDBAAIAAEXAeKiLIDBAAIAAEXAeKiLIAAEXEAnNgCLIDBAAAVHiLIDBAAIDBAAIAAEXASGiLIDBAAIAAEXASGiLIAAEXAPFiLIAAEXAPFiLIDBAAAJDiLIAAEXAJDiLIDBAAIDBAAADBiLIDBAAIAAEXADBiLIAAEXAGCiLIDBAAAbJiLIDBAAAjAiLIDAAAIDBAAAjAiLIAAEXApCiLIDBAAIAAEXApCiLIAAEXAmBiLIDBAAAvEiLIAAEXAvEiLIDBAAIDBAAA1GiLIDBAAIAAEXA1GiLIAAEXAyFiLIDBAAA7IiLIAAEXA7IiLIDAAAIDCAAEghKgCLIDBAAIAAEXEghKgCLIAAEXA+JiLIDBAAEgnMgCLIDBAAIDBAAEgnMgCLIAAEXEgtOgCLIDBAAIAAEXEgqNgCLIDBAA");
 	this.shape_1.setTransform(308.8,14);
 
 	this.shape_2 = new cjs.Shape();
@@ -2056,7 +2056,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_1.lineHeight = 23;
 	this.text_1.lineWidth = 72;
 	this.text_1.parent = this;
-	this.text_1.setTransform(-2.4,-247.5);
+	this.text_1.setTransform(-2.4,-212.5);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_1);
@@ -2068,15 +2068,15 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.instance = new lib.downArrow();
 	this.instance.parent = this;
-	this.instance.setTransform(-1.4,208,1,1,0,0,0,7.5,28.6);
+	this.instance.setTransform(-1.4,214,1,1,0,0,0,7.5,28.6);
 
 	this.instance_1 = new lib.downArrow();
 	this.instance_1.parent = this;
-	this.instance_1.setTransform(-1.4,77.7,1,1,0,0,0,7.5,28.6);
+	this.instance_1.setTransform(-1.4,90.7,1,1,0,0,0,7.5,28.6);
 
 	this.permCBtn = new lib.ViewButton();
 	this.permCBtn.parent = this;
-	this.permCBtn.setTransform(-40.7,158.6);
+	this.permCBtn.setTransform(-40.7,167.6);
 	new cjs.ButtonHelper(this.permCBtn, 0, 1, 1);
 
 	this.text_2 = new cjs.Text("Permutation", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2084,7 +2084,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_2.lineHeight = 39;
 	this.text_2.lineWidth = 193;
 	this.text_2.parent = this;
-	this.text_2.setTransform(-3.6,122.3,0.663,0.663);
+	this.text_2.setTransform(-3.6,131.3,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_2);
@@ -2092,110 +2092,110 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.combinedOutput = new lib.bits32();
 	this.combinedOutput.parent = this;
-	this.combinedOutput.setTransform(-1.4,54.9,1,1,0,0,0,308.8,14);
+	this.combinedOutput.setTransform(-1.4,68.9,1,1,0,0,0,308.8,14);
 
 	this.sBoxOutput6 = new lib.bitString4();
 	this.sBoxOutput6.parent = this;
-	this.sBoxOutput6.setTransform(376.8,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput6.setTransform(376.8,-8.4,1,1,0,0,0,38.6,14);
 
 	this.sBoxOutput5 = new lib.bitString4();
 	this.sBoxOutput5.parent = this;
-	this.sBoxOutput5.setTransform(225.4,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput5.setTransform(225.4,-8.4,1,1,0,0,0,38.6,14);
 
 	this.sBoxOutput4 = new lib.bitString4();
 	this.sBoxOutput4.parent = this;
-	this.sBoxOutput4.setTransform(74,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput4.setTransform(74,-8.4,1,1,0,0,0,38.6,14);
 
 	this.sBoxOutput3 = new lib.bitString4();
 	this.sBoxOutput3.parent = this;
-	this.sBoxOutput3.setTransform(-77.4,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput3.setTransform(-77.4,-8.4,1,1,0,0,0,38.6,14);
 
 	this.sBoxOutput2 = new lib.bitString4();
 	this.sBoxOutput2.parent = this;
-	this.sBoxOutput2.setTransform(-228.8,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput2.setTransform(-228.8,-8.4,1,1,0,0,0,38.6,14);
 
 	this.sBoxOutput1 = new lib.bitString4();
 	this.sBoxOutput1.parent = this;
-	this.sBoxOutput1.setTransform(-380.2,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput1.setTransform(-380.2,-8.4,1,1,0,0,0,38.6,14);
 
 	this.sBoxOutput7 = new lib.bitString4();
 	this.sBoxOutput7.parent = this;
-	this.sBoxOutput7.setTransform(528.2,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput7.setTransform(528.2,-8.4,1,1,0,0,0,38.6,14);
 
 	this.sBoxOutput0 = new lib.bitString4();
 	this.sBoxOutput0.parent = this;
-	this.sBoxOutput0.setTransform(-531.6,-22.4,1,1,0,0,0,38.6,14);
+	this.sBoxOutput0.setTransform(-531.6,-8.4,1,1,0,0,0,38.6,14);
 
 	this.instance_2 = new lib.downArrow();
 	this.instance_2.parent = this;
-	this.instance_2.setTransform(528.1,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_2.setTransform(528.1,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_3 = new lib.downArrow();
 	this.instance_3.parent = this;
-	this.instance_3.setTransform(376.1,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_3.setTransform(376.1,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_4 = new lib.downArrow();
 	this.instance_4.parent = this;
-	this.instance_4.setTransform(225,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_4.setTransform(225,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_5 = new lib.downArrow();
 	this.instance_5.parent = this;
-	this.instance_5.setTransform(73,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_5.setTransform(73,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_6 = new lib.downArrow();
 	this.instance_6.parent = this;
-	this.instance_6.setTransform(-77.5,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_6.setTransform(-77.5,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_7 = new lib.downArrow();
 	this.instance_7.parent = this;
-	this.instance_7.setTransform(-229.5,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_7.setTransform(-229.5,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_8 = new lib.downArrow();
 	this.instance_8.parent = this;
-	this.instance_8.setTransform(-380.7,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_8.setTransform(-380.7,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_9 = new lib.downArrow();
 	this.instance_9.parent = this;
-	this.instance_9.setTransform(-532.7,-70.4,1,1,0,0,0,7.5,28.6);
+	this.instance_9.setTransform(-532.7,-52.4,1,1,0,0,0,7.5,28.6);
 
 	this.instance_10 = new lib.downArrow();
 	this.instance_10.parent = this;
-	this.instance_10.setTransform(528.1,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_10.setTransform(528.1,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.instance_11 = new lib.downArrow();
 	this.instance_11.parent = this;
-	this.instance_11.setTransform(376.1,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_11.setTransform(377.1,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.instance_12 = new lib.downArrow();
 	this.instance_12.parent = this;
-	this.instance_12.setTransform(225,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_12.setTransform(225,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.instance_13 = new lib.downArrow();
 	this.instance_13.parent = this;
-	this.instance_13.setTransform(73,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_13.setTransform(74,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.instance_14 = new lib.downArrow();
 	this.instance_14.parent = this;
-	this.instance_14.setTransform(-77.5,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_14.setTransform(-78.5,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.instance_15 = new lib.downArrow();
 	this.instance_15.parent = this;
-	this.instance_15.setTransform(-229.5,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_15.setTransform(-229.5,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.instance_16 = new lib.downArrow();
 	this.instance_16.parent = this;
-	this.instance_16.setTransform(-380.7,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_16.setTransform(-380.7,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.instance_17 = new lib.downArrow();
 	this.instance_17.parent = this;
-	this.instance_17.setTransform(-532.7,-187.7,1,1,0,0,0,7.5,28.6);
+	this.instance_17.setTransform(-532.7,-158.7,1,1,0,0,0,7.5,28.6);
 
 	this.text_3 = new cjs.Text("S-Box 8", "normal 400 28px 'Open Sans'", "#FFFFFF");
 	this.text_3.textAlign = "center";
 	this.text_3.lineHeight = 39;
 	this.text_3.lineWidth = 101;
 	this.text_3.parent = this;
-	this.text_3.setTransform(528,-148.7,0.663,0.663);
+	this.text_3.setTransform(528,-125.7,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_3);
@@ -2203,7 +2203,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn7 = new lib.ViewButton();
 	this.sBoxBtn7.parent = this;
-	this.sBoxBtn7.setTransform(490.5,-116);
+	this.sBoxBtn7.setTransform(490.5,-93);
 	new cjs.ButtonHelper(this.sBoxBtn7, 0, 1, 1);
 
 	this.text_4 = new cjs.Text("S-Box 7", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2211,7 +2211,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_4.lineHeight = 39;
 	this.text_4.lineWidth = 101;
 	this.text_4.parent = this;
-	this.text_4.setTransform(376.5,-148.7,0.663,0.663);
+	this.text_4.setTransform(376.5,-125.7,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_4);
@@ -2219,7 +2219,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn6 = new lib.ViewButton();
 	this.sBoxBtn6.parent = this;
-	this.sBoxBtn6.setTransform(339,-116);
+	this.sBoxBtn6.setTransform(339,-93);
 	new cjs.ButtonHelper(this.sBoxBtn6, 0, 1, 1);
 
 	this.text_5 = new cjs.Text("S-Box 6", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2227,7 +2227,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_5.lineHeight = 39;
 	this.text_5.lineWidth = 101;
 	this.text_5.parent = this;
-	this.text_5.setTransform(225.1,-147.6,0.663,0.663);
+	this.text_5.setTransform(225.1,-124.6,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_5);
@@ -2235,7 +2235,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn5 = new lib.ViewButton();
 	this.sBoxBtn5.parent = this;
-	this.sBoxBtn5.setTransform(187.5,-114.9);
+	this.sBoxBtn5.setTransform(187.5,-91.9);
 	new cjs.ButtonHelper(this.sBoxBtn5, 0, 1, 1);
 
 	this.text_6 = new cjs.Text("S-Box 5", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2243,7 +2243,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_6.lineHeight = 39;
 	this.text_6.lineWidth = 101;
 	this.text_6.parent = this;
-	this.text_6.setTransform(73.6,-148.7,0.663,0.663);
+	this.text_6.setTransform(73.6,-125.7,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_6);
@@ -2251,7 +2251,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn4 = new lib.ViewButton();
 	this.sBoxBtn4.parent = this;
-	this.sBoxBtn4.setTransform(36.1,-116);
+	this.sBoxBtn4.setTransform(36.1,-93);
 	new cjs.ButtonHelper(this.sBoxBtn4, 0, 1, 1);
 
 	this.text_7 = new cjs.Text("S-Box 4", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2259,7 +2259,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_7.lineHeight = 39;
 	this.text_7.lineWidth = 101;
 	this.text_7.parent = this;
-	this.text_7.setTransform(-77.8,-147.6,0.663,0.663);
+	this.text_7.setTransform(-77.8,-124.6,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_7);
@@ -2267,7 +2267,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn3 = new lib.ViewButton();
 	this.sBoxBtn3.parent = this;
-	this.sBoxBtn3.setTransform(-115.4,-114.9);
+	this.sBoxBtn3.setTransform(-115.4,-91.9);
 	new cjs.ButtonHelper(this.sBoxBtn3, 0, 1, 1);
 
 	this.text_8 = new cjs.Text("S-Box 3", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2275,7 +2275,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_8.lineHeight = 39;
 	this.text_8.lineWidth = 101;
 	this.text_8.parent = this;
-	this.text_8.setTransform(-229.3,-147.6,0.663,0.663);
+	this.text_8.setTransform(-229.3,-124.6,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_8);
@@ -2283,7 +2283,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn2 = new lib.ViewButton();
 	this.sBoxBtn2.parent = this;
-	this.sBoxBtn2.setTransform(-266.8,-114.9);
+	this.sBoxBtn2.setTransform(-266.8,-91.9);
 	new cjs.ButtonHelper(this.sBoxBtn2, 0, 1, 1);
 
 	this.text_9 = new cjs.Text("S-Box 2", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2291,7 +2291,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_9.lineHeight = 39;
 	this.text_9.lineWidth = 101;
 	this.text_9.parent = this;
-	this.text_9.setTransform(-380.7,-147.6,0.663,0.663);
+	this.text_9.setTransform(-380.7,-124.6,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_9);
@@ -2299,7 +2299,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn1 = new lib.ViewButton();
 	this.sBoxBtn1.parent = this;
-	this.sBoxBtn1.setTransform(-418.3,-114.9);
+	this.sBoxBtn1.setTransform(-418.3,-91.9);
 	new cjs.ButtonHelper(this.sBoxBtn1, 0, 1, 1);
 
 	this.text_10 = new cjs.Text("S-Box 1", "normal 400 28px 'Open Sans'", "#FFFFFF");
@@ -2307,7 +2307,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_10.lineHeight = 39;
 	this.text_10.lineWidth = 101;
 	this.text_10.parent = this;
-	this.text_10.setTransform(-532.6,-147.6,0.663,0.663);
+	this.text_10.setTransform(-532.6,-124.6,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_10);
@@ -2315,52 +2315,52 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.sBoxBtn0 = new lib.ViewButton();
 	this.sBoxBtn0.parent = this;
-	this.sBoxBtn0.setTransform(-570.2,-114.9);
+	this.sBoxBtn0.setTransform(-570.2,-91.9);
 	new cjs.ButtonHelper(this.sBoxBtn0, 0, 1, 1);
 
 	this.finalInput5 = new lib.SixBitLow();
 	this.finalInput5.parent = this;
-	this.finalInput5.setTransform(224.9,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput5.setTransform(224.9,-175.4,1,1,0,0,0,57.9,14);
 
 	this.finalInput6 = new lib.SixBitLow();
 	this.finalInput6.parent = this;
-	this.finalInput6.setTransform(376.3,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput6.setTransform(376.3,-175.4,1,1,0,0,0,57.9,14);
 
 	this.finalInput7 = new lib.SixBitLow();
 	this.finalInput7.parent = this;
-	this.finalInput7.setTransform(527.8,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput7.setTransform(527.8,-175.4,1,1,0,0,0,57.9,14);
 
 	this.finalInput4 = new lib.SixBitLow();
 	this.finalInput4.parent = this;
-	this.finalInput4.setTransform(73.4,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput4.setTransform(73.4,-175.4,1,1,0,0,0,57.9,14);
 
 	this.finalInput3 = new lib.SixBitLow();
 	this.finalInput3.parent = this;
-	this.finalInput3.setTransform(-78,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput3.setTransform(-78,-175.4,1,1,0,0,0,57.9,14);
 
 	this.finalInput2 = new lib.SixBitLow();
 	this.finalInput2.parent = this;
-	this.finalInput2.setTransform(-229.5,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput2.setTransform(-229.5,-175.4,1,1,0,0,0,57.9,14);
 
 	this.finalInput1 = new lib.SixBitLow();
 	this.finalInput1.parent = this;
-	this.finalInput1.setTransform(-380.9,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput1.setTransform(-380.9,-175.4,1,1,0,0,0,57.9,14);
 
 	this.finalInput0 = new lib.SixBitLow();
 	this.finalInput0.parent = this;
-	this.finalInput0.setTransform(-532.4,-210.4,1,1,0,0,0,57.9,14);
+	this.finalInput0.setTransform(-532.4,-175.4,1,1,0,0,0,57.9,14);
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AFo1tMBWnAAAALkOIIlxHmEA64AOII89HmEBSiAOIMgojAHmEAjOAOIIxXHmEhcOgVtMBV4AAAEgjvAOIIRbHmEhTDAOIMAonAHmEg7ZAOIIdBHmAsFOIIF1Hm");
-	this.shape.setTransform(0,-98);
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AFo0EMBWnAAAALkMfIlxHmEAjOAMfIxXHmEBSiAMfMgojAHmEA64AMfI89HmEhcOgUEMBV4AAAAsFMfIF1HmEgjvAMfIRbHmEg7ZAMfIdBHmEhTDAMfMAonAHm");
+	this.shape.setTransform(0,-73.5);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#1174C3").s().p("AsNbrIAAoiIACAAIAAglIgCAAIAAksIYIAAIAANzgAaivxIAAgeIgBAAIAAnEIABAAIAAgeIgBAAIAAjvISBAAIAALNIABAAIAAAigA0zvxIAAgeIAAAAIAAnEIABAAIAAgeIgBAAIAAjvISAAAIAALNIABAAIAAAigEgsdgPxIAAgeIAAAAIAAnEIABAAIAAgeIgBAAIAAjvISAAAIAALNIABAAIAAAigEhEIgPxIAAgeIAAAAIAAnEIABAAIAAgeIgBAAIAAjvISAAAIAALNIACAAIAAAigEhb2gPxIAAgeIgBAAIAAnEIABAAIAAgeIgBAAIAAj5ISBAAIAALXIABAAIAAAigEBJ3gP7IAAgfIgBAAIAAnEIABAAIAAgeIgBAAIAAjuISBAAIAALNIABAAIAAAigEAyMgP7IAAgfIAAAAIAAnEIABAAIAAgeIgBAAIAAjuISAAAIAALNIABAAIAAAigAC3v7IAAgfIgBAAIAAnEIABAAIAAgeIgBAAIAAjuISBAAIAALNIABAAIAAAig");
-	this.shape_1.setTransform(-2.3,22.9);
+	this.shape_1.graphics.f("#1174C3").s().p("AsNalIAAoiIACAAIAAglIgCAAIAAksIYIAAIAANzgAaiurIAAgeIgBAAIAAnEIABAAIAAgfIgBAAIAAjtISBAAIAALMIABAAIAAAigA0zurIAAgeIAAAAIAAnEIABAAIAAgfIgBAAIAAjtISAAAIAALMIABAAIAAAigEgsdgOrIAAgeIAAAAIAAnEIABAAIAAgfIgBAAIAAjtISAAAIAALMIABAAIAAAigEhEIgOrIAAgeIAAAAIAAnEIABAAIAAgfIgBAAIAAjtISAAAIAALMIACAAIAAAigEhb2gOrIAAgeIgBAAIAAnEIABAAIAAgfIgBAAIAAj4ISBAAIAALXIABAAIAAAigEBJ3gO2IAAgdIgBAAIAAnEIABAAIAAgfIgBAAIAAjuISBAAIAALMIABAAIAAAigEAyMgO2IAAgdIAAAAIAAnEIABAAIAAgfIgBAAIAAjuISAAAIAALMIABAAIAAAigAC3u2IAAgdIgBAAIAAnEIABAAIAAgfIgBAAIAAjuISBAAIAALMIABAAIAAAig");
+	this.shape_1.setTransform(-2.3,38.9);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape},{t:this.finalInput0},{t:this.finalInput1},{t:this.finalInput2},{t:this.finalInput3},{t:this.finalInput4},{t:this.finalInput7},{t:this.finalInput6},{t:this.finalInput5},{t:this.sBoxBtn0},{t:this.text_10},{t:this.sBoxBtn1},{t:this.text_9},{t:this.sBoxBtn2},{t:this.text_8},{t:this.sBoxBtn3},{t:this.text_7},{t:this.sBoxBtn4},{t:this.text_6},{t:this.sBoxBtn5},{t:this.text_5},{t:this.sBoxBtn6},{t:this.text_4},{t:this.sBoxBtn7},{t:this.text_3},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.instance_11},{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.sBoxOutput0},{t:this.sBoxOutput7},{t:this.sBoxOutput1},{t:this.sBoxOutput2},{t:this.sBoxOutput3},{t:this.sBoxOutput4},{t:this.sBoxOutput5},{t:this.sBoxOutput6},{t:this.combinedOutput},{t:this.text_2},{t:this.permCBtn},{t:this.instance_1},{t:this.instance},{t:this.finalOutput},{t:this.text_1},{t:this.text}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.SBoxes, new cjs.Rectangle(-591.2,-249.5,1182.6,527), null);
+}).prototype = getMCSymbolPrototype(lib.SBoxes, new cjs.Rectangle(-591.2,-214.5,1182.6,492), null);
 
 
 (lib.sBox = function(mode,startPosition,loop) {
@@ -2486,7 +2486,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	// Layer 1
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAuUgNMIAAaaEA1cgNMIAAaaEAnMgNMIAAaaEAgEgNMIAAaaAY8tMIAAaaAR0tMIAAaaAqrtMIAAaaAjjtMIAAaaAKstMIAAaaADktMIAAaaAxztMIAAaaA47tMIAAaaEggDgNMIAAaaEgnLgNMIAAaaEg1bgNMIAAaaEguTgNMIAAaa");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EA1cgNMIAAaaEAuUgNMIAAaaAR0tMIAAaaAY8tMIAAaaEAgEgNMIAAaaEAnMgNMIAAaaADktMIAAaaAKstMIAAaaAjjtMIAAaaAqrtMIAAaaEggDgNMIAAaaA47tMIAAaaAxztMIAAaaEguTgNMIAAaaEg1bgNMIAAaaEgnLgNMIAAaa");
 	this.shape_1.setTransform(556.3,110.9);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape_1).wait(1));
@@ -2876,7 +2876,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.dataInput0.setTransform(60.6,129.5,1,1,0,0,0,57.9,14);
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EAm+gcUIPmFDITSEbEAj5gXdIOSEnEAj5gXdIItEnAOv8UIDPE9IIiEhAR+3XIC+EhAU28UIPDE3Aa38PIJCEyEAg9gcPIVnE+INtEbEAy/gcLMAo9AJVAJGjOMBTJAAAAjY8UIDRE+IinEgACt8PIi0E5IC9EgAyM3XIioEhAyM3XIoMEhA7c8UIpAFBIoCEdA1b8PIvBE8ItnEdAgBIzIAAnOAvV8UIi3E9ApZ8PIozE4Eg2dgXYIzREiEgzhgcLMgoTAJVEg2dgXYItsEiAgBcVIAAnPEgnjgcUIu6E8EghigcTI07E7EhcOgDOMBTJAAAEhbyAM+MBXdAAAAEqM+MBXcAAAAIz8PIJLE4");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EAj5gXdIItEnEAj5gXdIOSEnEAm+gcUIPmFDINtEbAOv8UIDPE9IC+EhAR+3XIIiEhEAg9gcPIVnE+ITSEbAa38PIJCEyAU28UIPDE3AJGjOMBTJAAAEAy/gcLMAo9AJVAjY8UIDRE+IC9EgACt8PIi0E5IinEgA1b8PIvBE8ItnEdA7c8UIpAFBIoCEdAyM3XIoMEhAyM3XIioEhAgBIzIAAnOApZ8PIozE4AvV8UIi3E9Eg2dgXYItsEiEgzhgcLMgoTAJVEg2dgXYIzREiEhbyAM+MBXdAAAEhcOgDOMBTJAAAEghigcTI07E7EgnjgcUIu6E8AgBcVIAAnPAIz8PIJLE4AEqM+MBXcAAA");
 	this.shape.setTransform(590.3,236.2);
 
 	this.shape_1 = new cjs.Shape();
@@ -2962,7 +2962,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	// Layer 4
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(2,1,1).p("AX/hSIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAT/kuIAADcAX/kuIAADcAb/kuIAADcAX/EzIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAb/BXIAADcAX/BXIAADcAT/BXIAADcAj+kuIAADcAAAkuIAADcAEAkuIAADcAIAkuIAADcAMAkuIAADcAP/kuIAADcA79kuIAADcA3+kuIAADcAz9kuIAADcAv+kuIAADcAr+kuIAADcAn+kuIAADcAEABXIAADcAAABXIAADcAj+BXIAADcAP/BXIAADcAMABXIAADcAIABXIAADcA3+BXIAADcA79BXIAADcAn+BXIAADcAr+BXIAADcAv+BXIAADcAz9BXIAADc");
+	this.shape.graphics.f().s("#000000").ss(2,1,1).p("AX/hSIkAAAIkAAAIj/AAAb/kuIAADcIkAAAAX/kuIAADcAT/kuIAADcA79hSIkAAAIAAjfMA/7AAAIAADfIj/AAAX/EzIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAT/BXIAADcAX/BXIAADcAb/BXIAADcAEAhSIkAAAAEAkuIAADcAAAkuIAADcIj+AAIkAAAIkAAAAj+kuIAADcAP/kuIAADcAMAkuIAADcIkAAAAIAkuIAADcIkAAAA3+kuIAADcIj/AAA79kuIAADcAv+hSIj/AAAn+kuIAADcAr+kuIAADcIkAAAAv+kuIAADcAz9kuIAADcIkBAAAz9BXIAADcAv+BXIAADcAr+BXIAADcAn+BXIAADcA79BXIAADcA3+BXIAADcAIABXIAADcAMABXIAADcAP/BXIAADcAj+BXIAADcAAABXIAADcAEABXIAADc");
 	this.shape.setTransform(209.8,176.2);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
@@ -3541,7 +3541,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EBGjgTsIAACQEArQgRcIAAh4IAAiYIbTAAIAACAIEmAAIAAQPEBAGAC4IAAiWIAAh5INiAAINxAAIAAEPEBGjATvIAAB4EArQAVnIAAh4IAAiYIbTAAIAACYIOQAAIAAu1EBbZAC+I7TAAEBNogBXIAAEPEAgIgIoIAAqsIJWAAEAgIAJqIAAKFIJWAAEBGjgRWI7TAAEBGjAVtI7TAAAonhXINwAAIAACNIAACCA5lvHIKdAAIAAL0Eg04gNBIAAkRIbTAAIAACLIAACGA2KC4IAAiWIAAh5INjAAIAAEPA5lQ0IAAiFEg04AOvIAAEQIbTAAIAAiLIX4AAIAAr2AFJC+I7TAAEhbYgNBIAAkRIbTAAIAACLIJXAAEhAFgPHIAACGEhbYAOvIAAEQIbTAAIAAiLIAAiFEhAFAQ0IJXAAEhAFgM7I7TAAEhAFAOpI7TAAA5ls7I7TAAA5lOpI7TAAAFJA2IJ8gB");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EBGjgTsIAACQEArQgRcIAAh4IAAiYIbTAAIAACAIEmAAIAAQPEBAGAC4IAAiWIAAh5INiAAIAAEPEBGjATvIAAB4EBGjATvIOQAAIAAu1EArQAVnIAAh4IAAiYIbTAAIAACYEBNogBXINxAAIAAEPEBbZAC+I7TAAEAgIgIoIAAqsIJWAAEAgIAJqIAAKFIJWAAEBGjAVtI7TAAEBGjgRWI7TAAAonhXINwAAIAACNIAACCA5lvHIKdAAIAAL0Eg04gNBIAAkRIbTAAIAACLIAACGA2KC4IAAiWIAAh5INjAAIAAEPA5lQ0IAAiFEg04AOvIAAEQIbTAAIAAiLIX4AAIAAr2AFJC+I7TAAEhbYgNBIAAkRIbTAAIAACLIJXAAEhAFgPHIAACGEhbYAOvIAAEQIbTAAIAAiLIAAiFEhAFAQ0IJXAAEhAFAOpI7TAAEhAFgM7I7TAAA5lOpI7TAAA5ls7I7TAAAFJA2IJ8gB");
 	this.shape_1.setTransform(584.9,184.7);
 
 	this.shape_2 = new cjs.Shape();
@@ -3730,7 +3730,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EA1tgAQIGPAAADZuhIAAiLIbTAAIAACLIAACLI7TAAgEAnSgJIIAAlZIomAAAe2OaIAACTI7TAAIAAiDIAAiTIbTAAgEAnSAJKIAAFQIocAAAskpJIAAlYIP9AAEg77ABlIAAkPIbTAAIAACaIAAB1EggogAQIErAAEggoABrI7TAAAskJSIAAFYIQHAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EA1tgAQIGPAAADZuhIAAiLIbTAAIAACLEAnSgJIIAAlZIomAAIAACLI7TAAIAAiLADjOqIAAiTIbTAAIAACDIAACTI7TAAgEAnSAJKIAAFQIocAAAskpJIAAlYIP9AAEggogAQIAAB1Eg77ABlIAAkPIbTAAIAACaIErAAAskJSIAAFYIQHAAEggoABrI7TAA");
 	this.shape.setTransform(383.7,134.1);
 
 	this.shape_1 = new cjs.Shape();
@@ -3940,7 +3940,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	new cjs.ButtonHelper(this.manglerBtn, 0, 1, 1);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAtdgI/IAAiUIbTAAIAAEWI7TAAAFY4rIAAkQIbTAAIAAEWIt/AAIAAD3ASs4lItUAAEgFhgiAIM7AAIAADJAFYJeIAAh6IbTAAIAAEXI7TAAAFYL1IAAiXAV0g/IAAGbEAtdgHDIAAh8EAkTgI/IJKAAEAgrAYHIAACtI7TAAIAAkWIbTAAgEAgpAYHIACAAATCa3IAAHhI2hAAEgFhgiAIAACFEgg0giAIAAiLIbTAAIAACLEgg0gf7IAAiFIu2AAIAACwEgtcga6IAACLI7TAAIAAkWIbTAAIAACLMAhJAhIAli/1I7SAAEg7FAa0ItqAAIAAkWIbTAAIAAEWItpAAIAAHkIYZAAEgFhAkMI7TAAIAAkWIbTAAgAntLZILFLCAlmJeIK+AA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAtdgI/IAAiUIbTAAIAAEWI7TAAAFY4rIAAkQIbTAAIAAEWIt/AAIAAD3EgFhgiAIM7AAIAADJASs4lItUAAAFYL1IAAiXIAAh6IbTAAIAAEXI7TAAAV0g/IAAGbEAtdgHDIAAh8EAkTgI/IJKAAEAgpAYHIACAAIAACtI7TAAIAAkWIbTAAIAABpATCa3IAAHhI2hAAEgg0giAIAAiLIbTAAIAACLIAACFEgg0gf7IAAiFIu2AAIAACwEgtcga6IAACLI7TAAIAAkWIbTAAIAACLMAhJAhIAli/1I7SAAEg7FAa0ItqAAIAAkWIbTAAIAAEWItpAAIAAHkIYZAAEgFhAkMI7TAAIAAkWIbTAAgAlmJeIK+AAAntLZILFLC");
 	this.shape_1.setTransform(642.1,298.5);
 
 	this.shape_2 = new cjs.Shape();
@@ -4098,7 +4098,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EBaZAGJI7TAAIAACQIAACGIbTAAgAYDslIAAkRIbTAAIAAEREAz9AIZIJXAAEAlegMfIAAJWEAzWgMfIt4AAItbAAAvcJ6IAAh5IAAiYIbSAAIAACAIJWAAAL2HpIAACRA6kIBIJWAAEhNGAC6ItSAAIAAkWIbTAAIAAEWgEg5VAFjIzxAAIAAipEhNGAMfItSAAIAAEYIbTAAIAAkYgEg5VAJ2IzxAAIAACpAL2KAI7SAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EBaZAGJI7TAAIAACQIAACGIbTAAgAYDslIAAkRIbTAAIAAEREAz9AIZIJXAAEAzWgMfIt4AAIAAJWAvcJ6IAAh5IAAiYIbSAAIAACAIJWAAAL2HpIAACREAlegMfItbAAA6kIBIJWAAEhNGAC6ItSAAIAAkWIbTAAIAAEWgEg5VAFjIzxAAIAAipEhNGAMfItSAAIAAEYIbTAAIAAkYgEg5VAJ2IzxAAIAACpAL2KAI7SAA");
 	this.shape.setTransform(577.5,134.8);
 
 	this.shape_1 = new cjs.Shape();
@@ -4395,7 +4395,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EhKWgZIIuNAAIAAkXIbTAAIAAEXItGAAIAAFbEgkXgZRIAAkRIbTAAIAAERA2A5IIAAFbAnCbwIM4AAMAAAgvRINNAAApE5LI7TAAEg9QAbwIAABzI7TAAIAAkXIbTAAIAACkIXLAAEhKWAAaIAASUEA8HgQxIAGAAEBYkAQaI7UAAIAAB/IAACYIbUAAgEAilgVrINqAAIAAEXItqAAItpAAIAAkXINpAAIAAEXEAmzgPXIkeClIC7BsEAiUgJLIAAEXItqAAIAAkXINqAAINpAAIAAEXItpAAEAiVgMyIi6BsEAijAAKIAAG4Ad4vXIEdClEAyIASZIJXAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EhKWgZIIuNAAIAAkXIbTAAIAAEXItGAAIAAFbEgkXgZRIAAkRIbTAAIAAERA2A5IIAAFbAnCbwIM4AAMAAAgvRINNAAApE5LI7TAAEg9QAbwIAABzI7TAAIAAkXIbTAAIAACkIXLAAEhKWAAaIAASUEA8HgQxIAGAAEBYkAQaI7UAAIAAB/IAACYIbUAAgEAilgVrINqAAIAAEXItqAAItpAAIAAkXINpAAIAAEXEAmzgPXIkeClIC7BsEAiUgJLIAAEXItqAAIAAkXINqAAINpAAIAAEXItpAAAd4vXIEdClIi6BsEAijAAKIAAG4EAyIASZIJXAA");
 	this.shape.setTransform(594,171);
 
 	this.shape_1 = new cjs.Shape();
@@ -4755,7 +4755,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field3 = new cjs.Text("11", "normal 400 14px 'Inconsolata'");
 	this.field3.name = "field3";
 	this.field3.textAlign = "center";
-	this.field3.lineHeight = 19;
+	this.field3.lineHeight = 16;
 	this.field3.lineWidth = 17;
 	this.field3.parent = this;
 	this.field3.setTransform(181.7,158.5);
@@ -4767,7 +4767,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.input2 = new cjs.Text("10", "normal 400 14px 'Inconsolata'");
 	this.input2.name = "input2";
 	this.input2.textAlign = "center";
-	this.input2.lineHeight = 19;
+	this.input2.lineHeight = 16;
 	this.input2.lineWidth = 17;
 	this.input2.parent = this;
 	this.input2.setTransform(181.7,126.3);
@@ -4779,7 +4779,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.input1 = new cjs.Text("01", "normal 400 14px 'Inconsolata'");
 	this.input1.name = "input1";
 	this.input1.textAlign = "center";
-	this.input1.lineHeight = 19;
+	this.input1.lineHeight = 16;
 	this.input1.lineWidth = 17;
 	this.input1.parent = this;
 	this.input1.setTransform(181.7,94.2);
@@ -4791,7 +4791,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.input0 = new cjs.Text("00", "normal 400 14px 'Inconsolata'");
 	this.input0.name = "input0";
 	this.input0.textAlign = "center";
-	this.input0.lineHeight = 19;
+	this.input0.lineHeight = 16;
 	this.input0.lineWidth = 17;
 	this.input0.parent = this;
 	this.input0.setTransform(181.7,62.1);
