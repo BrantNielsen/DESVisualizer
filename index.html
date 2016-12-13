@@ -16,7 +16,6 @@
     <title>DES Visualizer</title>
     <!-- write your code here -->
     <!---->
-    <script src="js/utils.js"></script>
     <script src="js/bit-array-typed.js"></script>
     <script src="js/des.js"></script>
     <script src="js/jquery.js"></script>
@@ -102,7 +101,7 @@ function isFontAvailable(font, obj) {
   src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }</style>
-<script src="index.js?1481663895120"></script>
+<script src="index.js?1481665854605"></script>
     <script>
     var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
     function init() {
@@ -168,7 +167,7 @@ function handleComplete() {
 			lastW = iw; lastH = ih; lastS = sRatio;		
 		}
 	}
-	makeResponsive(true,'both',false,1);	
+	makeResponsive(true,'both',true,1);	
 	fnStartAnimation();
 }
     </script>
@@ -218,7 +217,7 @@ function handleComplete() {
                 </div>
             </div>
             <div class="buttonWrapper">
-                <button type="button" class="btn btn-default">?</button>
+                <!--<button type="button" class="btn btn-default">?</button>-->
                 <button type="submit" class="btn btn-success">Encrypt</button>
             </div>
         </form>
