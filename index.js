@@ -1065,40 +1065,17 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 
-(lib.HexDisplay = function(mode,startPosition,loop) {
+(lib.hexTextBackdrop = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// timeline functions:
-	this.frame_0 = function() {
-		var thisStage = this;
-		
-		//Move forward and down a little, to fit the text more properly visually
-		this.valueTxt.x = 5;
-		this.valueTxt.y = 4;
-		
-		this.setValue = function(bitArray) {
-			thisStage.valueTxt.text = bitArray.toHexString(2);
-		}
-	}
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,255,255,0.008)").s().p("AtoB+IAAj7IbRAAIAAD7g");
+	this.shape.setTransform(87.3,12.6);
 
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
 
-	// Text Field
-	this.valueTxt = new cjs.Text("", "normal 400 14px 'Inconsolata'");
-	this.valueTxt.name = "valueTxt";
-	this.valueTxt.lineHeight = 19;
-	this.valueTxt.lineWidth = 171;
-	this.valueTxt.parent = this;
-	this.valueTxt.setTransform(2,2);
-	if(!lib.properties.webfonts['Inconsolata']) {
-		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
-		lib.webFontTxtInst['Inconsolata'].push(this.valueTxt);
-	}
-
-	this.timeline.addTween(cjs.Tween.get(this.valueTxt).wait(1));
-
-}).prototype = getMCSymbolPrototype(lib.HexDisplay, new cjs.Rectangle(0,0,174.6,25.1), null);
+}).prototype = getMCSymbolPrototype(lib.hexTextBackdrop, new cjs.Rectangle(0,0,174.6,25.1), null);
 
 
 (lib.downArrow = function(mode,startPosition,loop) {
@@ -2082,6 +2059,18 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.bits32, new cjs.Rectangle(-1,-1.5,619.6,35.2), null);
+
+
+(lib.binaryBackdrop = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#F5F5F5").s().p("AxQDUIAAmnMAihAAAIAAGng");
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.binaryBackdrop, new cjs.Rectangle(-110.5,-21.2,221.1,42.4), null);
 
 
 (lib.Arrow = function(mode,startPosition,loop) {
@@ -3341,858 +3330,89 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 }).prototype = getMCSymbolPrototype(lib.manglerExpansion, new cjs.Rectangle(-1,60,1182.6,504.7), null);
 
 
-(lib.KeyGenRounds = function(mode,startPosition,loop) {
+(lib.HexDisplay = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
 	this.frame_0 = function() {
-		// Bind event listeners
-		this.leftHalfBtn.addEventListener("click", (function() {
-			this.dispatchEvent(new createjs.Event("leftHalfPermutationRequested"));
-		}).bind(this));
+		//Move forward and down a little, to fit the text more properly visually
+		this.valueTxt.x = 5;
+		this.valueTxt.y = 4;
 		
-		this.rightHalfBtn.addEventListener("click", (function() {
-			this.dispatchEvent(new createjs.Event("rightHalfPermutationRequested"));
-		}).bind(this));
+		this.valueTxt.mouseEnabled = false;
 		
-		this.setData = (function(cryptoObject, roundIndex) {
-			this.cSubTxt.text = this.dSubTxt.text = roundIndex.toString();
-			this.keySubTxt.text = (roundIndex + 1).toString();
-			
-			var roundKeyParts = cryptoObject.roundKeys.roundKeyParts[roundIndex];
-			
-			this.preShiftedCDsp.gotoAndStop(0);
-			this.preShiftedCDsp.setValue(roundKeyParts.preShiftC);
-			
-			this.preShiftedDDsp.gotoAndStop(0);
-			this.preShiftedDDsp.setValue(roundKeyParts.preShiftD);
-			
-			this.shiftedCDsp.gotoAndStop(0);
-			this.shiftedCDsp.setValue(roundKeyParts.shiftedC);
-			
-			this.shiftedDDsp.gotoAndStop(0);
-			this.shiftedDDsp.setValue(roundKeyParts.shiftedD);
-			
-			this.combinedCDsp.gotoAndStop(0);
-			this.combinedCDsp.setValue(roundKeyParts.shiftedC);
-			
-			this.combinedDDsp.gotoAndStop(0);
-			this.combinedDDsp.setValue(roundKeyParts.shiftedD);
-			
-			this.leftHalfDsp.gotoAndStop(0);
-			this.leftHalfDsp.setValue(roundKeyParts.pc2C);
-			
-			this.rightHalfDsp.gotoAndStop(0);
-			this.rightHalfDsp.setValue(roundKeyParts.pc2D);
-			
-			this.leftKeyDsp.gotoAndStop(0);
-			this.leftKeyDsp.setValue(roundKeyParts.pc2C);
-			
-			this.rightKeyDsp.gotoAndStop(0);
-			this.rightKeyDsp.setValue(roundKeyParts.pc2D);
-			
-			this.rotateTimes1Txt.text = this.rotateTimes2Txt.text = DES.PER_ROUND_KEY_SHIFTS[roundIndex].toString();
-		}).bind(this);
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
-
-	// Layer 3
-	this.rightKeyDsp = new lib.HexDisplay();
-	this.rightKeyDsp.parent = this;
-	this.rightKeyDsp.setTransform(1171.5,191.2,1,1,0,0,0,87.3,13.6);
-
-	this.combinedDDsp = new lib.HexDisplay();
-	this.combinedDDsp.parent = this;
-	this.combinedDDsp.setTransform(620.5,191.2,1,1,0,0,0,87.3,13.6);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.combinedDDsp},{t:this.rightKeyDsp}]}).wait(1));
-
-	// Layer 4
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(2,1,1).p("AX/hSIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAT/kuIAADcAX/kuIAADcAb/kuIAADcAX/EzIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAb/BXIAADcAX/BXIAADcAT/BXIAADcAj+kuIAADcAAAkuIAADcAEAkuIAADcAIAkuIAADcAMAkuIAADcAP/kuIAADcA79kuIAADcA3+kuIAADcAz9kuIAADcAv+kuIAADcAr+kuIAADcAn+kuIAADcAEABXIAADcAAABXIAADcAj+BXIAADcAP/BXIAADcAMABXIAADcAIABXIAADcA3+BXIAADcA79BXIAADcAn+BXIAADcAr+BXIAADcAv+BXIAADcAz9BXIAADc");
-	this.shape.setTransform(209.8,176.2);
-
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
-
-	// Layer 2
-	this.text = new cjs.Text("Round Number", "normal 400 16px 'Open Sans'");
-	this.text.lineHeight = 23;
-	this.text.lineWidth = 129;
-	this.text.parent = this;
-	this.text.setTransform(7.2,122.5);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text);
-	}
-
-	this.text_1 = new cjs.Text("16", "normal 400 12px 'Open Sans'");
-	this.text_1.textAlign = "center";
-	this.text_1.lineHeight = 18;
-	this.text_1.lineWidth = 22;
-	this.text_1.parent = this;
-	this.text_1.setTransform(401.6,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_1);
-	}
-
-	this.text_2 = new cjs.Text("15", "normal 400 12px 'Open Sans'");
-	this.text_2.textAlign = "center";
-	this.text_2.lineHeight = 18;
-	this.text_2.lineWidth = 22;
-	this.text_2.parent = this;
-	this.text_2.setTransform(376,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_2);
-	}
-
-	this.text_3 = new cjs.Text("14", "normal 400 12px 'Open Sans'");
-	this.text_3.textAlign = "center";
-	this.text_3.lineHeight = 18;
-	this.text_3.lineWidth = 22;
-	this.text_3.parent = this;
-	this.text_3.setTransform(350.5,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_3);
-	}
-
-	this.text_4 = new cjs.Text("13", "normal 400 12px 'Open Sans'");
-	this.text_4.textAlign = "center";
-	this.text_4.lineHeight = 18;
-	this.text_4.lineWidth = 22;
-	this.text_4.parent = this;
-	this.text_4.setTransform(324.9,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_4);
-	}
-
-	this.text_5 = new cjs.Text("12", "normal 400 12px 'Open Sans'");
-	this.text_5.textAlign = "center";
-	this.text_5.lineHeight = 18;
-	this.text_5.lineWidth = 22;
-	this.text_5.parent = this;
-	this.text_5.setTransform(299.3,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_5);
-	}
-
-	this.text_6 = new cjs.Text("11", "normal 400 12px 'Open Sans'");
-	this.text_6.textAlign = "center";
-	this.text_6.lineHeight = 18;
-	this.text_6.lineWidth = 22;
-	this.text_6.parent = this;
-	this.text_6.setTransform(273.7,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_6);
-	}
-
-	this.text_7 = new cjs.Text("10", "normal 400 12px 'Open Sans'");
-	this.text_7.textAlign = "center";
-	this.text_7.lineHeight = 18;
-	this.text_7.lineWidth = 22;
-	this.text_7.parent = this;
-	this.text_7.setTransform(248.2,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_7);
-	}
-
-	this.text_8 = new cjs.Text("9", "normal 400 12px 'Open Sans'");
-	this.text_8.textAlign = "center";
-	this.text_8.lineHeight = 18;
-	this.text_8.lineWidth = 22;
-	this.text_8.parent = this;
-	this.text_8.setTransform(222.6,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_8);
-	}
-
-	this.text_9 = new cjs.Text("8", "normal 400 12px 'Open Sans'");
-	this.text_9.textAlign = "center";
-	this.text_9.lineHeight = 18;
-	this.text_9.lineWidth = 22;
-	this.text_9.parent = this;
-	this.text_9.setTransform(197,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_9);
-	}
-
-	this.text_10 = new cjs.Text("7", "normal 400 12px 'Open Sans'");
-	this.text_10.textAlign = "center";
-	this.text_10.lineHeight = 18;
-	this.text_10.lineWidth = 22;
-	this.text_10.parent = this;
-	this.text_10.setTransform(171.4,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_10);
-	}
-
-	this.text_11 = new cjs.Text("6", "normal 400 12px 'Open Sans'");
-	this.text_11.textAlign = "center";
-	this.text_11.lineHeight = 18;
-	this.text_11.lineWidth = 22;
-	this.text_11.parent = this;
-	this.text_11.setTransform(145.9,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_11);
-	}
-
-	this.text_12 = new cjs.Text("5", "normal 400 12px 'Open Sans'");
-	this.text_12.textAlign = "center";
-	this.text_12.lineHeight = 18;
-	this.text_12.lineWidth = 22;
-	this.text_12.parent = this;
-	this.text_12.setTransform(120.3,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_12);
-	}
-
-	this.text_13 = new cjs.Text("4", "normal 400 12px 'Open Sans'");
-	this.text_13.textAlign = "center";
-	this.text_13.lineHeight = 18;
-	this.text_13.lineWidth = 22;
-	this.text_13.parent = this;
-	this.text_13.setTransform(94.7,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_13);
-	}
-
-	this.text_14 = new cjs.Text("3", "normal 400 12px 'Open Sans'");
-	this.text_14.textAlign = "center";
-	this.text_14.lineHeight = 18;
-	this.text_14.lineWidth = 22;
-	this.text_14.parent = this;
-	this.text_14.setTransform(69.1,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_14);
-	}
-
-	this.text_15 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_15.textAlign = "center";
-	this.text_15.lineHeight = 18;
-	this.text_15.lineWidth = 22;
-	this.text_15.parent = this;
-	this.text_15.setTransform(43.6,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_15);
-	}
-
-	this.text_16 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
-	this.text_16.textAlign = "center";
-	this.text_16.lineHeight = 18;
-	this.text_16.lineWidth = 22;
-	this.text_16.parent = this;
-	this.text_16.setTransform(18,149.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_16);
-	}
-
-	this.text_17 = new cjs.Text("Right Half", "normal 400 28px 'Open Sans'");
-	this.text_17.lineHeight = 39;
-	this.text_17.lineWidth = 127;
-	this.text_17.parent = this;
-	this.text_17.setTransform(862.7,270,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_17);
-	}
-
-	this.text_18 = new cjs.Text("Left Half", "normal 400 28px 'Open Sans'");
-	this.text_18.lineHeight = 39;
-	this.text_18.lineWidth = 110;
-	this.text_18.parent = this;
-	this.text_18.setTransform(862.7,20,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_18);
-	}
-
-	this.rightHalfDsp = new lib.HexDisplay();
-	this.rightHalfDsp.parent = this;
-	this.rightHalfDsp.setTransform(949.1,309.7,1,1,0,0,0,87.3,13.6);
-
-	this.rightHalfBtn = new lib.rightHalfBtn();
-	this.rightHalfBtn.parent = this;
-	this.rightHalfBtn.setTransform(791.8,207.9);
-	new cjs.ButtonHelper(this.rightHalfBtn, 0, 1, 1);
-
-	this.leftHalfBtn = new lib.leftHalfBtn();
-	this.leftHalfBtn.parent = this;
-	this.leftHalfBtn.setTransform(704.1,207.9);
-	new cjs.ButtonHelper(this.leftHalfBtn, 0, 1, 1);
-
-	this.combinedCDsp = new lib.HexDisplay();
-	this.combinedCDsp.parent = this;
-	this.combinedCDsp.setTransform(530.5,191.2,1,1,0,0,0,87.3,13.6);
-
-	this.leftKeyDsp = new lib.HexDisplay();
-	this.leftKeyDsp.parent = this;
-	this.leftKeyDsp.setTransform(1082.5,191.2,1,1,0,0,0,87.3,13.6);
-
-	this.shiftedDDsp = new lib.HexDisplay();
-	this.shiftedDDsp.parent = this;
-	this.shiftedDDsp.setTransform(333.8,292.5,1,1,0,0,0,87.3,13.6);
-
-	this.preShiftedDDsp = new lib.HexDisplay();
-	this.preShiftedDDsp.parent = this;
-	this.preShiftedDDsp.setTransform(87.5,292.5,1,1,0,0,0,87.3,13.6);
-
-	this.leftHalfDsp = new lib.HexDisplay();
-	this.leftHalfDsp.parent = this;
-	this.leftHalfDsp.setTransform(949.1,59.7,1,1,0,0,0,87.3,13.6);
-
-	this.preShiftedCDsp = new lib.HexDisplay();
-	this.preShiftedCDsp.parent = this;
-	this.preShiftedCDsp.setTransform(87.5,87.9,1,1,0,0,0,87.3,13.6);
-
-	this.shiftedCDsp = new lib.HexDisplay();
-	this.shiftedCDsp.parent = this;
-	this.shiftedCDsp.setTransform(333.8,87.8,1,1,0,0,0,87.3,13.6);
-
-	this.keySubTxt = new cjs.Text("", "normal 400 14px 'Open Sans'");
-	this.keySubTxt.name = "keySubTxt";
-	this.keySubTxt.lineHeight = 20;
-	this.keySubTxt.lineWidth = 11;
-	this.keySubTxt.parent = this;
-	this.keySubTxt.setTransform(1028,164.3,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.keySubTxt);
-	}
-
-	this.text_19 = new cjs.Text("Key", "normal 400 28px 'Open Sans'");
-	this.text_19.lineHeight = 39;
-	this.text_19.lineWidth = 47;
-	this.text_19.parent = this;
-	this.text_19.setTransform(996.3,150.1,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_19);
-	}
-
-	this.text_20 = new cjs.Text("Bit Rotation", "normal 400 16px 'Open Sans'");
-	this.text_20.lineHeight = 23;
-	this.text_20.lineWidth = 129;
-	this.text_20.parent = this;
-	this.text_20.setTransform(7.2,213);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_20);
-	}
-
-	this.text_21 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
-	this.text_21.textAlign = "center";
-	this.text_21.lineHeight = 18;
-	this.text_21.lineWidth = 22;
-	this.text_21.parent = this;
-	this.text_21.setTransform(401.6,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_21);
-	}
-
-	this.text_22 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_22.textAlign = "center";
-	this.text_22.lineHeight = 18;
-	this.text_22.lineWidth = 22;
-	this.text_22.parent = this;
-	this.text_22.setTransform(376,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_22);
-	}
-
-	this.text_23 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_23.textAlign = "center";
-	this.text_23.lineHeight = 18;
-	this.text_23.lineWidth = 22;
-	this.text_23.parent = this;
-	this.text_23.setTransform(350.5,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_23);
-	}
-
-	this.text_24 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_24.textAlign = "center";
-	this.text_24.lineHeight = 18;
-	this.text_24.lineWidth = 22;
-	this.text_24.parent = this;
-	this.text_24.setTransform(324.9,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_24);
-	}
-
-	this.text_25 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_25.textAlign = "center";
-	this.text_25.lineHeight = 18;
-	this.text_25.lineWidth = 22;
-	this.text_25.parent = this;
-	this.text_25.setTransform(299.3,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_25);
-	}
-
-	this.text_26 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_26.textAlign = "center";
-	this.text_26.lineHeight = 18;
-	this.text_26.lineWidth = 22;
-	this.text_26.parent = this;
-	this.text_26.setTransform(273.7,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_26);
-	}
-
-	this.text_27 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_27.textAlign = "center";
-	this.text_27.lineHeight = 18;
-	this.text_27.lineWidth = 22;
-	this.text_27.parent = this;
-	this.text_27.setTransform(248.2,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_27);
-	}
-
-	this.text_28 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
-	this.text_28.textAlign = "center";
-	this.text_28.lineHeight = 18;
-	this.text_28.lineWidth = 22;
-	this.text_28.parent = this;
-	this.text_28.setTransform(222.6,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_28);
-	}
-
-	this.text_29 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_29.textAlign = "center";
-	this.text_29.lineHeight = 18;
-	this.text_29.lineWidth = 22;
-	this.text_29.parent = this;
-	this.text_29.setTransform(197,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_29);
-	}
-
-	this.text_30 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_30.textAlign = "center";
-	this.text_30.lineHeight = 18;
-	this.text_30.lineWidth = 22;
-	this.text_30.parent = this;
-	this.text_30.setTransform(171.4,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_30);
-	}
-
-	this.text_31 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_31.textAlign = "center";
-	this.text_31.lineHeight = 18;
-	this.text_31.lineWidth = 22;
-	this.text_31.parent = this;
-	this.text_31.setTransform(145.9,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_31);
-	}
-
-	this.text_32 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_32.textAlign = "center";
-	this.text_32.lineHeight = 18;
-	this.text_32.lineWidth = 22;
-	this.text_32.parent = this;
-	this.text_32.setTransform(120.3,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_32);
-	}
-
-	this.text_33 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_33.textAlign = "center";
-	this.text_33.lineHeight = 18;
-	this.text_33.lineWidth = 22;
-	this.text_33.parent = this;
-	this.text_33.setTransform(94.7,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_33);
-	}
-
-	this.text_34 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
-	this.text_34.textAlign = "center";
-	this.text_34.lineHeight = 18;
-	this.text_34.lineWidth = 22;
-	this.text_34.parent = this;
-	this.text_34.setTransform(69.1,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_34);
-	}
-
-	this.text_35 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
-	this.text_35.textAlign = "center";
-	this.text_35.lineHeight = 18;
-	this.text_35.lineWidth = 22;
-	this.text_35.parent = this;
-	this.text_35.setTransform(43.6,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_35);
-	}
-
-	this.text_36 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
-	this.text_36.textAlign = "center";
-	this.text_36.lineHeight = 18;
-	this.text_36.lineWidth = 22;
-	this.text_36.parent = this;
-	this.text_36.setTransform(18,189.9);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_36);
-	}
-
-	this.text_37 = new cjs.Text("PC2 Permutation", "normal 400 28px 'Open Sans'", "#FFFFFF");
-	this.text_37.textAlign = "center";
-	this.text_37.lineHeight = 39;
-	this.text_37.lineWidth = 193;
-	this.text_37.parent = this;
-	this.text_37.setTransform(785.3,140.5,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_37);
-	}
-
-	this.rotateTimes2Txt = new cjs.Text("", "normal 400 16px 'Open Sans'");
-	this.rotateTimes2Txt.name = "rotateTimes2Txt";
-	this.rotateTimes2Txt.textAlign = "center";
-	this.rotateTimes2Txt.lineHeight = 23;
-	this.rotateTimes2Txt.lineWidth = 27;
-	this.rotateTimes2Txt.parent = this;
-	this.rotateTimes2Txt.setTransform(217.1,324.5);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.rotateTimes2Txt);
-	}
-
-	this.text_38 = new cjs.Text("Times", "normal 400 16px 'Open Sans'");
-	this.text_38.lineHeight = 23;
-	this.text_38.lineWidth = 45;
-	this.text_38.parent = this;
-	this.text_38.setTransform(234.2,324.5);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_38);
-	}
-
-	this.text_39 = new cjs.Text("Rotate", "normal 400 16px 'Open Sans'");
-	this.text_39.lineHeight = 23;
-	this.text_39.lineWidth = 49;
-	this.text_39.parent = this;
-	this.text_39.setTransform(150.2,324.5);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_39);
-	}
-
-	this.rotateTimes1Txt = new cjs.Text("", "normal 400 16px 'Open Sans'");
-	this.rotateTimes1Txt.name = "rotateTimes1Txt";
-	this.rotateTimes1Txt.textAlign = "center";
-	this.rotateTimes1Txt.lineHeight = 23;
-	this.rotateTimes1Txt.lineWidth = 27;
-	this.rotateTimes1Txt.parent = this;
-	this.rotateTimes1Txt.setTransform(217.1,33.3);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.rotateTimes1Txt);
-	}
-
-	this.text_40 = new cjs.Text("Times", "normal 400 16px 'Open Sans'");
-	this.text_40.lineHeight = 23;
-	this.text_40.lineWidth = 45;
-	this.text_40.parent = this;
-	this.text_40.setTransform(234.2,33.3);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_40);
-	}
-
-	this.text_41 = new cjs.Text("Rotate", "normal 400 16px 'Open Sans'");
-	this.text_41.lineHeight = 23;
-	this.text_41.lineWidth = 49;
-	this.text_41.parent = this;
-	this.text_41.setTransform(150.2,33.3);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_41);
-	}
-
-	this.dSubTxt = new cjs.Text("0", "normal 400 14px 'Open Sans'");
-	this.dSubTxt.name = "dSubTxt";
-	this.dSubTxt.lineHeight = 20;
-	this.dSubTxt.lineWidth = 11;
-	this.dSubTxt.parent = this;
-	this.dSubTxt.setTransform(16.2,326.6,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.dSubTxt);
-	}
-
-	this.text_42 = new cjs.Text("D", "normal 400 28px 'Open Sans'");
-	this.text_42.lineHeight = 39;
-	this.text_42.lineWidth = 20;
-	this.text_42.parent = this;
-	this.text_42.setTransform(1.4,314.4,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_42);
-	}
-
-	this.cSubTxt = new cjs.Text("0", "normal 400 14px 'Open Sans'");
-	this.cSubTxt.name = "cSubTxt";
-	this.cSubTxt.lineHeight = 20;
-	this.cSubTxt.lineWidth = 11;
-	this.cSubTxt.parent = this;
-	this.cSubTxt.setTransform(14.8,60.1,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.cSubTxt);
-	}
-
-	this.text_43 = new cjs.Text("C", "normal 400 28px 'Open Sans'");
-	this.text_43.lineHeight = 39;
-	this.text_43.lineWidth = 18;
-	this.text_43.parent = this;
-	this.text_43.setTransform(1.4,48.3,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_43);
-	}
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EBGjgTsIAACQEArQgRcIAAh4IAAiYIbTAAIAACAIEmAAIAAQPEBAGAC4IAAiWIAAh5INiAAINxAAIAAEPEBGjATvIAAB4EArQAVnIAAh4IAAiYIbTAAIAACYIOQAAIAAu1EBbZAC+I7TAAEBNogBXIAAEPEAgIgIoIAAqsIJWAAEAgIAJqIAAKFIJWAAEBGjgRWI7TAAEBGjAVtI7TAAAonhXINwAAIAACNIAACCA5lvHIKdAAIAAL0Eg04gNBIAAkRIbTAAIAACLIAACGA2KC4IAAiWIAAh5INjAAIAAEPA5lQ0IAAiFEg04AOvIAAEQIbTAAIAAiLIX4AAIAAr2AFJC+I7TAAEhbYgNBIAAkRIbTAAIAACLIJXAAEhAFgPHIAACGEhbYAOvIAAEQIbTAAIAAiLIAAiFEhAFAQ0IJXAAEhAFgM7I7TAAEhAFAOpI7TAAA5ls7I7TAAA5lOpI7TAAAFJA2IJ8gB");
-	this.shape_1.setTransform(584.9,184.7);
-
-	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#1174C3").s().p("AAxJKIvQAAIAArUIACAAIAAgxIgCAAIAAmNIPQAAINvAAIAASSg");
-	this.shape_2.setTransform(785.6,188);
-
-	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f("#000000").s().p("AZ4TiIAAhKIBxBKIhxBKgEhGVAQnIAAhKIByBKIhyBLgAxTExIhKAAIBLhyIBKBygEBFMAEuIhLAAIBKhyIBLBygAghAoIAAhKIBxBKIhxBLgEAwcAATIADACIgDACgEglzAATIADACIgDACgA/4jgIBJAAIBMAAIhLBygEA6UgDqIBOAAIBHAAIhKBygEhGVgPUIAAhKIByBKIhyBLgAZ4zhIAAhLIBxBLIhxBLg");
-	this.shape_3.setTransform(684.7,186);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.text_43},{t:this.cSubTxt},{t:this.text_42},{t:this.dSubTxt},{t:this.text_41},{t:this.text_40},{t:this.rotateTimes1Txt},{t:this.text_39},{t:this.text_38},{t:this.rotateTimes2Txt},{t:this.text_37},{t:this.text_36},{t:this.text_35},{t:this.text_34},{t:this.text_33},{t:this.text_32},{t:this.text_31},{t:this.text_30},{t:this.text_29},{t:this.text_28},{t:this.text_27},{t:this.text_26},{t:this.text_25},{t:this.text_24},{t:this.text_23},{t:this.text_22},{t:this.text_21},{t:this.text_20},{t:this.text_19},{t:this.keySubTxt},{t:this.shiftedCDsp},{t:this.preShiftedCDsp},{t:this.leftHalfDsp},{t:this.preShiftedDDsp},{t:this.shiftedDDsp},{t:this.leftKeyDsp},{t:this.combinedCDsp},{t:this.leftHalfBtn},{t:this.rightHalfBtn},{t:this.rightHalfDsp},{t:this.text_18},{t:this.text_17},{t:this.text_16},{t:this.text_15},{t:this.text_14},{t:this.text_13},{t:this.text_12},{t:this.text_11},{t:this.text_10},{t:this.text_9},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text}]}).wait(1));
-
-}).prototype = getMCSymbolPrototype(lib.KeyGenRounds, new cjs.Rectangle(-1,18.7,1259.7,328.9), null);
-
-
-(lib.KeyGen = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		var thisStage = this;
+		hideBinary.bind(this)();
 		
-		this.cBtn.addEventListener("click", function() {
-			thisStage.dispatchEvent(new createjs.Event("cPermutationRequested"));
-		});
+		this.valueBackdrop.addEventListener("mouseover", showBinary.bind(this));
+		this.valueBackdrop.addEventListener("mouseout", hideBinary.bind(this));
 		
-		this.dBtn.addEventListener("click", function() {
-			thisStage.dispatchEvent(new createjs.Event("dPermutationRequested"));
-		});
-		
-		this.keyRoundsBtn.addEventListener("click", function() {
-			thisStage.dispatchEvent(new createjs.Event("keyRoundsRequested"));
-		});
-		
-		this.setData = (function(cryptoObject) {
-			this.keyDsp.gotoAndStop(0);
-			this.keyDsp.setValue(cryptoObject.key);
+		function showBinary() {
+			this.binaryBackdrop.visible = true;
+			this.binaryTxt.visible = true;
 			
-			this.cDsp.gotoAndStop(0);
-			this.cDsp.setValue(cryptoObject.roundKeys.initialKeyPermutations.c);
-			
-			this.dDsp.gotoAndStop(0);
-			this.dDsp.setValue(cryptoObject.roundKeys.initialKeyPermutations.d);
-			
-			var roundKeys = [];
-			
-			for (let i = 0; i < cryptoObject.roundKeys.roundKeyParts.length; i++) {
-				roundKeys[i] = cryptoObject.roundKeys.roundKeyParts[i].key;
+			if (this.getTransformedBounds().x > 800) {
+				this.binaryBackdrop.x = 61;
+				this.binaryTxt.x = -46.5;
 			}
-			
-			this.roundKeysTable.gotoAndStop(0);
-			this.roundKeysTable.setData("16 Round Keys", roundKeys);
+		}
+		
+		function hideBinary() {
+			this.binaryBackdrop.visible = false;
+			this.binaryTxt.visible = false;
+		}
+		
+		this.setValue = (function(bitArray) {
+			this.valueTxt.text = bitArray.toHexString(2);
+			this.binaryTxt.text = bitArray.toBinaryString(8);
 		}).bind(this);
 	}
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
-	// Layer 3
-	this.roundKeysTable = new lib.Table();
-	this.roundKeysTable.parent = this;
-	this.roundKeysTable.setTransform(969.8,160.7,1,1,0,0,0,0.3,1.4);
-
-	this.timeline.addTween(cjs.Tween.get(this.roundKeysTable).wait(1));
-
-	// Layer 2
-	this.dBtn = new lib.viewDBtn();
-	this.dBtn.parent = this;
-	this.dBtn.setTransform(352.3,170,1,1,0,0,0,37.6,16.3);
-	new cjs.ButtonHelper(this.dBtn, 0, 1, 1);
-
-	this.cBtn = new lib.viewCBtn();
-	this.cBtn.parent = this;
-	this.cBtn.setTransform(267.3,170,1,1,0,0,0,37.6,16.3);
-	new cjs.ButtonHelper(this.cBtn, 0, 1, 1);
-
-	this.dDsp = new lib.HexDisplay();
-	this.dDsp.parent = this;
-	this.dDsp.setTransform(494.6,226.8,1,1,0,0,0,87.3,13.6);
-
-	this.cDsp = new lib.HexDisplay();
-	this.cDsp.parent = this;
-	this.cDsp.setTransform(492.7,41.1,1,1,0,0,0,87.3,13.6);
-
-	this.keyDsp = new lib.HexDisplay();
-	this.keyDsp.parent = this;
-	this.keyDsp.setTransform(87.3,131.2,1,1,0,0,0,87.3,13.6);
-
-	this.keyRoundsBtn = new lib.ViewButton();
-	this.keyRoundsBtn.parent = this;
-	this.keyRoundsBtn.setTransform(597.3,152.9);
-	new cjs.ButtonHelper(this.keyRoundsBtn, 0, 1, 1);
-
-	this.text = new cjs.Text("Generate Round Keys", "normal 400 28px 'Open Sans'", "#FFFFFF");
-	this.text.textAlign = "center";
-	this.text.lineHeight = 39;
-	this.text.lineWidth = 193;
-	this.text.parent = this;
-	this.text.setTransform(634.3,86.7,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text);
+	// Binary Text
+	this.binaryTxt = new cjs.Text("10101010 10101010 10101010 10101010 10101010 10101010 10101010 10101010", "normal 400 12px 'Inconsolata'", "#333333");
+	this.binaryTxt.name = "binaryTxt";
+	this.binaryTxt.lineHeight = 17;
+	this.binaryTxt.lineWidth = 217;
+	this.binaryTxt.parent = this;
+	this.binaryTxt.setTransform(5,32.6);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.binaryTxt);
 	}
 
-	this.text_1 = new cjs.Text("0", "normal 400 14px 'Open Sans'");
-	this.text_1.lineHeight = 20;
-	this.text_1.lineWidth = 11;
-	this.text_1.parent = this;
-	this.text_1.setTransform(420.5,199.1,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_1);
+	this.timeline.addTween(cjs.Tween.get(this.binaryTxt).wait(1));
+
+	// Binary Backdrop
+	this.binaryBackdrop = new lib.binaryBackdrop();
+	this.binaryBackdrop.parent = this;
+	this.binaryBackdrop.setTransform(110.5,46.3);
+
+	this.timeline.addTween(cjs.Tween.get(this.binaryBackdrop).wait(1));
+
+	// Text Field
+	this.valueTxt = new cjs.Text("", "normal 400 14px 'Inconsolata'", "#333333");
+	this.valueTxt.name = "valueTxt";
+	this.valueTxt.lineHeight = 19;
+	this.valueTxt.lineWidth = 171;
+	this.valueTxt.parent = this;
+	this.valueTxt.setTransform(2,2);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.valueTxt);
 	}
 
-	this.text_2 = new cjs.Text("0", "normal 400 14px 'Open Sans'");
-	this.text_2.lineHeight = 20;
-	this.text_2.lineWidth = 11;
-	this.text_2.parent = this;
-	this.text_2.setTransform(420.1,13.2,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_2);
-	}
+	this.timeline.addTween(cjs.Tween.get(this.valueTxt).wait(1));
 
-	this.text_3 = new cjs.Text("D", "normal 400 28px 'Open Sans'");
-	this.text_3.lineHeight = 39;
-	this.text_3.lineWidth = 20;
-	this.text_3.parent = this;
-	this.text_3.setTransform(407.7,186.9,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_3);
-	}
+	// Text Backdrop
+	this.valueBackdrop = new lib.hexTextBackdrop();
+	this.valueBackdrop.parent = this;
+	this.valueBackdrop.setTransform(87.3,12.6,1,1,0,0,0,87.3,12.6);
 
-	this.text_4 = new cjs.Text("C", "normal 400 28px 'Open Sans'");
-	this.text_4.lineHeight = 39;
-	this.text_4.lineWidth = 18;
-	this.text_4.parent = this;
-	this.text_4.setTransform(406.7,1.4,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_4);
-	}
+	this.timeline.addTween(cjs.Tween.get(this.valueBackdrop).wait(1));
 
-	this.text_5 = new cjs.Text("0", "normal 400 12px 'Open Sans'", "#FFFFFF");
-	this.text_5.textAlign = "center";
-	this.text_5.lineHeight = 18;
-	this.text_5.lineWidth = 7;
-	this.text_5.parent = this;
-	this.text_5.setTransform(353.3,124.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_5);
-	}
-
-	this.text_6 = new cjs.Text("0", "normal 400 12px 'Open Sans'", "#FFFFFF");
-	this.text_6.textAlign = "center";
-	this.text_6.lineHeight = 18;
-	this.text_6.lineWidth = 7;
-	this.text_6.parent = this;
-	this.text_6.setTransform(308.5,124.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_6);
-	}
-
-	this.text_7 = new cjs.Text("Run Mapping for C  &  D", "normal 400 28px 'Open Sans'", "#FFFFFF");
-	this.text_7.textAlign = "center";
-	this.text_7.lineHeight = 39;
-	this.text_7.lineWidth = 193;
-	this.text_7.parent = this;
-	this.text_7.setTransform(307.7,87.5,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_7);
-	}
-
-	this.text_8 = new cjs.Text("64-bit Key", "normal 400 28px 'Open Sans'");
-	this.text_8.lineHeight = 39;
-	this.text_8.lineWidth = 144;
-	this.text_8.parent = this;
-	this.text_8.setTransform(1.5,91.2,0.663,0.663);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_8);
-	}
-
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EA1tgAQIGPAAADZuhIAAiLIbTAAIAACLIAACLI7TAAgEAnSgJIIAAlZIomAAAe2OaIAACTI7TAAIAAiDIAAiTIbTAAgEAnSAJKIAAFQIocAAAskpJIAAlYIP9AAEg77ABlIAAkPIbTAAIAACaIAAB1EggogAQIErAAEggoABrI7TAAAskJSIAAFYIQHAA");
-	this.shape.setTransform(383.7,134.1);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#000000").s().p("EArIAAAIAAhKIA5AnIAAgFIABAAIAAAFIAwAfIAAAJIhqBGgEgswAAAIAAhKIA5AnIAAgFIAAAAIAAAFIAwAfIAAAJIhpBGg");
-	this.shape_1.setTransform(491.2,132.4);
-
-	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#1174C3").s().p("A6RJNItuAAIAArTIACAAIAAgwIgCAAIAAmPIc/AAIAASSgAZlJGIukAAIAArUIACAAIAAgwIgCAAIAAmPIOkAAIOcAAIAAI5IAAJag");
-	this.shape_2.setTransform(471.3,134.5);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text},{t:this.keyRoundsBtn},{t:this.keyDsp},{t:this.cDsp},{t:this.dDsp},{t:this.cBtn},{t:this.dBtn}]}).wait(1));
-
-}).prototype = getMCSymbolPrototype(lib.KeyGen, new cjs.Rectangle(-0.9,-30,1152,381.4), null);
+}).prototype = getMCSymbolPrototype(lib.HexDisplay, new cjs.Rectangle(0,0,224.1,67.5), null);
 
 
 (lib.DESRounds = function(mode,startPosition,loop) {
@@ -4389,7 +3609,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	new cjs.ButtonHelper(this.manglerBtn, 0, 1, 1);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAtdgI/IAAiUIbTAAIAAEWI7TAAAFY4rIAAkQIbTAAIAAEWIt/AAIAAD3ASs4lItUAAEgFhgiAIM7AAIAADJAFYJeIAAh6IbTAAIAAEXI7TAAAFYL1IAAiXAV0g/IAAGbEAtdgHDIAAh8EAkTgI/IJKAAEAgrAYHIAACtI7TAAIAAkWIbTAAgEAgpAYHIACAAATCa3IAAHhI2hAAEgFhgiAIAACFEgg0giAIAAiLIbTAAIAACLEgg0gf7IAAiFIu2AAIAACwEgtcga6IAACLI7TAAIAAkWIbTAAIAACLMAhJAhIAli/1I7SAAEg7FAa0ItqAAIAAkWIbTAAIAAEWItpAAIAAHkIYZAAEgFhAkMI7TAAIAAkWIbTAAgAntLZILFLCAlmJeIK+AA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAtdgI/IAAiUIbTAAIAAEWI7TAAAFY4rIAAkQIbTAAIAAEWIt/AAIAAD3EgFhgiAIM7AAIAADJASs4lItUAAAFYL1IAAiXIAAh6IbTAAIAAEXI7TAAAV0g/IAAGbEAtdgHDIAAh8EAkTgI/IJKAAEAgpAYHIACAAIAACtI7TAAIAAkWIbTAAIAABpATCa3IAAHhI2hAAEgg0giAIAAiLIbTAAIAACLIAACFEgg0gf7IAAiFIu2AAIAACwEgtcga6IAACLI7TAAIAAkWIbTAAIAACLMAhJAhIAli/1I7SAAEg7FAa0ItqAAIAAkWIbTAAIAAEWItpAAIAAHkIYZAAEgFhAkMI7TAAIAAkWIbTAAgAlmJeIK+AAAntLZILFLC");
 	this.shape_1.setTransform(642.1,298.5);
 
 	this.shape_2 = new cjs.Shape();
@@ -4402,7 +3622,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.manglerBtn},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.instance},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text},{t:this.keySubTxt}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.DESRounds, new cjs.Rectangle(175.5,40,933.2,491.2), null);
+}).prototype = getMCSymbolPrototype(lib.DESRounds, new cjs.Rectangle(175.5,40,981.7,532.6), null);
 
 
 (lib.DESOverview = function(mode,startPosition,loop) {
@@ -4547,7 +3767,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EBaZAGJI7TAAIAACQIAACGIbTAAgAYDslIAAkRIbTAAIAAEREAz9AIZIJXAAEAlegMfIAAJWEAzWgMfIt4AAItbAAAvcJ6IAAh5IAAiYIbSAAIAACAIJWAAAL2HpIAACRA6kIBIJWAAEhNGAC6ItSAAIAAkWIbTAAIAAEWgEg5VAFjIzxAAIAAipEhNGAMfItSAAIAAEYIbTAAIAAkYgEg5VAJ2IzxAAIAACpAL2KAI7SAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EBaZAGJI7TAAIAACQIAACGIbTAAgAYDslIAAkRIbTAAIAAEREAz9AIZIJXAAEAzWgMfIt4AAIAAJWAvcJ6IAAh5IAAiYIbSAAIAACAIJWAAAL2HpIAACREAlegMfItbAAA6kIBIJWAAEhNGAC6ItSAAIAAkWIbTAAIAAEWgEg5VAFjIzxAAIAAipEhNGAMfItSAAIAAEYIbTAAIAAkYgEg5VAJ2IzxAAIAACpAL2KAI7SAA");
 	this.shape.setTransform(577.5,134.8);
 
 	this.shape_1 = new cjs.Shape();
@@ -4560,7 +3780,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text},{t:this.decryptBtn},{t:this.encryptBtn},{t:this.encryptionKeyDsp},{t:this.encryptionPlaintextDsp},{t:this.ciphertextDsp},{t:this.decryptionKeyDsp},{t:this.decryptionPlaintextDsp}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.DESOverview, new cjs.Rectangle(-2,-0.2,1159,276.5), null);
+}).prototype = getMCSymbolPrototype(lib.DESOverview, new cjs.Rectangle(-2,-0.2,1207.4,284.8), null);
 
 
 (lib.DESInternal = function(mode,startPosition,loop) {
@@ -4844,7 +4064,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EhKWgZIIuNAAIAAkXIbTAAIAAEXItGAAIAAFbEgkXgZRIAAkRIbTAAIAAERA2A5IIAAFbAnCbwIM4AAMAAAgvRINNAAApE5LI7TAAEg9QAbwIAABzI7TAAIAAkXIbTAAIAACkIXLAAEhKWAAaIAASUEA8HgQxIAGAAEBYkAQaI7UAAIAAB/IAACYIbUAAgEAilgVrINqAAIAAEXItqAAItpAAIAAkXINpAAIAAEXEAmzgPXIkeClIC7BsEAiUgJLIAAEXItqAAIAAkXINqAAINpAAIAAEXItpAAEAiVgMyIi6BsEAijAAKIAAG4Ad4vXIEdClEAyIASZIJXAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EhKWgZIIuNAAIAAkXIbTAAIAAEXItGAAIAAFbEgkXgZRIAAkRIbTAAIAAERA2A5IIAAFbAnCbwIM4AAMAAAgvRINNAAApE5LI7TAAEg9QAbwIAABzI7TAAIAAkXIbTAAIAACkIXLAAEhKWAAaIAASUEA8HgQxIAGAAEBYkAQaI7UAAIAAB/IAACYIbUAAgEAilgVrINqAAIAAEXItqAAItpAAIAAkXINpAAIAAEXEAmzgPXIkeClIC7BsEAiUgJLIAAEXItqAAIAAkXINqAAINpAAIAAEXItpAAAd4vXIEdClIi6BsEAijAAKIAAG4EAyIASZIJXAA");
 	this.shape.setTransform(594,171);
 
 	this.shape_1 = new cjs.Shape();
@@ -4857,7 +4077,861 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.inputLabelTxt},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.outputLabelTxt},{t:this.finalPermBtn},{t:this.roundsBtn},{t:this.perRoundBtn},{t:this.initialPermBtn},{t:this.keyDsp},{t:this.inputDsp},{t:this.outputDsp},{t:this.text_2},{t:this.permutationDsp},{t:this.text_1},{t:this.text},{t:this.finalRoundOutputDsp},{t:this.leftRightSwapDsp}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.DESInternal, new cjs.Rectangle(26.2,-45,1135.6,471.2), null);
+}).prototype = getMCSymbolPrototype(lib.DESInternal, new cjs.Rectangle(26.2,-45,1183.9,471.2), null);
+
+
+(lib.KeyGenRounds = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		// Bind event listeners
+		this.leftHalfBtn.addEventListener("click", (function() {
+			this.dispatchEvent(new createjs.Event("leftHalfPermutationRequested"));
+		}).bind(this));
+		
+		this.rightHalfBtn.addEventListener("click", (function() {
+			this.dispatchEvent(new createjs.Event("rightHalfPermutationRequested"));
+		}).bind(this));
+		
+		this.setData = (function(cryptoObject, roundIndex) {
+			this.cSubTxt.text = this.dSubTxt.text = roundIndex.toString();
+			this.keySubTxt.text = (roundIndex + 1).toString();
+			
+			var roundKeyParts = cryptoObject.roundKeys.roundKeyParts[roundIndex];
+			
+			this.preShiftedCDsp.gotoAndStop(0);
+			this.preShiftedCDsp.setValue(roundKeyParts.preShiftC);
+			
+			this.preShiftedDDsp.gotoAndStop(0);
+			this.preShiftedDDsp.setValue(roundKeyParts.preShiftD);
+			
+			this.shiftedCDsp.gotoAndStop(0);
+			this.shiftedCDsp.setValue(roundKeyParts.shiftedC);
+			
+			this.shiftedDDsp.gotoAndStop(0);
+			this.shiftedDDsp.setValue(roundKeyParts.shiftedD);
+			
+			this.combinedCDsp.gotoAndStop(0);
+			this.combinedCDsp.setValue(roundKeyParts.shiftedC);
+			
+			this.combinedDDsp.gotoAndStop(0);
+			this.combinedDDsp.setValue(roundKeyParts.shiftedD);
+			
+			this.leftHalfDsp.gotoAndStop(0);
+			this.leftHalfDsp.setValue(roundKeyParts.pc2C);
+			
+			this.rightHalfDsp.gotoAndStop(0);
+			this.rightHalfDsp.setValue(roundKeyParts.pc2D);
+			
+			this.leftKeyDsp.gotoAndStop(0);
+			this.leftKeyDsp.setValue(roundKeyParts.pc2C);
+			
+			this.rightKeyDsp.gotoAndStop(0);
+			this.rightKeyDsp.setValue(roundKeyParts.pc2D);
+			
+			this.rotateTimes1Txt.text = this.rotateTimes2Txt.text = DES.PER_ROUND_KEY_SHIFTS[roundIndex].toString();
+		}).bind(this);
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// Layer 3
+	this.rightKeyDsp = new lib.HexDisplay();
+	this.rightKeyDsp.parent = this;
+	this.rightKeyDsp.setTransform(1131.5,191.2,1,1,0,0,0,87.3,13.6);
+
+	this.combinedDDsp = new lib.HexDisplay();
+	this.combinedDDsp.parent = this;
+	this.combinedDDsp.setTransform(620.5,191.2,1,1,0,0,0,87.3,13.6);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.combinedDDsp},{t:this.rightKeyDsp}]}).wait(1));
+
+	// Layer 4
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#000000").ss(2,1,1).p("AX/hSIkAAAIkAAAIj/AAAb/kuIAADcIkAAAAX/kuIAADcAT/kuIAADcA79hSIkAAAIAAjfMA/7AAAIAADfIj/AAAX/EzIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAT/BXIAADcAX/BXIAADcAb/BXIAADcAEAhSIkAAAAEAkuIAADcAAAkuIAADcIj+AAIkAAAIkAAAAj+kuIAADcAP/kuIAADcAMAkuIAADcIkAAAAIAkuIAADcIkAAAA3+kuIAADcIj/AAA79kuIAADcAv+hSIj/AAAn+kuIAADcAr+kuIAADcIkAAAAv+kuIAADcAz9kuIAADcIkBAAAz9BXIAADcAv+BXIAADcAr+BXIAADcAn+BXIAADcA79BXIAADcA3+BXIAADcAIABXIAADcAMABXIAADcAP/BXIAADcAj+BXIAADcAAABXIAADcAEABXIAADc");
+	this.shape.setTransform(209.8,176.2);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+	// Layer 2
+	this.text = new cjs.Text("Round Number", "normal 400 16px 'Open Sans'");
+	this.text.lineHeight = 23;
+	this.text.lineWidth = 129;
+	this.text.parent = this;
+	this.text.setTransform(7.2,122.5);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text);
+	}
+
+	this.text_1 = new cjs.Text("16", "normal 400 12px 'Open Sans'");
+	this.text_1.textAlign = "center";
+	this.text_1.lineHeight = 18;
+	this.text_1.lineWidth = 22;
+	this.text_1.parent = this;
+	this.text_1.setTransform(401.6,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_1);
+	}
+
+	this.text_2 = new cjs.Text("15", "normal 400 12px 'Open Sans'");
+	this.text_2.textAlign = "center";
+	this.text_2.lineHeight = 18;
+	this.text_2.lineWidth = 22;
+	this.text_2.parent = this;
+	this.text_2.setTransform(376,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_2);
+	}
+
+	this.text_3 = new cjs.Text("14", "normal 400 12px 'Open Sans'");
+	this.text_3.textAlign = "center";
+	this.text_3.lineHeight = 18;
+	this.text_3.lineWidth = 22;
+	this.text_3.parent = this;
+	this.text_3.setTransform(350.5,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_3);
+	}
+
+	this.text_4 = new cjs.Text("13", "normal 400 12px 'Open Sans'");
+	this.text_4.textAlign = "center";
+	this.text_4.lineHeight = 18;
+	this.text_4.lineWidth = 22;
+	this.text_4.parent = this;
+	this.text_4.setTransform(324.9,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_4);
+	}
+
+	this.text_5 = new cjs.Text("12", "normal 400 12px 'Open Sans'");
+	this.text_5.textAlign = "center";
+	this.text_5.lineHeight = 18;
+	this.text_5.lineWidth = 22;
+	this.text_5.parent = this;
+	this.text_5.setTransform(299.3,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_5);
+	}
+
+	this.text_6 = new cjs.Text("11", "normal 400 12px 'Open Sans'");
+	this.text_6.textAlign = "center";
+	this.text_6.lineHeight = 18;
+	this.text_6.lineWidth = 22;
+	this.text_6.parent = this;
+	this.text_6.setTransform(273.7,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_6);
+	}
+
+	this.text_7 = new cjs.Text("10", "normal 400 12px 'Open Sans'");
+	this.text_7.textAlign = "center";
+	this.text_7.lineHeight = 18;
+	this.text_7.lineWidth = 22;
+	this.text_7.parent = this;
+	this.text_7.setTransform(248.2,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_7);
+	}
+
+	this.text_8 = new cjs.Text("9", "normal 400 12px 'Open Sans'");
+	this.text_8.textAlign = "center";
+	this.text_8.lineHeight = 18;
+	this.text_8.lineWidth = 22;
+	this.text_8.parent = this;
+	this.text_8.setTransform(222.6,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_8);
+	}
+
+	this.text_9 = new cjs.Text("8", "normal 400 12px 'Open Sans'");
+	this.text_9.textAlign = "center";
+	this.text_9.lineHeight = 18;
+	this.text_9.lineWidth = 22;
+	this.text_9.parent = this;
+	this.text_9.setTransform(197,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_9);
+	}
+
+	this.text_10 = new cjs.Text("7", "normal 400 12px 'Open Sans'");
+	this.text_10.textAlign = "center";
+	this.text_10.lineHeight = 18;
+	this.text_10.lineWidth = 22;
+	this.text_10.parent = this;
+	this.text_10.setTransform(171.4,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_10);
+	}
+
+	this.text_11 = new cjs.Text("6", "normal 400 12px 'Open Sans'");
+	this.text_11.textAlign = "center";
+	this.text_11.lineHeight = 18;
+	this.text_11.lineWidth = 22;
+	this.text_11.parent = this;
+	this.text_11.setTransform(145.9,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_11);
+	}
+
+	this.text_12 = new cjs.Text("5", "normal 400 12px 'Open Sans'");
+	this.text_12.textAlign = "center";
+	this.text_12.lineHeight = 18;
+	this.text_12.lineWidth = 22;
+	this.text_12.parent = this;
+	this.text_12.setTransform(120.3,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_12);
+	}
+
+	this.text_13 = new cjs.Text("4", "normal 400 12px 'Open Sans'");
+	this.text_13.textAlign = "center";
+	this.text_13.lineHeight = 18;
+	this.text_13.lineWidth = 22;
+	this.text_13.parent = this;
+	this.text_13.setTransform(94.7,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_13);
+	}
+
+	this.text_14 = new cjs.Text("3", "normal 400 12px 'Open Sans'");
+	this.text_14.textAlign = "center";
+	this.text_14.lineHeight = 18;
+	this.text_14.lineWidth = 22;
+	this.text_14.parent = this;
+	this.text_14.setTransform(69.1,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_14);
+	}
+
+	this.text_15 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_15.textAlign = "center";
+	this.text_15.lineHeight = 18;
+	this.text_15.lineWidth = 22;
+	this.text_15.parent = this;
+	this.text_15.setTransform(43.6,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_15);
+	}
+
+	this.text_16 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
+	this.text_16.textAlign = "center";
+	this.text_16.lineHeight = 18;
+	this.text_16.lineWidth = 22;
+	this.text_16.parent = this;
+	this.text_16.setTransform(18,149.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_16);
+	}
+
+	this.text_17 = new cjs.Text("Right Half", "normal 400 28px 'Open Sans'");
+	this.text_17.lineHeight = 39;
+	this.text_17.lineWidth = 127;
+	this.text_17.parent = this;
+	this.text_17.setTransform(822.7,270,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_17);
+	}
+
+	this.text_18 = new cjs.Text("Left Half", "normal 400 28px 'Open Sans'");
+	this.text_18.lineHeight = 39;
+	this.text_18.lineWidth = 110;
+	this.text_18.parent = this;
+	this.text_18.setTransform(822.7,20,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_18);
+	}
+
+	this.rightHalfDsp = new lib.HexDisplay();
+	this.rightHalfDsp.parent = this;
+	this.rightHalfDsp.setTransform(909.1,309.7,1,1,0,0,0,87.3,13.6);
+
+	this.rightHalfBtn = new lib.rightHalfBtn();
+	this.rightHalfBtn.parent = this;
+	this.rightHalfBtn.setTransform(751.8,207.9);
+	new cjs.ButtonHelper(this.rightHalfBtn, 0, 1, 1);
+
+	this.leftHalfBtn = new lib.leftHalfBtn();
+	this.leftHalfBtn.parent = this;
+	this.leftHalfBtn.setTransform(664.1,207.9);
+	new cjs.ButtonHelper(this.leftHalfBtn, 0, 1, 1);
+
+	this.combinedCDsp = new lib.HexDisplay();
+	this.combinedCDsp.parent = this;
+	this.combinedCDsp.setTransform(530.5,191.2,1,1,0,0,0,87.3,13.6);
+
+	this.leftKeyDsp = new lib.HexDisplay();
+	this.leftKeyDsp.parent = this;
+	this.leftKeyDsp.setTransform(1042.5,191.2,1,1,0,0,0,87.3,13.6);
+
+	this.shiftedDDsp = new lib.HexDisplay();
+	this.shiftedDDsp.parent = this;
+	this.shiftedDDsp.setTransform(333.8,292.5,1,1,0,0,0,87.3,13.6);
+
+	this.preShiftedDDsp = new lib.HexDisplay();
+	this.preShiftedDDsp.parent = this;
+	this.preShiftedDDsp.setTransform(87.5,292.5,1,1,0,0,0,87.3,13.6);
+
+	this.leftHalfDsp = new lib.HexDisplay();
+	this.leftHalfDsp.parent = this;
+	this.leftHalfDsp.setTransform(909.1,59.7,1,1,0,0,0,87.3,13.6);
+
+	this.preShiftedCDsp = new lib.HexDisplay();
+	this.preShiftedCDsp.parent = this;
+	this.preShiftedCDsp.setTransform(87.5,87.9,1,1,0,0,0,87.3,13.6);
+
+	this.shiftedCDsp = new lib.HexDisplay();
+	this.shiftedCDsp.parent = this;
+	this.shiftedCDsp.setTransform(333.8,87.8,1,1,0,0,0,87.3,13.6);
+
+	this.keySubTxt = new cjs.Text("", "normal 400 14px 'Open Sans'");
+	this.keySubTxt.name = "keySubTxt";
+	this.keySubTxt.lineHeight = 20;
+	this.keySubTxt.lineWidth = 11;
+	this.keySubTxt.parent = this;
+	this.keySubTxt.setTransform(988,164.3,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.keySubTxt);
+	}
+
+	this.text_19 = new cjs.Text("Key", "normal 400 28px 'Open Sans'");
+	this.text_19.lineHeight = 39;
+	this.text_19.lineWidth = 47;
+	this.text_19.parent = this;
+	this.text_19.setTransform(956.3,150.1,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_19);
+	}
+
+	this.text_20 = new cjs.Text("Bit Rotation", "normal 400 16px 'Open Sans'");
+	this.text_20.lineHeight = 23;
+	this.text_20.lineWidth = 129;
+	this.text_20.parent = this;
+	this.text_20.setTransform(7.2,213);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_20);
+	}
+
+	this.text_21 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
+	this.text_21.textAlign = "center";
+	this.text_21.lineHeight = 18;
+	this.text_21.lineWidth = 22;
+	this.text_21.parent = this;
+	this.text_21.setTransform(401.6,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_21);
+	}
+
+	this.text_22 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_22.textAlign = "center";
+	this.text_22.lineHeight = 18;
+	this.text_22.lineWidth = 22;
+	this.text_22.parent = this;
+	this.text_22.setTransform(376,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_22);
+	}
+
+	this.text_23 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_23.textAlign = "center";
+	this.text_23.lineHeight = 18;
+	this.text_23.lineWidth = 22;
+	this.text_23.parent = this;
+	this.text_23.setTransform(350.5,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_23);
+	}
+
+	this.text_24 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_24.textAlign = "center";
+	this.text_24.lineHeight = 18;
+	this.text_24.lineWidth = 22;
+	this.text_24.parent = this;
+	this.text_24.setTransform(324.9,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_24);
+	}
+
+	this.text_25 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_25.textAlign = "center";
+	this.text_25.lineHeight = 18;
+	this.text_25.lineWidth = 22;
+	this.text_25.parent = this;
+	this.text_25.setTransform(299.3,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_25);
+	}
+
+	this.text_26 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_26.textAlign = "center";
+	this.text_26.lineHeight = 18;
+	this.text_26.lineWidth = 22;
+	this.text_26.parent = this;
+	this.text_26.setTransform(273.7,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_26);
+	}
+
+	this.text_27 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_27.textAlign = "center";
+	this.text_27.lineHeight = 18;
+	this.text_27.lineWidth = 22;
+	this.text_27.parent = this;
+	this.text_27.setTransform(248.2,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_27);
+	}
+
+	this.text_28 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
+	this.text_28.textAlign = "center";
+	this.text_28.lineHeight = 18;
+	this.text_28.lineWidth = 22;
+	this.text_28.parent = this;
+	this.text_28.setTransform(222.6,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_28);
+	}
+
+	this.text_29 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_29.textAlign = "center";
+	this.text_29.lineHeight = 18;
+	this.text_29.lineWidth = 22;
+	this.text_29.parent = this;
+	this.text_29.setTransform(197,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_29);
+	}
+
+	this.text_30 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_30.textAlign = "center";
+	this.text_30.lineHeight = 18;
+	this.text_30.lineWidth = 22;
+	this.text_30.parent = this;
+	this.text_30.setTransform(171.4,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_30);
+	}
+
+	this.text_31 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_31.textAlign = "center";
+	this.text_31.lineHeight = 18;
+	this.text_31.lineWidth = 22;
+	this.text_31.parent = this;
+	this.text_31.setTransform(145.9,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_31);
+	}
+
+	this.text_32 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_32.textAlign = "center";
+	this.text_32.lineHeight = 18;
+	this.text_32.lineWidth = 22;
+	this.text_32.parent = this;
+	this.text_32.setTransform(120.3,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_32);
+	}
+
+	this.text_33 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_33.textAlign = "center";
+	this.text_33.lineHeight = 18;
+	this.text_33.lineWidth = 22;
+	this.text_33.parent = this;
+	this.text_33.setTransform(94.7,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_33);
+	}
+
+	this.text_34 = new cjs.Text("2", "normal 400 12px 'Open Sans'");
+	this.text_34.textAlign = "center";
+	this.text_34.lineHeight = 18;
+	this.text_34.lineWidth = 22;
+	this.text_34.parent = this;
+	this.text_34.setTransform(69.1,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_34);
+	}
+
+	this.text_35 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
+	this.text_35.textAlign = "center";
+	this.text_35.lineHeight = 18;
+	this.text_35.lineWidth = 22;
+	this.text_35.parent = this;
+	this.text_35.setTransform(43.6,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_35);
+	}
+
+	this.text_36 = new cjs.Text("1", "normal 400 12px 'Open Sans'");
+	this.text_36.textAlign = "center";
+	this.text_36.lineHeight = 18;
+	this.text_36.lineWidth = 22;
+	this.text_36.parent = this;
+	this.text_36.setTransform(18,189.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_36);
+	}
+
+	this.text_37 = new cjs.Text("PC2 Permutation", "normal 400 28px 'Open Sans'", "#FFFFFF");
+	this.text_37.textAlign = "center";
+	this.text_37.lineHeight = 39;
+	this.text_37.lineWidth = 193;
+	this.text_37.parent = this;
+	this.text_37.setTransform(745.3,140.5,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_37);
+	}
+
+	this.rotateTimes2Txt = new cjs.Text("", "normal 400 16px 'Open Sans'");
+	this.rotateTimes2Txt.name = "rotateTimes2Txt";
+	this.rotateTimes2Txt.textAlign = "center";
+	this.rotateTimes2Txt.lineHeight = 23;
+	this.rotateTimes2Txt.lineWidth = 27;
+	this.rotateTimes2Txt.parent = this;
+	this.rotateTimes2Txt.setTransform(217.1,324.5);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.rotateTimes2Txt);
+	}
+
+	this.text_38 = new cjs.Text("Times", "normal 400 16px 'Open Sans'");
+	this.text_38.lineHeight = 23;
+	this.text_38.lineWidth = 45;
+	this.text_38.parent = this;
+	this.text_38.setTransform(234.2,324.5);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_38);
+	}
+
+	this.text_39 = new cjs.Text("Rotate", "normal 400 16px 'Open Sans'");
+	this.text_39.lineHeight = 23;
+	this.text_39.lineWidth = 49;
+	this.text_39.parent = this;
+	this.text_39.setTransform(150.2,324.5);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_39);
+	}
+
+	this.rotateTimes1Txt = new cjs.Text("", "normal 400 16px 'Open Sans'");
+	this.rotateTimes1Txt.name = "rotateTimes1Txt";
+	this.rotateTimes1Txt.textAlign = "center";
+	this.rotateTimes1Txt.lineHeight = 23;
+	this.rotateTimes1Txt.lineWidth = 27;
+	this.rotateTimes1Txt.parent = this;
+	this.rotateTimes1Txt.setTransform(217.1,33.3);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.rotateTimes1Txt);
+	}
+
+	this.text_40 = new cjs.Text("Times", "normal 400 16px 'Open Sans'");
+	this.text_40.lineHeight = 23;
+	this.text_40.lineWidth = 45;
+	this.text_40.parent = this;
+	this.text_40.setTransform(234.2,33.3);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_40);
+	}
+
+	this.text_41 = new cjs.Text("Rotate", "normal 400 16px 'Open Sans'");
+	this.text_41.lineHeight = 23;
+	this.text_41.lineWidth = 49;
+	this.text_41.parent = this;
+	this.text_41.setTransform(150.2,33.3);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_41);
+	}
+
+	this.dSubTxt = new cjs.Text("0", "normal 400 14px 'Open Sans'");
+	this.dSubTxt.name = "dSubTxt";
+	this.dSubTxt.lineHeight = 20;
+	this.dSubTxt.lineWidth = 11;
+	this.dSubTxt.parent = this;
+	this.dSubTxt.setTransform(16.2,326.6,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.dSubTxt);
+	}
+
+	this.text_42 = new cjs.Text("D", "normal 400 28px 'Open Sans'");
+	this.text_42.lineHeight = 39;
+	this.text_42.lineWidth = 20;
+	this.text_42.parent = this;
+	this.text_42.setTransform(1.4,314.4,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_42);
+	}
+
+	this.cSubTxt = new cjs.Text("0", "normal 400 14px 'Open Sans'");
+	this.cSubTxt.name = "cSubTxt";
+	this.cSubTxt.lineHeight = 20;
+	this.cSubTxt.lineWidth = 11;
+	this.cSubTxt.parent = this;
+	this.cSubTxt.setTransform(14.8,60.1,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.cSubTxt);
+	}
+
+	this.text_43 = new cjs.Text("C", "normal 400 28px 'Open Sans'");
+	this.text_43.lineHeight = 39;
+	this.text_43.lineWidth = 18;
+	this.text_43.parent = this;
+	this.text_43.setTransform(1.4,48.3,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_43);
+	}
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EBDbgTsIAACQEAoIgRcIAAh4IAAiYIbTAAIAACAIEmAAIAAQPEBKggBXINxAAIAAEPEBDbATvIAAB4EBDbATvIOQAAIAAu1EAoIAVnIAAh4IAAiYIbTAAIAACYEBKggBXIAAEPEA8+AC4IAAiWIAAh5INiAAAdAooIAAqsIJWAAAdAJqIAAKFIJWAAEBYRAC+I7TAAEBDbAVtI7TAAEBDbgRWI7TAAAlfhXINwAAIAACNIDsgBA2dvHIKdAAIAAL0EgxwgNBIAAkRIbTAAIAACLIAACGAzCC4IAAiWIAAh5INjAAIAAEPA2dQ0IAAiFEgxwAOvIAAEQIbTAAIAAiLIX3AAIAAr2AIRA2IAACCAIRC+I7TAAEhYQgNBIAAkRIbTAAIAACLIJXAAEg89gPHIAACGEhYQAOvIAAEQIbTAAIAAiLIAAiFEg89AQ0IJXAAEg89AOpI7TAAEg89gM7I7TAAA2dOpI7TAAA2ds7I7TAA");
+	this.shape_1.setTransform(564.9,184.7);
+
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#1174C3").s().p("AAxJKIvQAAIAArUIACAAIAAgxIgCAAIAAmNIPQAAINvAAIAASSg");
+	this.shape_2.setTransform(745.6,188);
+
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("#000000").s().p("AWwTiIAAhKIBxBKIhxBKgEhDNAQnIAAhKIByBKIhyBLgAuLExIhKAAIBLhyIBKBygEBCEAEuIhLAAIBKhyIBLBygAjpAoIAAhKIByBKIhyBLgEAtUAATIADACIgDACgEgirAATIADACIgDACgA8wjgIBJAAIBMAAIhLBygEA3MgDqIBOAAIBHAAIhKBygEhDNgPUIAAhKIByBKIhyBLgAWwzhIAAhLIBxBLIhxBLg");
+	this.shape_3.setTransform(664.7,186);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.text_43},{t:this.cSubTxt},{t:this.text_42},{t:this.dSubTxt},{t:this.text_41},{t:this.text_40},{t:this.rotateTimes1Txt},{t:this.text_39},{t:this.text_38},{t:this.rotateTimes2Txt},{t:this.text_37},{t:this.text_36},{t:this.text_35},{t:this.text_34},{t:this.text_33},{t:this.text_32},{t:this.text_31},{t:this.text_30},{t:this.text_29},{t:this.text_28},{t:this.text_27},{t:this.text_26},{t:this.text_25},{t:this.text_24},{t:this.text_23},{t:this.text_22},{t:this.text_21},{t:this.text_20},{t:this.text_19},{t:this.keySubTxt},{t:this.shiftedCDsp},{t:this.preShiftedCDsp},{t:this.leftHalfDsp},{t:this.preShiftedDDsp},{t:this.shiftedDDsp},{t:this.leftKeyDsp},{t:this.combinedCDsp},{t:this.leftHalfBtn},{t:this.rightHalfBtn},{t:this.rightHalfDsp},{t:this.text_18},{t:this.text_17},{t:this.text_16},{t:this.text_15},{t:this.text_14},{t:this.text_13},{t:this.text_12},{t:this.text_11},{t:this.text_10},{t:this.text_9},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text}]}).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.KeyGenRounds, new cjs.Rectangle(-1,18.7,1269.2,345), null);
+
+
+(lib.KeyGen = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		var thisStage = this;
+		
+		this.cBtn.addEventListener("click", function() {
+			thisStage.dispatchEvent(new createjs.Event("cPermutationRequested"));
+		});
+		
+		this.dBtn.addEventListener("click", function() {
+			thisStage.dispatchEvent(new createjs.Event("dPermutationRequested"));
+		});
+		
+		this.keyRoundsBtn.addEventListener("click", function() {
+			thisStage.dispatchEvent(new createjs.Event("keyRoundsRequested"));
+		});
+		
+		this.setData = (function(cryptoObject) {
+			this.keyDsp.gotoAndStop(0);
+			this.keyDsp.setValue(cryptoObject.key);
+			
+			this.cDsp.gotoAndStop(0);
+			this.cDsp.setValue(cryptoObject.roundKeys.initialKeyPermutations.c);
+			
+			this.dDsp.gotoAndStop(0);
+			this.dDsp.setValue(cryptoObject.roundKeys.initialKeyPermutations.d);
+			
+			var roundKeys = [];
+			
+			for (let i = 0; i < cryptoObject.roundKeys.roundKeyParts.length; i++) {
+				roundKeys[i] = cryptoObject.roundKeys.roundKeyParts[i].key;
+			}
+			
+			this.roundKeysTable.gotoAndStop(0);
+			this.roundKeysTable.setData("16 Round Keys", roundKeys);
+		}).bind(this);
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// Layer 3
+	this.roundKeysTable = new lib.Table();
+	this.roundKeysTable.parent = this;
+	this.roundKeysTable.setTransform(969.8,160.7,1,1,0,0,0,0.3,1.4);
+
+	this.timeline.addTween(cjs.Tween.get(this.roundKeysTable).wait(1));
+
+	// Layer 2
+	this.dBtn = new lib.viewDBtn();
+	this.dBtn.parent = this;
+	this.dBtn.setTransform(352.3,170,1,1,0,0,0,37.6,16.3);
+	new cjs.ButtonHelper(this.dBtn, 0, 1, 1);
+
+	this.cBtn = new lib.viewCBtn();
+	this.cBtn.parent = this;
+	this.cBtn.setTransform(267.3,170,1,1,0,0,0,37.6,16.3);
+	new cjs.ButtonHelper(this.cBtn, 0, 1, 1);
+
+	this.dDsp = new lib.HexDisplay();
+	this.dDsp.parent = this;
+	this.dDsp.setTransform(494.6,226.8,1,1,0,0,0,87.3,13.6);
+
+	this.cDsp = new lib.HexDisplay();
+	this.cDsp.parent = this;
+	this.cDsp.setTransform(492.7,41.1,1,1,0,0,0,87.3,13.6);
+
+	this.keyDsp = new lib.HexDisplay();
+	this.keyDsp.parent = this;
+	this.keyDsp.setTransform(87.3,131.2,1,1,0,0,0,87.3,13.6);
+
+	this.keyRoundsBtn = new lib.ViewButton();
+	this.keyRoundsBtn.parent = this;
+	this.keyRoundsBtn.setTransform(597.3,152.9);
+	new cjs.ButtonHelper(this.keyRoundsBtn, 0, 1, 1);
+
+	this.text = new cjs.Text("Generate Round Keys", "normal 400 28px 'Open Sans'", "#FFFFFF");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 39;
+	this.text.lineWidth = 193;
+	this.text.parent = this;
+	this.text.setTransform(634.3,86.7,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text);
+	}
+
+	this.text_1 = new cjs.Text("0", "normal 400 14px 'Open Sans'");
+	this.text_1.lineHeight = 20;
+	this.text_1.lineWidth = 11;
+	this.text_1.parent = this;
+	this.text_1.setTransform(420.5,199.1,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_1);
+	}
+
+	this.text_2 = new cjs.Text("0", "normal 400 14px 'Open Sans'");
+	this.text_2.lineHeight = 20;
+	this.text_2.lineWidth = 11;
+	this.text_2.parent = this;
+	this.text_2.setTransform(420.1,13.2,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_2);
+	}
+
+	this.text_3 = new cjs.Text("D", "normal 400 28px 'Open Sans'");
+	this.text_3.lineHeight = 39;
+	this.text_3.lineWidth = 20;
+	this.text_3.parent = this;
+	this.text_3.setTransform(407.7,186.9,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_3);
+	}
+
+	this.text_4 = new cjs.Text("C", "normal 400 28px 'Open Sans'");
+	this.text_4.lineHeight = 39;
+	this.text_4.lineWidth = 18;
+	this.text_4.parent = this;
+	this.text_4.setTransform(406.7,1.4,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_4);
+	}
+
+	this.text_5 = new cjs.Text("0", "normal 400 12px 'Open Sans'", "#FFFFFF");
+	this.text_5.textAlign = "center";
+	this.text_5.lineHeight = 18;
+	this.text_5.lineWidth = 7;
+	this.text_5.parent = this;
+	this.text_5.setTransform(353.3,124.7);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_5);
+	}
+
+	this.text_6 = new cjs.Text("0", "normal 400 12px 'Open Sans'", "#FFFFFF");
+	this.text_6.textAlign = "center";
+	this.text_6.lineHeight = 18;
+	this.text_6.lineWidth = 7;
+	this.text_6.parent = this;
+	this.text_6.setTransform(308.5,124.7);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_6);
+	}
+
+	this.text_7 = new cjs.Text("Run Mapping for C  &  D", "normal 400 28px 'Open Sans'", "#FFFFFF");
+	this.text_7.textAlign = "center";
+	this.text_7.lineHeight = 39;
+	this.text_7.lineWidth = 193;
+	this.text_7.parent = this;
+	this.text_7.setTransform(307.7,87.5,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_7);
+	}
+
+	this.text_8 = new cjs.Text("64-bit Key", "normal 400 28px 'Open Sans'");
+	this.text_8.lineHeight = 39;
+	this.text_8.lineWidth = 144;
+	this.text_8.parent = this;
+	this.text_8.setTransform(1.5,91.2,0.663,0.663);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text_8);
+	}
+
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EA1tgAQIGPAAADZuhIAAiLIbTAAIAACLEAnSgJIIAAlZIomAAIAACLI7TAAIAAiLADjOqIAAiTIbTAAIAACDIAACTI7TAAgEAnSAJKIAAFQIocAAAskpJIAAlYIP9AAEggogAQIAAB1Eg77ABlIAAkPIbTAAIAACaIErAAAskJSIAAFYIQHAAEggoABrI7TAA");
+	this.shape.setTransform(383.7,134.1);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#000000").s().p("EArIAAAIAAhKIA5AnIAAgFIABAAIAAAFIAwAfIAAAJIhqBGgEgswAAAIAAhKIA5AnIAAgFIAAAAIAAAFIAwAfIAAAJIhpBGg");
+	this.shape_1.setTransform(491.2,132.4);
+
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#1174C3").s().p("A6RJNItuAAIAArTIACAAIAAgwIgCAAIAAmPIc/AAIAASSgAZlJGIukAAIAArUIACAAIAAgwIgCAAIAAmPIOkAAIOcAAIAAI5IAAJag");
+	this.shape_2.setTransform(471.3,134.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text},{t:this.keyRoundsBtn},{t:this.keyDsp},{t:this.cDsp},{t:this.dDsp},{t:this.cBtn},{t:this.dBtn}]}).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.KeyGen, new cjs.Rectangle(-0.9,-30,1152,381.4), null);
 
 
 // stage content:
@@ -4882,13 +4956,12 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		
 		document.stageRoot = this;
 		
-		// Event dispatcher for movie clips to listen to round changes.
-		//this.globalDispatcher = new createjs.EventDispatcher();
-		
 		document.initializeVisualization = (function(encryptionObject, decryptionObject) {
 			this.globalData.encryptionObject = encryptionObject;
 			this.globalData.decryptionObject = decryptionObject;
 			
+			//Come back to this frame first, then go to the overview frame.
+			//This is so the data resets no matter what frame we were on, including the overview frame
 			this.gotoAndStop(0);
 			this.gotoAndStop("Overview");
 		}).bind(this);
@@ -5331,7 +5404,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.desRounds = new lib.DESRounds();
 	this.desRounds.parent = this;
-	this.desRounds.setTransform(-13.9,61.2,1,1,0,0,0,-0.8,3.2);
+	this.desRounds.setTransform(-13.9,51.2,1,1,0,0,0,-0.8,3.2);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desRounds},{t:this.back},{t:this.desRoundTitleTxt}]},5).to({state:[]},1).wait(4));
 
@@ -5441,7 +5514,7 @@ p.nominalBounds = null;
 // library properties:
 lib.properties = {
 	width: 1200,
-	height: 600,
+	height: 650,
 	fps: 24,
 	color: "#FFFFFF",
 	opacity: 1.00,
