@@ -380,7 +380,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	// Token Open Sans Font
 	this.text = new cjs.Text("Get Inconsolata in here!", "normal 400 18px 'Inconsolata'", "#003300");
-	this.text.lineHeight = 20;
+	this.text.lineHeight = 24;
 	this.text.lineWidth = 297;
 	this.text.parent = this;
 	this.text.setTransform(33.1,-97.8);

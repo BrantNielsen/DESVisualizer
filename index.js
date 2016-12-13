@@ -600,6 +600,51 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 }).prototype = getMCSymbolPrototype(lib.Table, new cjs.Rectangle(-181.5,-189.3,363.6,381.9), null);
 
 
+(lib.stepForwardBtn = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.text = new cjs.Text("Step Forward > ", "18px 'Arial'", "#333333");
+	this.text.lineHeight = 22;
+	this.text.lineWidth = 129;
+	this.text.parent = this;
+	this.text.setTransform(17.6,11.4);
+
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1));
+
+	// Layer 2
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFFFFF").s("#CCCCCC").ss(1,1,1).rr(-40.8,-18.7,81.6,37.4,4);
+	this.shape.setTransform(80.2,22.1,1.951,1.174);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-0.3,-0.8,161.2,45.8);
+
+
+(lib.stepBackwardBtn = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 2
+	this.text = new cjs.Text("< Step Backward", "18px 'Arial'", "#333333");
+	this.text.lineHeight = 22;
+	this.text.parent = this;
+	this.text.setTransform(11.1,11.4);
+
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1));
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFFFFF").s("#CCCCCC").ss(1,1,1).rr(-40.8,-18.7,81.6,37.4,4);
+	this.shape.setTransform(80.2,22.1,1.951,1.174);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-0.3,-0.8,161.2,45.8);
+
+
 (lib.SixBitLow = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -2074,6 +2119,10 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 			}
 		}
 		
+		this.permuteBtn.addEventListener("click", (function() {
+			this.dispatchEvent(new createjs.Event("permutationRequested"));
+		}).bind(this));
+		
 		this.setData = (function(cryptoObject, roundIndex) {
 			var manglerData = cryptoObject.rounds[roundIndex].manglerData;
 			
@@ -2133,10 +2182,10 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.instance_1.parent = this;
 	this.instance_1.setTransform(-1.4,90.7,1,1,0,0,0,7.5,28.6);
 
-	this.permCBtn = new lib.ViewButton();
-	this.permCBtn.parent = this;
-	this.permCBtn.setTransform(-40.7,167.6);
-	new cjs.ButtonHelper(this.permCBtn, 0, 1, 1);
+	this.permuteBtn = new lib.ViewButton();
+	this.permuteBtn.parent = this;
+	this.permuteBtn.setTransform(-40.7,167.6);
+	new cjs.ButtonHelper(this.permuteBtn, 0, 1, 1);
 
 	this.text_2 = new cjs.Text("Permutation", "normal 400 28px 'Open Sans'", "#FFFFFF");
 	this.text_2.textAlign = "center";
@@ -2417,7 +2466,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape_1.graphics.f("#1174C3").s().p("AsNalIAAoiIACAAIAAglIgCAAIAAksIYIAAIAANzgAaiurIAAgeIgBAAIAAnEIABAAIAAgfIgBAAIAAjtISBAAIAALMIABAAIAAAigA0zurIAAgeIAAAAIAAnEIABAAIAAgfIgBAAIAAjtISAAAIAALMIABAAIAAAigEgsdgOrIAAgeIAAAAIAAnEIABAAIAAgfIgBAAIAAjtISAAAIAALMIABAAIAAAigEhEIgOrIAAgeIAAAAIAAnEIABAAIAAgfIgBAAIAAjtISAAAIAALMIACAAIAAAigEhb2gOrIAAgeIgBAAIAAnEIABAAIAAgfIgBAAIAAj4ISBAAIAALXIABAAIAAAigEBJ3gO2IAAgdIgBAAIAAnEIABAAIAAgfIgBAAIAAjuISBAAIAALMIABAAIAAAigEAyMgO2IAAgdIAAAAIAAnEIABAAIAAgfIgBAAIAAjuISAAAIAALMIABAAIAAAigAC3u2IAAgdIgBAAIAAnEIABAAIAAgfIgBAAIAAjuISBAAIAALMIABAAIAAAig");
 	this.shape_1.setTransform(-2.3,38.9);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape},{t:this.finalInput0},{t:this.finalInput1},{t:this.finalInput2},{t:this.finalInput3},{t:this.finalInput4},{t:this.finalInput7},{t:this.finalInput6},{t:this.finalInput5},{t:this.sBoxBtn0},{t:this.text_10},{t:this.sBoxBtn1},{t:this.text_9},{t:this.sBoxBtn2},{t:this.text_8},{t:this.sBoxBtn3},{t:this.text_7},{t:this.sBoxBtn4},{t:this.text_6},{t:this.sBoxBtn5},{t:this.text_5},{t:this.sBoxBtn6},{t:this.text_4},{t:this.sBoxBtn7},{t:this.text_3},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.instance_11},{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.sBoxOutput0},{t:this.sBoxOutput7},{t:this.sBoxOutput1},{t:this.sBoxOutput2},{t:this.sBoxOutput3},{t:this.sBoxOutput4},{t:this.sBoxOutput5},{t:this.sBoxOutput6},{t:this.combinedOutput},{t:this.text_2},{t:this.permCBtn},{t:this.instance_1},{t:this.instance},{t:this.finalOutput},{t:this.text_1},{t:this.text}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape},{t:this.finalInput0},{t:this.finalInput1},{t:this.finalInput2},{t:this.finalInput3},{t:this.finalInput4},{t:this.finalInput7},{t:this.finalInput6},{t:this.finalInput5},{t:this.sBoxBtn0},{t:this.text_10},{t:this.sBoxBtn1},{t:this.text_9},{t:this.sBoxBtn2},{t:this.text_8},{t:this.sBoxBtn3},{t:this.text_7},{t:this.sBoxBtn4},{t:this.text_6},{t:this.sBoxBtn5},{t:this.text_5},{t:this.sBoxBtn6},{t:this.text_4},{t:this.sBoxBtn7},{t:this.text_3},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.instance_11},{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.sBoxOutput0},{t:this.sBoxOutput7},{t:this.sBoxOutput1},{t:this.sBoxOutput2},{t:this.sBoxOutput3},{t:this.sBoxOutput4},{t:this.sBoxOutput5},{t:this.sBoxOutput6},{t:this.combinedOutput},{t:this.text_2},{t:this.permuteBtn},{t:this.instance_1},{t:this.instance},{t:this.finalOutput},{t:this.text_1},{t:this.text}]}).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.SBoxes, new cjs.Rectangle(-591.2,-214.5,1182.6,492), null);
 
@@ -2813,6 +2862,238 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.showKeyTable},{t:this.showReverseKeyTable}]}).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.ReverseOrderDiagramPortion, new cjs.Rectangle(0,-1,185.6,132.4), null);
+
+
+(lib.Permutation = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		var thisStage = this;
+		
+		this.showPermutation = function (inputData, numInputColumns, permutationMapping, numMappingColumns, outputData, inputLabel, mappingLabel, outputLabel) {
+		    function bitArrayDataIndexFunc(data, dataIndex) {
+		        return data.get(dataIndex)? "1" : "0";
+		    }
+		
+		    function pmDataIndexFunc(data, dataIndex) {
+		        return data[dataIndex].toString();
+		    }
+			
+			var allLabelY = 10;
+			
+			var allDataStartY = allLabelY + 40;
+			var allDataSpaceY = 30;
+			
+			// --- Input label and data ---
+			
+			var inputStartX = 40;
+		    var inputSpaceX = 30;
+			
+			var inputLabelTxt = new createjs.Text(inputLabel, "24px Open Sans", "#333");
+			inputLabelTxt.x = inputStartX - 14;
+			inputLabelTxt.y = allLabelY;
+			inputLabelTxt.textAlign = "left";
+			thisStage.addChild(inputLabelTxt);
+			
+		    var inputFields = placeFields(inputData, numInputColumns, inputStartX, allDataStartY, inputSpaceX, allDataSpaceY, bitArrayDataIndexFunc);
+			
+			var inputOutline = new createjs.Shape();
+			inputOutline.graphics.setStrokeStyle(2).beginStroke("#333").drawRect(0, 0, numInputColumns * inputSpaceX, allDataSpaceY * Math.ceil(inputData.length / numInputColumns));
+			inputOutline.x = inputLabelTxt.x - 6;
+			inputOutline.y = inputLabelTxt.y + 34;
+			thisStage.addChild(inputOutline);
+			
+			// --- Permutation Mapping label and data ---
+			
+		    var pmStartX = inputStartX + numInputColumns * inputSpaceX + 100;
+		    var pmSpaceX = 40;
+			
+			var pmLabelTxt = new createjs.Text(mappingLabel, "24px Open Sans", "#333");
+			pmLabelTxt.x = pmStartX - 24;
+			pmLabelTxt.y = allLabelY;
+			thisStage.addChild(pmLabelTxt);
+			
+		    var pmFields = placeFields(permutationMapping, numMappingColumns, pmStartX, allDataStartY, pmSpaceX, allDataSpaceY, pmDataIndexFunc);
+		
+			var pmOutline = new createjs.Shape();
+			pmOutline.graphics.setStrokeStyle(2).beginStroke("#333").drawRect(0, 0, numMappingColumns * pmSpaceX, allDataSpaceY * Math.ceil(permutationMapping.length / numMappingColumns));
+			pmOutline.x = pmLabelTxt.x - 6;
+			pmOutline.y = pmLabelTxt.y + 34;
+			thisStage.addChild(pmOutline);
+		
+			// --- Output label and data ---
+		
+		    var outputStartX = pmStartX + numMappingColumns * pmSpaceX + 100;
+		    var outputSpaceX = inputSpaceX;
+			
+			var outputLabelTxt = new createjs.Text(outputLabel, "24px Open Sans", "#333");
+			outputLabelTxt.x = outputStartX - 14;
+			outputLabelTxt.y = allLabelY;
+			thisStage.addChild(outputLabelTxt);
+			
+		    var outputFields = placeFields(outputData, numMappingColumns, outputStartX, allDataStartY, outputSpaceX, allDataSpaceY, bitArrayDataIndexFunc);
+		
+			var outputOutline = new createjs.Shape();
+			outputOutline.graphics.setStrokeStyle(2).beginStroke("#333").drawRect(0, 0, numMappingColumns * outputSpaceX, allDataSpaceY * Math.ceil(permutationMapping.length / numMappingColumns));
+			outputOutline.x = outputLabelTxt.x - 6;
+			outputOutline.y = outputLabelTxt.y + 34;
+			thisStage.addChild(outputOutline);
+			
+			// --- Highlighters ---
+		
+		    var inputHighlighter = new createjs.Shape();
+		    inputHighlighter.graphics.beginFill("#FFFF66").drawRect(0, 0, 25, 25);
+		    inputHighlighter.visible = false;
+		    thisStage.addChildAt(inputHighlighter, 0);
+		
+		    var mappingHighlighter = new createjs.Shape();
+		    mappingHighlighter.graphics.beginFill("#FFFF66").drawRect(0, 0, 35, 30);
+		    mappingHighlighter.visible = false;
+		    thisStage.addChildAt(mappingHighlighter, 0);
+		
+		    var outputHighlighter = new createjs.Shape();
+		    outputHighlighter.graphics.beginFill("#FFFF66").drawRect(0, 0, 25, 25);
+		    outputHighlighter.visible = false;
+		    thisStage.addChildAt(outputHighlighter, 0);
+			
+			// --- Buttons ---
+			
+		    thisStage.stepForwardBtn.removeAllEventListeners();
+		    thisStage.stepForwardBtn.addEventListener("click", stepForward);
+		
+		    thisStage.stepBackwardBtn.removeAllEventListeners();
+		    thisStage.stepBackwardBtn.addEventListener("click", stepBackward);
+		
+		    var stepIndex = -1;
+		
+		    function stepForward() {
+		        stepIndex++;
+		
+		        if (stepIndex === 0) {
+		            hideAll(outputFields);
+		        } else if (stepIndex === permutationMapping.length) {
+		            stepIndex = -1;
+		            moveHighlights(stepIndex);
+		
+		            return false;
+		        }
+		
+		        moveHighlights(stepIndex);
+		        outputFields[stepIndex].visible = true;
+				
+				return true;
+		    }
+			
+			function stepBackward() {
+				stepIndex--;
+				if (stepIndex < -1) {
+					stepIndex = permutationMapping.length - 1;
+				}
+		
+				moveHighlights(stepIndex);
+		
+				if (stepIndex === -1) {
+					showAll(outputFields);
+					return false;
+				} else if (stepIndex < permutationMapping.length - 1) {
+					outputFields[stepIndex + 1].visible = false;
+				}
+		
+				return true;
+			}
+			
+			
+			function moveHighlights(stepIndex) {
+				if (stepIndex === -1) {
+					inputHighlighter.visible = mappingHighlighter.visible = outputHighlighter.visible = false;
+				} else {
+					inputHighlighter.visible = mappingHighlighter.visible = outputHighlighter.visible = true;
+					
+					inputHighlighter.x = inputFields[permutationMapping[stepIndex] - 1].getTransformedBounds().x + 2;
+					inputHighlighter.y = inputFields[permutationMapping[stepIndex] - 1].getTransformedBounds().y - 3;
+		
+					mappingHighlighter.x = pmFields[stepIndex].getTransformedBounds().x - 5;
+					mappingHighlighter.y = pmFields[stepIndex].getTransformedBounds().y - 5;
+		
+					outputHighlighter.x = outputFields[stepIndex].getTransformedBounds().x + 2;
+					outputHighlighter.y = outputFields[stepIndex].getTransformedBounds().y - 3;
+				}
+			}
+		}
+		
+		function placeFields(data, numColumns, startX, startY, spaceX, spaceY, getDataIndexFunction) {
+		    var fields = [];
+		    var currentY = startY;
+		    var dataIndex = 0;
+		
+		    while (dataIndex < data.length) {
+		        for (var colIndex = 0; colIndex < numColumns && dataIndex < data.length; colIndex++) {
+					var fieldValue = getDataIndexFunction(data, dataIndex);
+					
+					if (fieldValue.length < 2) {
+						fieldValue = " " + fieldValue;
+					}
+					
+		            var thisField = new createjs.Text(fieldValue, "20px Inconsolata", "#333");
+		            thisField.x = startX + (colIndex * spaceX);
+		            thisField.y = currentY;
+		            thisField.textAlign = "right";
+		            thisStage.addChild(thisField);
+		
+		            fields[dataIndex] = thisField;
+		
+		            dataIndex++;
+		        }
+		
+		        currentY += spaceY;
+		    }
+		
+		    return fields;
+		}
+		
+		function hideAll(displayObjects) {
+		    for (var i = 0; i < displayObjects.length; i++) {
+		        displayObjects[i].visible = false;
+		    }
+		}
+		
+		function showAll(displayObjects) {
+		    for (var i = 0; i < displayObjects.length; i++) {
+		        displayObjects[i].visible = true;
+		    }
+		}
+		
+		//this.showPermutation(BitArray.fromHex("0123456789ABCDEF"), 8, DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION, 8, BitArray.fromHex("FEDCBA9876543210"), "Input", "Permutation Mapping", "Output");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// Layer 3
+	this.text = new cjs.Text("Step Through:", "normal 700 24px 'Open Sans'", "#333333");
+	this.text.lineHeight = 35;
+	this.text.lineWidth = 210;
+	this.text.parent = this;
+	this.text.setTransform(639.8,376.4);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.text);
+	}
+
+	this.stepBackwardBtn = new lib.stepBackwardBtn();
+	this.stepBackwardBtn.parent = this;
+	this.stepBackwardBtn.setTransform(637.6,420);
+	new cjs.ButtonHelper(this.stepBackwardBtn, 0, 1, 1);
+
+	this.stepForwardBtn = new lib.stepForwardBtn();
+	this.stepForwardBtn.parent = this;
+	this.stepForwardBtn.setTransform(801.7,420);
+	new cjs.ButtonHelper(this.stepForwardBtn, 0, 1, 1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.stepForwardBtn},{t:this.stepBackwardBtn},{t:this.text}]}).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.Permutation, new cjs.Rectangle(637.3,374.4,325.2,90.7), null);
 
 
 (lib.PerRoundStraightThrough = function(mode,startPosition,loop) {
@@ -4581,7 +4862,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 // stage content:
 (lib.DESVisualizer = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{Overview:1,Internal:2,"Key Gen":3,"Key Rounds":4,Rounds:5,Mangler:6,SBoxes:7,SBox:8});
+	this.initialize(mode,startPosition,loop,{Overview:1,Internal:2,"Key Gen":3,"Key Rounds":4,Rounds:5,Mangler:6,SBoxes:7,SBox:8,Permutation:9});
 
 	// timeline functions:
 	this.frame_0 = function() {
@@ -4602,7 +4883,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		document.stageRoot = this;
 		
 		// Event dispatcher for movie clips to listen to round changes.
-		this.globalDispatcher = new createjs.EventDispatcher();
+		//this.globalDispatcher = new createjs.EventDispatcher();
 		
 		document.initializeVisualization = (function(encryptionObject, decryptionObject) {
 			this.globalData.encryptionObject = encryptionObject;
@@ -4633,6 +4914,8 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		}
 	}
 	this.frame_2 = function() {
+		var cryptoObject = (this.globalData.isEncryption)? this.globalData.encryptionObject : this.globalData.decryptionObject;
+		
 		this.titleTxt.text = (this.globalData.isEncryption) ? "DES Encryption" : "DES Decryption";
 		
 		this.desInternal.removeAllEventListeners();
@@ -4645,11 +4928,35 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		this.desInternal.setData(this.globalData.encryptionObject, this.globalData.decryptionObject, this.globalData.isEncryption);
 		
 		function gotoInitialPermutation() {
-			
+			this.permutationSettings = {
+				'title': "Initial Input Permutation",
+				'returnFrame': "Internal",
+				'inputData': cryptoObject.input,
+				'numInputColumns': 8,
+				'permutationMapping': DES.PERMUTATION_MAPPINGS.INITIAL_PERMUTATION,
+				'numMappingColumns': 8,
+				'outputData': cryptoObject.initialPermutation,
+				'inputLabel': "Input",
+				'mappingLabel': "Bit Mapping",
+				'outputLabel': "Output"
+			};
+			this.gotoAndStop("Permutation");
 		}
 		
 		function gotoFinalPermutation() {
-			
+			this.permutationSettings = {
+				'title': "Final Output Permutation",
+				'returnFrame': "Internal",
+				'inputData': cryptoObject.finalRoundSwitch,
+				'numInputColumns': 8,
+				'permutationMapping': DES.PERMUTATION_MAPPINGS.FINAL_PERMUTATION,
+				'numMappingColumns': 8,
+				'outputData': cryptoObject.final,
+				'inputLabel': "Input",
+				'mappingLabel': "Bit Mapping",
+				'outputLabel': (this.globalData.isEncryption)? "Ciphertext" : "Plaintext"
+			};
+			this.gotoAndStop("Permutation");
 		}
 		
 		function gotoKeyGen() {
@@ -4680,10 +4987,46 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		this.keyGen.gotoAndStop(0);
 		this.keyGen.setData(this.globalData.encryptionObject);
 		
-		this.keyGen.addEventListener("keyRoundsRequested", (function() {
+		this.keyGen.addEventListener("keyRoundsRequested", gotoKeyRounds.bind(this));
+		this.keyGen.addEventListener("cPermutationRequested", gotoCPermutation.bind(this));
+		this.keyGen.addEventListener("dPermutationRequested", gotoDPermutation.bind(this));
+		
+		function gotoKeyRounds() {
 			this.globalData.roundIndex = 0;
 			this.gotoAndStop("Key Rounds");
-		}).bind(this));
+		}
+		
+		function gotoCPermutation() {
+			this.permutationSettings = {
+				'title': "Generate Initial C",
+				'returnFrame': "Key Gen",
+				'inputData': this.globalData.encryptionObject.key,
+				'numInputColumns': 8,
+				'permutationMapping': DES.PERMUTATION_MAPPINGS.PC1_C,
+				'numMappingColumns': 7,
+				'outputData': this.globalData.encryptionObject.roundKeys.initialKeyPermutations.c,
+				'inputLabel': "Key",
+				'mappingLabel': "Bit Mapping",
+				'outputLabel': "Initial C"
+			};
+			this.gotoAndStop("Permutation");
+		}
+		
+		function gotoDPermutation() {
+			this.permutationSettings = {
+				'title': "Generate Intial D",
+				'returnFrame': "Key Gen",
+				'inputData': this.globalData.encryptionObject.key,
+				'numInputColumns': 8,
+				'permutationMapping': DES.PERMUTATION_MAPPINGS.PC1_D,
+				'numMappingColumns': 7,
+				'outputData': this.globalData.encryptionObject.roundKeys.initialKeyPermutations.d,
+				'inputLabel': "Key",
+				'mappingLabel': "Bit Mapping",
+				'outputLabel': "Initial D"
+			};
+			this.gotoAndStop("Permutation");
+		}
 		
 		this.backToInternal.removeAllEventListeners();
 		this.backToInternal.addEventListener("click", backToInternalClicked.bind(this));
@@ -4694,6 +5037,42 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 	this.frame_4 = function() {
 		this.keyGenRounds.gotoAndStop(0);
+		
+		this.keyGenRounds.removeAllEventListeners();
+		this.keyGenRounds.addEventListener("leftHalfPermutationRequested", gotoLeftHalfPermutation.bind(this));
+		this.keyGenRounds.addEventListener("rightHalfPermutationRequested", gotoRightHalfPermutation.bind(this));
+		
+		function gotoLeftHalfPermutation() {
+			this.permutationSettings = {
+				'title': "Left Half of Round Key[" + (this.globalData.roundIndex + 1) + "]",
+				'returnFrame': "Key Rounds",
+				'inputData': this.globalData.encryptionObject.roundKeys.roundKeyParts[this.globalData.roundIndex].combinedCD,
+				'numInputColumns': 8,
+				'permutationMapping': DES.PERMUTATION_MAPPINGS.PC2_C,
+				'numMappingColumns': 6,
+				'outputData': this.globalData.encryptionObject.roundKeys.roundKeyParts[this.globalData.roundIndex].pc2C,
+				'inputLabel': "Input",
+				'mappingLabel': "Bit Mapping",
+				'outputLabel': "Left Key Half"
+			};
+			this.gotoAndStop("Permutation");
+		}
+		
+		function gotoRightHalfPermutation() {
+				this.permutationSettings = {
+				'title': "Right Half of Round Key[" + (this.globalData.roundIndex + 1) + "]",
+				'returnFrame': "Key Rounds",
+				'inputData': this.globalData.encryptionObject.roundKeys.roundKeyParts[this.globalData.roundIndex].combinedCD,
+				'numInputColumns': 8,
+				'permutationMapping': DES.PERMUTATION_MAPPINGS.PC2_D,
+				'numMappingColumns': 6,
+				'outputData': this.globalData.encryptionObject.roundKeys.roundKeyParts[this.globalData.roundIndex].pc2D,
+				'inputLabel': "Input",
+				'mappingLabel': "Bit Mapping",
+				'outputLabel': "Right Key Half"
+			};
+			this.gotoAndStop("Permutation");
+		}
 		
 		this.roundSelector.gotoAndStop(0);
 		this.roundSelector.setRoundIndex(this.globalData.roundIndex);
@@ -4775,10 +5154,27 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		
 		this.sBoxes.removeAllEventListeners();
 		this.sBoxes.addEventListener("sBoxRequested", toSBox.bind(this));
+		this.sBoxes.addEventListener("permutationRequested", gotoPermutation.bind(this));
 		
 		function toSBox(event) {
 			this.globalData.sBoxIndex = event.sBoxIndex;
 			this.gotoAndStop("SBox");
+		}
+		
+		function gotoPermutation() {
+			this.permutationSettings = {
+				'title': "Mangler Output Permutation",
+				'returnFrame': "SBoxes",
+				'inputData': cryptoObject.rounds[this.globalData.roundIndex].manglerData.combinedOutputs,
+				'numInputColumns': 8,
+				'permutationMapping': DES.PERMUTATION_MAPPINGS.SBOX_PERMUTATION,
+				'numMappingColumns': 8,
+				'outputData': cryptoObject.rounds[this.globalData.roundIndex].manglerData.finalOutput,
+				'inputLabel': "Input",
+				'mappingLabel': "Bit Mapping",
+				'outputLabel': "Output"
+			};
+			this.gotoAndStop("Permutation");
 		}
 		
 		this.backToMangler.removeAllEventListeners();
@@ -4803,9 +5199,28 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 			this.gotoAndStop("SBoxes");
 		}
 	}
+	this.frame_9 = function() {
+		var permutation = new lib.Permutation();
+		permutation.x = 140.1;
+		permutation.y = 104.6;
+		this.addChild(permutation);
+		
+		this.permutationTitleTxt.text = this.permutationSettings.title;
+		
+		permutation.gotoAndStop(0);
+		permutation.showPermutation(this.permutationSettings.inputData, this.permutationSettings.numInputColumns, this.permutationSettings.permutationMapping, this.permutationSettings.numMappingColumns, this.permutationSettings.outputData, this.permutationSettings.inputLabel, this.permutationSettings.mappingLabel, this.permutationSettings.outputLabel);
+		
+		this.exitPermutationBtn.removeAllEventListeners();
+		this.exitPermutationBtn.addEventListener("click", exitPermutation.bind(this));
+		
+		function exitPermutation() {
+			this.removeChild(permutation);
+			this.gotoAndStop(this.permutationSettings.returnFrame);
+		}
+	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1).call(this.frame_3).wait(1).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(1).call(this.frame_8).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1).call(this.frame_3).wait(1).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(1).call(this.frame_8).wait(1).call(this.frame_9).wait(1));
 
 	// DES
 	this.text = new cjs.Text("Data Encryption Standard (DES)", "normal 400 48px 'Open Sans'", "#0066CC");
@@ -4823,7 +5238,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.desOverview.parent = this;
 	this.desOverview.setTransform(600.6,300.5,1,1,0,0,0,578.6,135.2);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desOverview},{t:this.text}]},1).to({state:[]},1).wait(7));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desOverview},{t:this.text}]},1).to({state:[]},1).wait(8));
 
 	// DES 2
 	this.backToOverview = new lib.Arrow();
@@ -4847,7 +5262,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.desInternal.parent = this;
 	this.desInternal.setTransform(593.8,307.5,1,1,0,0,0,596.1,152.7);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desInternal},{t:this.titleTxt},{t:this.backToOverview}]},2).to({state:[]},1).wait(6));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desInternal},{t:this.titleTxt},{t:this.backToOverview}]},2).to({state:[]},1).wait(7));
 
 	// Key Gen
 	this.backToInternal = new lib.Arrow();
@@ -4870,7 +5285,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.keyGen.parent = this;
 	this.keyGen.setTransform(600.6,300.8,1,1,0,0,0,566.3,120.8);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.keyGen},{t:this.text_1},{t:this.backToInternal}]},3).to({state:[]},1).wait(5));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.keyGen},{t:this.text_1},{t:this.backToInternal}]},3).to({state:[]},1).wait(6));
 
 	// Key Rounds
 	this.backToKeyGen = new lib.Arrow();
@@ -4894,7 +5309,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.keyGenRounds.parent = this;
 	this.keyGenRounds.setTransform(600.5,332.6,1,1,0,0,0,584.8,190.2);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.keyGenRounds},{t:this.keyRoundsTitleTxt},{t:this.backToKeyGen}]},4).to({state:[]},1).wait(4));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.keyGenRounds},{t:this.keyRoundsTitleTxt},{t:this.backToKeyGen}]},4).to({state:[]},1).wait(5));
 
 	// DES Rounds
 	this.desRoundTitleTxt = new cjs.Text("DES Round 1", "normal 400 48px 'Open Sans'", "#0066CC");
@@ -4918,7 +5333,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.desRounds.parent = this;
 	this.desRounds.setTransform(-13.9,61.2,1,1,0,0,0,-0.8,3.2);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desRounds},{t:this.back},{t:this.desRoundTitleTxt}]},5).to({state:[]},1).wait(3));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desRounds},{t:this.back},{t:this.desRoundTitleTxt}]},5).to({state:[]},1).wait(4));
 
 	// Mangler Title
 	this.manglerTitleTxt = new cjs.Text("Mangler (DES Round 1)", "normal 400 48px 'Open Sans'", "#0066CC");
@@ -4934,7 +5349,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 	this.manglerTitleTxt._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.manglerTitleTxt).wait(6).to({_off:false},0).to({_off:true},2).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.manglerTitleTxt).wait(6).to({_off:false},0).to({_off:true},2).wait(2));
 
 	// Mangler
 	this.backToRounds = new lib.Arrow();
@@ -4946,7 +5361,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.mangler.parent = this;
 	this.mangler.setTransform(600.3,200,1,1,0,0,0,590.3,180.1);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.mangler},{t:this.backToRounds}]},6).to({state:[]},1).wait(2));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.mangler},{t:this.backToRounds}]},6).to({state:[]},1).wait(3));
 
 	// S-Boxes
 	this.backToMangler = new lib.Arrow();
@@ -4958,7 +5373,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.sBoxes.parent = this;
 	this.sBoxes.setTransform(601.5,314.3,1,1,0,0,0,0,0.4);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.sBoxes},{t:this.backToMangler}]},7).to({state:[]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.sBoxes},{t:this.backToMangler}]},7).to({state:[]},1).wait(2));
 
 	// S-Box Title
 	this.sBoxTitleTxt = new cjs.Text("S-Box 1 (DES Round 1)", "normal 400 48px 'Open Sans'", "#0066CC");
@@ -4974,7 +5389,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 	this.sBoxTitleTxt._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.sBoxTitleTxt).wait(8).to({_off:false},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.sBoxTitleTxt).wait(8).to({_off:false},0).to({_off:true},1).wait(1));
 
 	// S-Box
 	this.backToSBoxes = new lib.Arrow();
@@ -4986,7 +5401,32 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.sBox.parent = this;
 	this.sBox.setTransform(513.8,149.4,1,1,0,0,0,535.9,158);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.sBox},{t:this.backToSBoxes}]},8).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.sBox},{t:this.backToSBoxes}]},8).to({state:[]},1).wait(1));
+
+	// Permutation Title
+	this.permutationTitleTxt = new cjs.Text("Permutation", "normal 400 48px 'Open Sans'", "#0066CC");
+	this.permutationTitleTxt.name = "permutationTitleTxt";
+	this.permutationTitleTxt.textAlign = "center";
+	this.permutationTitleTxt.lineHeight = 65;
+	this.permutationTitleTxt.lineWidth = 690;
+	this.permutationTitleTxt.parent = this;
+	this.permutationTitleTxt.setTransform(600,11.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.permutationTitleTxt);
+	}
+	this.permutationTitleTxt._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.permutationTitleTxt).wait(9).to({_off:false},0).wait(1));
+
+	// Permutation
+	this.exitPermutationBtn = new lib.Arrow();
+	this.exitPermutationBtn.parent = this;
+	this.exitPermutationBtn.setTransform(75,52.2,1,1,0,0,0,29.6,15.2);
+	this.exitPermutationBtn._off = true;
+	new cjs.ButtonHelper(this.exitPermutationBtn, 0, 1, 1);
+
+	this.timeline.addTween(cjs.Tween.get(this.exitPermutationBtn).wait(9).to({_off:false},0).wait(1));
 
 	// Round Selector
 	this.roundSelector = new lib.roundSelector();
@@ -4994,7 +5434,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.roundSelector.setTransform(1035.5,530.7,1,1,0,0,0,107.5,20);
 	this.roundSelector._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.roundSelector).wait(4).to({_off:false},0).to({_off:true},2).wait(3));
+	this.timeline.addTween(cjs.Tween.get(this.roundSelector).wait(4).to({_off:false},0).to({_off:true},2).wait(4));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = null;
