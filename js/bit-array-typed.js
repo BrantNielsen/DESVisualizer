@@ -19,30 +19,6 @@ let BitArray = function (size, hex) {
     if (hex) {
         hex = hex.slice(/^0x/.exec(hex) ? 2 : 0);
 
-        /*if (hex.length * 4 > this.length) {
-            throw 'Hex value is too large for this bit array.'
-        } else if (hex.length * 4 < this.length) {
-            // pad it
-            while(hex.length * 4 < this.length) {
-                hex = '0' + hex;
-            }
-        }*/
-
-        /*for (let i = 0; i < hex.length; i++) {
-            let hexDigit = hex.charAt(i);
-            let intVal = BitArray._hexToBinaryObj[hexDigit];
-
-            let startBitIndex = i * 4;
-            let endBitIndex = startBitIndex + 4;
-
-            for (let bitIndex = startBitIndex; bitIndex < endBitIndex; bitIndex++) {
-                let intValIndex = bitIndex % 4;
-                let intShift = 3 - intValIndex;
-
-                this.set(bitIndex, (intVal >>> intShift) & 1);
-            }
-        }*/
-
         let bitIndex = this.length - 1;
         for (let hexIndex = hex.length - 1; hexIndex >= 0 && bitIndex >= 0; hexIndex--) {
             let hexDigit = hex.charAt(hexIndex);
@@ -267,7 +243,6 @@ BitArray.prototype.equals = function(x) {
  * Returns the JSON representation of this BitArray.
  */
 BitArray.prototype.toJSON = function() {
-    //return JSON.stringify(this.toArray());
     return "new BitArray(" + this.length + ", '" + this.toHexString() + "')";
 };
 

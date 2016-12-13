@@ -90,7 +90,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	// Layer 1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAAAIhHAAAAAhHIAABHABIAAIhIAAIAABI");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AAAAAIAABIABIAAIhIAAAAAhHIAABHIhHAA");
 	this.shape.setTransform(12.2,12);
 
 	this.shape_1 = new cjs.Shape();
@@ -382,7 +382,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Aye8NMAuuAAAIAADiMAAAA05MguuAAAIpsAAIAAi5IAAgsIAAhqIAAh4IAAhuA8K1KIAAjhIAAjiIJsAAIAADiIAADhIAADiIAADhIAADiIAADhIAADiIAADiIAADgIAADiIAADhIAADiIAADhIAADhIAADiIAADlA8PzrIAFAAIAAhfIJsAAMAupAAAA8KxoIAAiDA8KqTIAAgSIAAjiIAAjhIJsAAMAupAAAA8PqTIAFAAA8KmFIAAg/IAAjPA8PmFIAFAAA8KjbIAAgHIAAijA8PjbIAFAAA8KnEIJsAAMAupAAAA8KqlIJsAAMAupAAAA8KuHIJsAAMAupAAAA8K4rIJsAAMAuuAAAA8KjiIJsAAMAupAAAA8KAAIAAgJIAAhGIAAiMA8PBuIAFAAIAAhuIJsAAMAupAAAA8PgJIAFAAA8PhPIAFAAA8KD6IAAgaIAAhyA8PD6IAFAAA8PISIAFAAIAAhQIAAjIA8KKjIAAiRA8PM1IAFAAIAAiSIJsAAMAupAAAA8PP9IAFAAA8KRmIAAhpIAAh4IAAhQA8PTZIAFAAIAAhzIJsAAMAupAAAA8PW/IAFAAA8PZVIAFAAA8KVHIJsAAMAupAAAA8KHCIJsAAMAupAAAA8KDgIJsAAMAupAAAA8KOFIJsAAMAupAAAA8KYpIJsAAMAupAAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Aye8NMAuuAAAIAADiMAAAA05MguuAAAIpsAAIAAi5IAAgsIAAhqIAAh4IAAhuIAAhzIAAhpIAAh4IAAhQIAAiSIAAiRIAAhQIAAjIIAAgaIAAhyA8KxoIAAiDIAAhfIAAjhIAAjiIJsAAIAADiIAADhIAADiIAADhIAADiIAADhIAADiMAupAAAA8PzrIAFAAA8KqlIAAjiIAAjhIJsAAMAupAAAA8PqTIAFAAIAAgSIJsAAMAupAAAA8KjiIAAijA8PjbIAFAAIAAgHIJsAAIAADiIAADgIAADiIAADhIAADiIAADhIAADhIAADiIAADlA8PmFIAFAAIAAg/IAAjPA8K1KIJsAAMAupAAAA8K4rIJsAAMAuuAAAA8KuHIJsAAMAupAAAA8KnEIJsAAMAupAAAA8KAAIAAgJIAAhGIAAiMA8PBuIAFAAIAAhuIJsAAMAupAAAA8PgJIAFAAA8PhPIAFAAA8PD6IAFAAA8PM1IAFAAA8PISIAFAAA8PTZIAFAAA8PP9IAFAAA8PZVIAFAAA8PW/IAFAAA8KYpIJsAAMAupAAAA8KRmIJsAAMAupAAAA8KOFIJsAAMAupAAAA8KDgIJsAAMAupAAAA8KHCIJsAAMAupAAAA8KKjIJsAAMAupAAAA8KVHIJsAAMAupAAA");
 	this.shape.setTransform(0.3,11.1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.text_16},{t:this.text_15},{t:this.text_14},{t:this.text_13},{t:this.text_12},{t:this.text_11},{t:this.text_10},{t:this.text_9},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text},{t:this.title}]}).wait(1));
@@ -391,7 +391,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field16 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field16.name = "field16";
 	this.field16.textAlign = "center";
-	this.field16.lineHeight = 14;
+	this.field16.lineHeight = 17;
 	this.field16.lineWidth = 276;
 	this.field16.parent = this;
 	this.field16.setTransform(41.4,170.3);
@@ -403,7 +403,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field15 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field15.name = "field15";
 	this.field15.textAlign = "center";
-	this.field15.lineHeight = 14;
+	this.field15.lineHeight = 17;
 	this.field15.lineWidth = 276;
 	this.field15.parent = this;
 	this.field15.setTransform(41.4,148.2);
@@ -415,7 +415,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field14 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field14.name = "field14";
 	this.field14.textAlign = "center";
-	this.field14.lineHeight = 14;
+	this.field14.lineHeight = 17;
 	this.field14.lineWidth = 276;
 	this.field14.parent = this;
 	this.field14.setTransform(41.4,125.7);
@@ -427,7 +427,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field13 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field13.name = "field13";
 	this.field13.textAlign = "center";
-	this.field13.lineHeight = 14;
+	this.field13.lineHeight = 17;
 	this.field13.lineWidth = 276;
 	this.field13.parent = this;
 	this.field13.setTransform(41.4,102.8);
@@ -439,7 +439,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field12 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field12.name = "field12";
 	this.field12.textAlign = "center";
-	this.field12.lineHeight = 14;
+	this.field12.lineHeight = 17;
 	this.field12.lineWidth = 276;
 	this.field12.parent = this;
 	this.field12.setTransform(41.4,80.3);
@@ -451,7 +451,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field11 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field11.name = "field11";
 	this.field11.textAlign = "center";
-	this.field11.lineHeight = 14;
+	this.field11.lineHeight = 17;
 	this.field11.lineWidth = 276;
 	this.field11.parent = this;
 	this.field11.setTransform(41.4,58);
@@ -474,7 +474,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field10 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field10.name = "field10";
 	this.field10.textAlign = "center";
-	this.field10.lineHeight = 14;
+	this.field10.lineHeight = 17;
 	this.field10.lineWidth = 276;
 	this.field10.parent = this;
 	this.field10.setTransform(41.4,35.6);
@@ -486,7 +486,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field9 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field9.name = "field9";
 	this.field9.textAlign = "center";
-	this.field9.lineHeight = 14;
+	this.field9.lineHeight = 17;
 	this.field9.lineWidth = 276;
 	this.field9.parent = this;
 	this.field9.setTransform(41.4,12.3);
@@ -498,7 +498,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field8 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field8.name = "field8";
 	this.field8.textAlign = "center";
-	this.field8.lineHeight = 14;
+	this.field8.lineHeight = 17;
 	this.field8.lineWidth = 276;
 	this.field8.parent = this;
 	this.field8.setTransform(41.4,-10.2);
@@ -510,7 +510,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field7 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field7.name = "field7";
 	this.field7.textAlign = "center";
-	this.field7.lineHeight = 14;
+	this.field7.lineHeight = 17;
 	this.field7.lineWidth = 276;
 	this.field7.parent = this;
 	this.field7.setTransform(41.4,-32.7);
@@ -522,7 +522,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field6 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field6.name = "field6";
 	this.field6.textAlign = "center";
-	this.field6.lineHeight = 14;
+	this.field6.lineHeight = 17;
 	this.field6.lineWidth = 276;
 	this.field6.parent = this;
 	this.field6.setTransform(41.4,-55.2);
@@ -534,7 +534,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field5 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field5.name = "field5";
 	this.field5.textAlign = "center";
-	this.field5.lineHeight = 14;
+	this.field5.lineHeight = 17;
 	this.field5.lineWidth = 276;
 	this.field5.parent = this;
 	this.field5.setTransform(41.4,-77.7);
@@ -546,7 +546,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field4 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field4.name = "field4";
 	this.field4.textAlign = "center";
-	this.field4.lineHeight = 14;
+	this.field4.lineHeight = 17;
 	this.field4.lineWidth = 276;
 	this.field4.parent = this;
 	this.field4.setTransform(41.4,-100);
@@ -558,7 +558,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field3 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field3.name = "field3";
 	this.field3.textAlign = "center";
-	this.field3.lineHeight = 14;
+	this.field3.lineHeight = 17;
 	this.field3.lineWidth = 276;
 	this.field3.parent = this;
 	this.field3.setTransform(41.4,-122.5);
@@ -570,7 +570,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field1 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field1.name = "field1";
 	this.field1.textAlign = "center";
-	this.field1.lineHeight = 14;
+	this.field1.lineHeight = 17;
 	this.field1.lineWidth = 276;
 	this.field1.parent = this;
 	this.field1.setTransform(41.4,-167.5);
@@ -582,7 +582,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field2 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field2.name = "field2";
 	this.field2.textAlign = "center";
-	this.field2.lineHeight = 14;
+	this.field2.lineHeight = 17;
 	this.field2.lineWidth = 276;
 	this.field2.parent = this;
 	this.field2.setTransform(41.4,-144.9);
@@ -619,7 +619,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field5 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field5.name = "field5";
 	this.field5.textAlign = "center";
-	this.field5.lineHeight = 14;
+	this.field5.lineHeight = 17;
 	this.field5.lineWidth = 15;
 	this.field5.parent = this;
 	this.field5.setTransform(105.9,7.1);
@@ -631,7 +631,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field4 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field4.name = "field4";
 	this.field4.textAlign = "center";
-	this.field4.lineHeight = 14;
+	this.field4.lineHeight = 17;
 	this.field4.lineWidth = 15;
 	this.field4.parent = this;
 	this.field4.setTransform(86.6,7.1);
@@ -643,7 +643,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field3 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field3.name = "field3";
 	this.field3.textAlign = "center";
-	this.field3.lineHeight = 14;
+	this.field3.lineHeight = 17;
 	this.field3.lineWidth = 15;
 	this.field3.parent = this;
 	this.field3.setTransform(67.4,7.1);
@@ -655,7 +655,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field2 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field2.name = "field2";
 	this.field2.textAlign = "center";
-	this.field2.lineHeight = 14;
+	this.field2.lineHeight = 17;
 	this.field2.lineWidth = 15;
 	this.field2.parent = this;
 	this.field2.setTransform(48.1,7.1);
@@ -667,7 +667,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field1 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field1.name = "field1";
 	this.field1.textAlign = "center";
-	this.field1.lineHeight = 14;
+	this.field1.lineHeight = 17;
 	this.field1.lineWidth = 15;
 	this.field1.parent = this;
 	this.field1.setTransform(28.9,7.1);
@@ -679,7 +679,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.field0 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field0.name = "field0";
 	this.field0.textAlign = "center";
-	this.field0.lineHeight = 14;
+	this.field0.lineHeight = 17;
 	this.field0.lineWidth = 15;
 	this.field0.parent = this;
 	this.field0.setTransform(9.6,7.1);
@@ -696,7 +696,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(77.2,14);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("AGCiLIDBAAIAAEXIjBAAIjBAAIjBAAIjAAAAGCiLIAAEXAAAiLIDBAAIDBAAAAAiLIAAEXAmBCMIjBAAIAAkXIDBAAIDBAAIAAEXgAmBiLIAAEXAjAiLIDAAA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("AGCiLIAAEXAGCiLIDBAAIAAEXIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIAAkXIDBAAIAAEXAAAiLIAAEXAAAiLIDBAAIDBAAAjAiLIAAEXAmBiLIDBAAIDAAA");
 	this.shape_1.setTransform(57.9,14);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -718,205 +718,247 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 p.nominalBounds = new cjs.Rectangle(0,0,16.4,16.4);
 
 
-(lib.row1 = function(mode,startPosition,loop) {
+(lib.sBoxRow = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// Layer 1
-	this.field15 = new cjs.Text("1111", "normal 400 14px 'Inconsolata'");
+	// timeline functions:
+	this.frame_0 = function() {
+		this.setValues = (function(sBoxValues, startIndex) {
+			for (let i = 0; i < 16; i++) {
+				var sBoxValue = sBoxValues[i + startIndex];
+				this["field" + i].text = BitArray.fromNumber(sBoxValue, 4).toBinaryString();
+			}
+		}).bind(this);
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// Layer 2
+	this.field15 = new cjs.Text("1111", "normal 400 24px 'Inconsolata'");
 	this.field15.name = "field15";
 	this.field15.textAlign = "center";
-	this.field15.lineHeight = 16;
-	this.field15.lineWidth = 42;
+	this.field15.lineHeight = 32;
+	this.field15.lineWidth = 51;
 	this.field15.parent = this;
-	this.field15.setTransform(706.8,2);
+	this.field15.setTransform(857.2,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field15);
 	}
 
-	this.field15_1 = new cjs.Text("1110", "normal 400 14px 'Inconsolata'");
-	this.field15_1.name = "field15_1";
-	this.field15_1.textAlign = "center";
-	this.field15_1.lineHeight = 16;
-	this.field15_1.lineWidth = 42;
-	this.field15_1.parent = this;
-	this.field15_1.setTransform(661.2,2);
-	if(!lib.properties.webfonts['Inconsolata']) {
-		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
-		lib.webFontTxtInst['Inconsolata'].push(this.field15_1);
-	}
-
-	this.field14 = new cjs.Text("1101", "normal 400 14px 'Inconsolata'");
+	this.field14 = new cjs.Text("1110", "normal 400 24px 'Inconsolata'");
 	this.field14.name = "field14";
 	this.field14.textAlign = "center";
-	this.field14.lineHeight = 16;
-	this.field14.lineWidth = 42;
+	this.field14.lineHeight = 32;
+	this.field14.lineWidth = 51;
 	this.field14.parent = this;
-	this.field14.setTransform(615.6,2);
+	this.field14.setTransform(801.9,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field14);
 	}
 
-	this.field13 = new cjs.Text("1100", "normal 400 14px 'Inconsolata'");
+	this.field13 = new cjs.Text("1101", "normal 400 24px 'Inconsolata'");
 	this.field13.name = "field13";
 	this.field13.textAlign = "center";
-	this.field13.lineHeight = 16;
-	this.field13.lineWidth = 42;
+	this.field13.lineHeight = 32;
+	this.field13.lineWidth = 51;
 	this.field13.parent = this;
-	this.field13.setTransform(570,2);
+	this.field13.setTransform(746.6,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field13);
 	}
 
-	this.field11 = new cjs.Text("1011", "normal 400 14px 'Inconsolata'");
+	this.field12 = new cjs.Text("1100", "normal 400 24px 'Inconsolata'");
+	this.field12.name = "field12";
+	this.field12.textAlign = "center";
+	this.field12.lineHeight = 32;
+	this.field12.lineWidth = 51;
+	this.field12.parent = this;
+	this.field12.setTransform(691.3,2);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field12);
+	}
+
+	this.field11 = new cjs.Text("1011", "normal 400 24px 'Inconsolata'");
 	this.field11.name = "field11";
 	this.field11.textAlign = "center";
-	this.field11.lineHeight = 16;
-	this.field11.lineWidth = 42;
+	this.field11.lineHeight = 32;
+	this.field11.lineWidth = 51;
 	this.field11.parent = this;
-	this.field11.setTransform(524.4,2);
+	this.field11.setTransform(635.9,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field11);
 	}
 
-	this.field10 = new cjs.Text("1010", "normal 400 14px 'Inconsolata'");
+	this.field10 = new cjs.Text("1010", "normal 400 24px 'Inconsolata'");
 	this.field10.name = "field10";
 	this.field10.textAlign = "center";
-	this.field10.lineHeight = 16;
-	this.field10.lineWidth = 42;
+	this.field10.lineHeight = 32;
+	this.field10.lineWidth = 51;
 	this.field10.parent = this;
-	this.field10.setTransform(478.8,2);
+	this.field10.setTransform(580.7,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field10);
 	}
 
-	this.field9 = new cjs.Text("1001", "normal 400 14px 'Inconsolata'");
+	this.field9 = new cjs.Text("1001", "normal 400 24px 'Inconsolata'");
 	this.field9.name = "field9";
 	this.field9.textAlign = "center";
-	this.field9.lineHeight = 16;
-	this.field9.lineWidth = 42;
+	this.field9.lineHeight = 32;
+	this.field9.lineWidth = 51;
 	this.field9.parent = this;
-	this.field9.setTransform(433.2,2);
+	this.field9.setTransform(525.4,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field9);
 	}
 
-	this.field8 = new cjs.Text("1000", "normal 400 14px 'Inconsolata'");
+	this.field8 = new cjs.Text("1000", "normal 400 24px 'Inconsolata'");
 	this.field8.name = "field8";
 	this.field8.textAlign = "center";
-	this.field8.lineHeight = 16;
-	this.field8.lineWidth = 42;
+	this.field8.lineHeight = 32;
+	this.field8.lineWidth = 51;
 	this.field8.parent = this;
-	this.field8.setTransform(387.6,2);
+	this.field8.setTransform(470.1,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field8);
 	}
 
-	this.field7 = new cjs.Text("0111", "normal 400 14px 'Inconsolata'");
+	this.field7 = new cjs.Text("0111", "normal 400 24px 'Inconsolata'");
 	this.field7.name = "field7";
 	this.field7.textAlign = "center";
-	this.field7.lineHeight = 16;
-	this.field7.lineWidth = 42;
+	this.field7.lineHeight = 32;
+	this.field7.lineWidth = 51;
 	this.field7.parent = this;
-	this.field7.setTransform(342,2);
+	this.field7.setTransform(414.8,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field7);
 	}
 
-	this.field6 = new cjs.Text("0110", "normal 400 14px 'Inconsolata'");
+	this.field6 = new cjs.Text("0110", "normal 400 24px 'Inconsolata'");
 	this.field6.name = "field6";
 	this.field6.textAlign = "center";
-	this.field6.lineHeight = 16;
-	this.field6.lineWidth = 42;
+	this.field6.lineHeight = 32;
+	this.field6.lineWidth = 51;
 	this.field6.parent = this;
-	this.field6.setTransform(296.4,2);
+	this.field6.setTransform(359.5,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field6);
 	}
 
-	this.field5 = new cjs.Text("0101", "normal 400 14px 'Inconsolata'");
+	this.field5 = new cjs.Text("0101", "normal 400 24px 'Inconsolata'");
 	this.field5.name = "field5";
 	this.field5.textAlign = "center";
-	this.field5.lineHeight = 16;
-	this.field5.lineWidth = 42;
+	this.field5.lineHeight = 32;
+	this.field5.lineWidth = 51;
 	this.field5.parent = this;
-	this.field5.setTransform(250.8,2);
+	this.field5.setTransform(304.2,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field5);
 	}
 
-	this.field4 = new cjs.Text("0100", "normal 400 14px 'Inconsolata'");
+	this.field4 = new cjs.Text("0100", "normal 400 24px 'Inconsolata'");
 	this.field4.name = "field4";
 	this.field4.textAlign = "center";
-	this.field4.lineHeight = 16;
-	this.field4.lineWidth = 42;
+	this.field4.lineHeight = 32;
+	this.field4.lineWidth = 51;
 	this.field4.parent = this;
-	this.field4.setTransform(205.2,2);
+	this.field4.setTransform(248.9,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field4);
 	}
 
-	this.field3 = new cjs.Text("0011", "normal 400 14px 'Inconsolata'");
+	this.field3 = new cjs.Text("0011", "normal 400 24px 'Inconsolata'");
 	this.field3.name = "field3";
 	this.field3.textAlign = "center";
-	this.field3.lineHeight = 16;
-	this.field3.lineWidth = 42;
+	this.field3.lineHeight = 32;
+	this.field3.lineWidth = 51;
 	this.field3.parent = this;
-	this.field3.setTransform(159.6,2);
+	this.field3.setTransform(193.6,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field3);
 	}
 
-	this.field2 = new cjs.Text("0010", "normal 400 14px 'Inconsolata'");
+	this.field2 = new cjs.Text("0010", "normal 400 24px 'Inconsolata'");
 	this.field2.name = "field2";
 	this.field2.textAlign = "center";
-	this.field2.lineHeight = 16;
-	this.field2.lineWidth = 42;
+	this.field2.lineHeight = 32;
+	this.field2.lineWidth = 51;
 	this.field2.parent = this;
-	this.field2.setTransform(114,2);
+	this.field2.setTransform(138.3,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field2);
 	}
 
-	this.field1 = new cjs.Text("0001", "normal 400 14px 'Inconsolata'");
+	this.field1 = new cjs.Text("0001", "normal 400 24px 'Inconsolata'");
 	this.field1.name = "field1";
 	this.field1.textAlign = "center";
-	this.field1.lineHeight = 16;
-	this.field1.lineWidth = 42;
+	this.field1.lineHeight = 32;
+	this.field1.lineWidth = 51;
 	this.field1.parent = this;
-	this.field1.setTransform(68.4,2);
+	this.field1.setTransform(82.9,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field1);
 	}
 
-	this.field0 = new cjs.Text("0000", "normal 400 14px 'Inconsolata'");
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.field1},{t:this.field2},{t:this.field3},{t:this.field4},{t:this.field5},{t:this.field6},{t:this.field7},{t:this.field8},{t:this.field9},{t:this.field10},{t:this.field11},{t:this.field12},{t:this.field13},{t:this.field14},{t:this.field15}]}).wait(1));
+
+	// Layer 1
+	this.field0 = new cjs.Text("0000", "normal 400 24px 'Inconsolata'");
 	this.field0.name = "field0";
 	this.field0.textAlign = "center";
-	this.field0.lineHeight = 16;
-	this.field0.lineWidth = 42;
+	this.field0.lineHeight = 32;
+	this.field0.lineWidth = 51;
 	this.field0.parent = this;
-	this.field0.setTransform(22.8,2);
+	this.field0.setTransform(27.7,2);
 	if(!lib.properties.webfonts['Inconsolata']) {
 		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
 		lib.webFontTxtInst['Inconsolata'].push(this.field0);
 	}
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.field0},{t:this.field1},{t:this.field2},{t:this.field3},{t:this.field4},{t:this.field5},{t:this.field6},{t:this.field7},{t:this.field8},{t:this.field9},{t:this.field10},{t:this.field11},{t:this.field13},{t:this.field14},{t:this.field15_1},{t:this.field15}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.field0).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.row1, new cjs.Rectangle(0,0,729.6,22.5), null);
+}).prototype = getMCSymbolPrototype(lib.sBoxRow, new cjs.Rectangle(0,0,884.8,33.7), null);
+
+
+(lib.SBoxRowHighlight = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,255,0,0.498)").s().p("EhHTACoIAAlQMCOnAAAIAAFQg");
+	this.shape.setTransform(456.4,16.9);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.SBoxRowHighlight, new cjs.Rectangle(0,0,912.9,33.7), null);
+
+
+(lib.SBoxColumnHighlight = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,255,0,0.498)").s().p("AkTTPMAAAgmdIInAAMAAAAmdg");
+	this.shape.setTransform(27.6,123.1);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.SBoxColumnHighlight, new cjs.Rectangle(0,0,55.3,246.3), null);
 
 
 (lib.RoundChangeButton = function(mode,startPosition,loop) {
@@ -1000,7 +1042,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	// Text Field
 	this.valueTxt = new cjs.Text("", "normal 400 14px 'Inconsolata'");
 	this.valueTxt.name = "valueTxt";
-	this.valueTxt.lineHeight = 16;
+	this.valueTxt.lineHeight = 19;
 	this.valueTxt.lineWidth = 171;
 	this.valueTxt.parent = this;
 	this.valueTxt.setTransform(2,2);
@@ -1023,7 +1065,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(7.6,35.7);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#000000").s().p("AhKg4IBLAAIBKAAIhLBxgAABg1IAAgDg");
+	this.shape_1.graphics.f("#000000").s().p("AhKg4IBLAAIAAADIAAgDIBKAAIhLBxgAABg4g");
 	this.shape_1.setTransform(7.5,51.9);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1489,7 +1531,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape_2.setTransform(308.8,14);
 
 	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f().s("#000000").ss(1,1,1).p("EAtPgCLIAAEXIjBAAIjBAAIjBAAIjBAAEAqOgCLIAAEXEAqOgCLIDBAAIDBAAEAwQACMIjBAAEAhLgCLIDBAAIDBAAIAAEXEAhLgCLIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIAAkXIDBAAIAAEXAeKiLIDBAAAeKiLIAAEXEAnNgCLIDBAAAVHiLIDBAAIDBAAIAAEXASGiLIAAEXASGiLIDBAAIAAEXAPFiLIAAEXAPFiLIDBAAAJDiLIAAEXAJDiLIDBAAIDBAAAGCiLIAAEXADBiLIAAEXADBiLIDBAAIDBAAAbJiLIDBAAAjAiLIAAEXAjAiLIDAAAIDBAAAmBiLIAAEXApCiLIAAEXApCiLIDBAAIDBAAAvEiLIAAEXAvEiLIDBAAIDBAAAyFiLIAAEXA1GiLIAAEXA1GiLIDBAAIDBAAA7IiLIDBAAIDBAAA7IiLIAAEXEghKgCLIAAEXEghKgCLIDBAAIAAEXA+JiLIDBAAEgnMgCLIDBAAIDBAAEgnMgCLIAAEXEgtOgCLIDBAAIAAEXEgqNgCLIDBAA");
+	this.shape_3.graphics.f().s("#000000").ss(1,1,1).p("EAqOgCLIDBAAIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAEAqOgCLIAAEXEAwQACMIjBAAEAtPgCLIDBAAEAnNgCLIAAEXEAhLgCLIDBAAIDBAAIDBAAAeKiLIAAEXAeKiLIDBAAIAAEXAbJiLIAAEXAVHiLIDBAAIDBAAIDBAAAPFiLIDBAAIDBAAIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAAPFiLIAAEXASGiLIAAEXAJDiLIDBAAIDBAAAJDiLIAAEXADBiLIDBAAIAAEXADBiLIAAEXAGCiLIDBAAAjAiLIDAAAIDBAAAjAiLIAAEXApCiLIDBAAIAAEXApCiLIAAEXAmBiLIDBAAAvEiLIDBAAIDBAAAvEiLIAAEXA1GiLIDBAAIAAEXA1GiLIAAEXAyFiLIDBAAA7IiLIAAEXA7IiLIDBAAIDBAAA+JiLIAAEXEghKgCLIDBAAIDBAAEghKgCLIAAEXEgnMgCLIAAEXEgnMgCLIDBAAIDBAAEgqNgCLIAAEXEgtOgCLIDBAAIDBAAEgtOgCLIAAEXIjBAAIAAkXg");
 	this.shape_3.setTransform(308.8,14);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1513,52 +1555,52 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer 3
-	this.field3 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field3 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field3.name = "field3";
 	this.field3.textAlign = "center";
-	this.field3.lineHeight = 18;
+	this.field3.lineHeight = 17;
 	this.field3.lineWidth = 15;
 	this.field3.parent = this;
 	this.field3.setTransform(67.6,7.1);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field3);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field3);
 	}
 
-	this.field2 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field2 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field2.name = "field2";
 	this.field2.textAlign = "center";
-	this.field2.lineHeight = 18;
+	this.field2.lineHeight = 17;
 	this.field2.lineWidth = 15;
 	this.field2.parent = this;
 	this.field2.setTransform(48.3,7.1);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field2);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field2);
 	}
 
-	this.field1 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field1 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field1.name = "field1";
 	this.field1.textAlign = "center";
-	this.field1.lineHeight = 18;
+	this.field1.lineHeight = 17;
 	this.field1.lineWidth = 15;
 	this.field1.parent = this;
 	this.field1.setTransform(29.1,7.1);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field1);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field1);
 	}
 
-	this.field0 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field0 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field0.name = "field0";
 	this.field0.textAlign = "center";
-	this.field0.lineHeight = 18;
+	this.field0.lineHeight = 17;
 	this.field0.lineWidth = 15;
 	this.field0.parent = this;
 	this.field0.setTransform(9.9,7.1);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field0);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field0);
 	}
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.field0},{t:this.field1},{t:this.field2},{t:this.field3}]}).wait(1));
@@ -1569,7 +1611,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(77.2,14);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("AGCCMIjBAAIjBAAIjAAAIjBAAIAAkXIDBAAIAAEXADBiLIAAEXADBiLIDBAAAjAiLIDAAAIAAEXAAAiLIDBAA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("ADBiLIDBAAADBiLIAAEXIjBAAIjAAAAGCCMIjBAAAjAiLIAAEXIjBAAIAAkXIDBAAIDAAAIAAEXAAAiLIDBAA");
 	this.shape_1.setTransform(38.6,14);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1593,388 +1635,388 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer 2
-	this.field30 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field30 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field30.name = "field30";
 	this.field30.textAlign = "center";
-	this.field30.lineHeight = 18;
+	this.field30.lineHeight = 17;
 	this.field30.lineWidth = 15;
 	this.field30.parent = this;
 	this.field30.setTransform(588.6,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field30);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field30);
 	}
 
-	this.field31 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field31 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field31.name = "field31";
 	this.field31.textAlign = "center";
-	this.field31.lineHeight = 18;
+	this.field31.lineHeight = 17;
 	this.field31.lineWidth = 15;
 	this.field31.parent = this;
 	this.field31.setTransform(607.9,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field31);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field31);
 	}
 
-	this.field28 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field28 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field28.name = "field28";
 	this.field28.textAlign = "center";
-	this.field28.lineHeight = 18;
+	this.field28.lineHeight = 17;
 	this.field28.lineWidth = 15;
 	this.field28.parent = this;
 	this.field28.setTransform(550,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field28);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field28);
 	}
 
-	this.field29 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field29 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field29.name = "field29";
 	this.field29.textAlign = "center";
-	this.field29.lineHeight = 18;
+	this.field29.lineHeight = 17;
 	this.field29.lineWidth = 15;
 	this.field29.parent = this;
 	this.field29.setTransform(569.2,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field29);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field29);
 	}
 
-	this.field26 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field26 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field26.name = "field26";
 	this.field26.textAlign = "center";
-	this.field26.lineHeight = 18;
+	this.field26.lineHeight = 17;
 	this.field26.lineWidth = 15;
 	this.field26.parent = this;
 	this.field26.setTransform(511.4,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field26);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field26);
 	}
 
-	this.field27 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field27 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field27.name = "field27";
 	this.field27.textAlign = "center";
-	this.field27.lineHeight = 18;
+	this.field27.lineHeight = 17;
 	this.field27.lineWidth = 15;
 	this.field27.parent = this;
 	this.field27.setTransform(530.7,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field27);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field27);
 	}
 
-	this.field24 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field24 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field24.name = "field24";
 	this.field24.textAlign = "center";
-	this.field24.lineHeight = 18;
+	this.field24.lineHeight = 17;
 	this.field24.lineWidth = 15;
 	this.field24.parent = this;
 	this.field24.setTransform(472.8,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field24);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field24);
 	}
 
-	this.field25 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field25 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field25.name = "field25";
 	this.field25.textAlign = "center";
-	this.field25.lineHeight = 18;
+	this.field25.lineHeight = 17;
 	this.field25.lineWidth = 15;
 	this.field25.parent = this;
 	this.field25.setTransform(492,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field25);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field25);
 	}
 
-	this.field22 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field22 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field22.name = "field22";
 	this.field22.textAlign = "center";
-	this.field22.lineHeight = 18;
+	this.field22.lineHeight = 17;
 	this.field22.lineWidth = 15;
 	this.field22.parent = this;
 	this.field22.setTransform(434.2,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field22);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field22);
 	}
 
-	this.field23 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field23 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field23.name = "field23";
 	this.field23.textAlign = "center";
-	this.field23.lineHeight = 18;
+	this.field23.lineHeight = 17;
 	this.field23.lineWidth = 15;
 	this.field23.parent = this;
 	this.field23.setTransform(453.5,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field23);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field23);
 	}
 
-	this.field20 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field20 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field20.name = "field20";
 	this.field20.textAlign = "center";
-	this.field20.lineHeight = 18;
+	this.field20.lineHeight = 17;
 	this.field20.lineWidth = 15;
 	this.field20.parent = this;
 	this.field20.setTransform(395.6,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field20);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field20);
 	}
 
-	this.field21 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field21 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field21.name = "field21";
 	this.field21.textAlign = "center";
-	this.field21.lineHeight = 18;
+	this.field21.lineHeight = 17;
 	this.field21.lineWidth = 15;
 	this.field21.parent = this;
 	this.field21.setTransform(414.8,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field21);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field21);
 	}
 
-	this.field18 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field18 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field18.name = "field18";
 	this.field18.textAlign = "center";
-	this.field18.lineHeight = 18;
+	this.field18.lineHeight = 17;
 	this.field18.lineWidth = 15;
 	this.field18.parent = this;
 	this.field18.setTransform(357,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field18);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field18);
 	}
 
-	this.field19 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field19 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field19.name = "field19";
 	this.field19.textAlign = "center";
-	this.field19.lineHeight = 18;
+	this.field19.lineHeight = 17;
 	this.field19.lineWidth = 15;
 	this.field19.parent = this;
 	this.field19.setTransform(376.3,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field19);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field19);
 	}
 
-	this.field16 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field16 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field16.name = "field16";
 	this.field16.textAlign = "center";
-	this.field16.lineHeight = 18;
+	this.field16.lineHeight = 17;
 	this.field16.lineWidth = 15;
 	this.field16.parent = this;
 	this.field16.setTransform(318.4,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field16);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field16);
 	}
 
-	this.field17 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field17 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field17.name = "field17";
 	this.field17.textAlign = "center";
-	this.field17.lineHeight = 18;
+	this.field17.lineHeight = 17;
 	this.field17.lineWidth = 15;
 	this.field17.parent = this;
 	this.field17.setTransform(337.6,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field17);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field17);
 	}
 
-	this.field14 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field14 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field14.name = "field14";
 	this.field14.textAlign = "center";
-	this.field14.lineHeight = 18;
+	this.field14.lineHeight = 17;
 	this.field14.lineWidth = 15;
 	this.field14.parent = this;
 	this.field14.setTransform(279.8,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field14);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field14);
 	}
 
-	this.field15 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field15 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field15.name = "field15";
 	this.field15.textAlign = "center";
-	this.field15.lineHeight = 18;
+	this.field15.lineHeight = 17;
 	this.field15.lineWidth = 15;
 	this.field15.parent = this;
 	this.field15.setTransform(299.1,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field15);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field15);
 	}
 
-	this.field12 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field12 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field12.name = "field12";
 	this.field12.textAlign = "center";
-	this.field12.lineHeight = 18;
+	this.field12.lineHeight = 17;
 	this.field12.lineWidth = 15;
 	this.field12.parent = this;
 	this.field12.setTransform(241.2,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field12);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field12);
 	}
 
-	this.field13 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field13 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field13.name = "field13";
 	this.field13.textAlign = "center";
-	this.field13.lineHeight = 18;
+	this.field13.lineHeight = 17;
 	this.field13.lineWidth = 15;
 	this.field13.parent = this;
 	this.field13.setTransform(260.4,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field13);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field13);
 	}
 
-	this.field10 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field10 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field10.name = "field10";
 	this.field10.textAlign = "center";
-	this.field10.lineHeight = 18;
+	this.field10.lineHeight = 17;
 	this.field10.lineWidth = 15;
 	this.field10.parent = this;
 	this.field10.setTransform(202.6,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field10);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field10);
 	}
 
-	this.field11 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field11 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field11.name = "field11";
 	this.field11.textAlign = "center";
-	this.field11.lineHeight = 18;
+	this.field11.lineHeight = 17;
 	this.field11.lineWidth = 15;
 	this.field11.parent = this;
 	this.field11.setTransform(221.9,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field11);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field11);
 	}
 
-	this.field8 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field8 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field8.name = "field8";
 	this.field8.textAlign = "center";
-	this.field8.lineHeight = 18;
+	this.field8.lineHeight = 17;
 	this.field8.lineWidth = 15;
 	this.field8.parent = this;
 	this.field8.setTransform(164,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field8);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field8);
 	}
 
-	this.field9 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field9 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field9.name = "field9";
 	this.field9.textAlign = "center";
-	this.field9.lineHeight = 18;
+	this.field9.lineHeight = 17;
 	this.field9.lineWidth = 15;
 	this.field9.parent = this;
 	this.field9.setTransform(183.2,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field9);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field9);
 	}
 
-	this.field6 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field6 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field6.name = "field6";
 	this.field6.textAlign = "center";
-	this.field6.lineHeight = 18;
+	this.field6.lineHeight = 17;
 	this.field6.lineWidth = 15;
 	this.field6.parent = this;
 	this.field6.setTransform(125.4,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field6);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field6);
 	}
 
-	this.field7 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field7 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field7.name = "field7";
 	this.field7.textAlign = "center";
-	this.field7.lineHeight = 18;
+	this.field7.lineHeight = 17;
 	this.field7.lineWidth = 15;
 	this.field7.parent = this;
 	this.field7.setTransform(144.7,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field7);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field7);
 	}
 
-	this.field4 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field4 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field4.name = "field4";
 	this.field4.textAlign = "center";
-	this.field4.lineHeight = 18;
+	this.field4.lineHeight = 17;
 	this.field4.lineWidth = 15;
 	this.field4.parent = this;
 	this.field4.setTransform(86.8,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field4);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field4);
 	}
 
-	this.field5 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field5 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field5.name = "field5";
 	this.field5.textAlign = "center";
-	this.field5.lineHeight = 18;
+	this.field5.lineHeight = 17;
 	this.field5.lineWidth = 15;
 	this.field5.parent = this;
 	this.field5.setTransform(106,7.6);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field5);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field5);
 	}
 
-	this.field2 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field2 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field2.name = "field2";
 	this.field2.textAlign = "center";
-	this.field2.lineHeight = 18;
+	this.field2.lineHeight = 17;
 	this.field2.lineWidth = 15;
 	this.field2.parent = this;
 	this.field2.setTransform(48.2,7.8);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field2);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field2);
 	}
 
-	this.field3 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field3 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field3.name = "field3";
 	this.field3.textAlign = "center";
-	this.field3.lineHeight = 18;
+	this.field3.lineHeight = 17;
 	this.field3.lineWidth = 15;
 	this.field3.parent = this;
 	this.field3.setTransform(67.5,7.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field3);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field3);
 	}
 
-	this.field0 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field0 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field0.name = "field0";
 	this.field0.textAlign = "center";
-	this.field0.lineHeight = 18;
+	this.field0.lineHeight = 17;
 	this.field0.lineWidth = 15;
 	this.field0.parent = this;
 	this.field0.setTransform(9.5,7.8);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field0);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field0);
 	}
 
-	this.field1 = new cjs.Text("", "normal 400 12px 'Open Sans'");
+	this.field1 = new cjs.Text("", "normal 400 12px 'Inconsolata'");
 	this.field1.name = "field1";
 	this.field1.textAlign = "center";
-	this.field1.lineHeight = 18;
+	this.field1.lineHeight = 17;
 	this.field1.lineWidth = 15;
 	this.field1.parent = this;
 	this.field1.setTransform(28.8,7.8);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.field1);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field1);
 	}
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.field1},{t:this.field0},{t:this.field3},{t:this.field2},{t:this.field5},{t:this.field4},{t:this.field7},{t:this.field6},{t:this.field9},{t:this.field8},{t:this.field11},{t:this.field10},{t:this.field13},{t:this.field12},{t:this.field15},{t:this.field14},{t:this.field17},{t:this.field16},{t:this.field19},{t:this.field18},{t:this.field21},{t:this.field20},{t:this.field23},{t:this.field22},{t:this.field25},{t:this.field24},{t:this.field27},{t:this.field26},{t:this.field29},{t:this.field28},{t:this.field31},{t:this.field30}]}).wait(1));
@@ -1985,7 +2027,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.shape.setTransform(308.8,14);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAqOgCLIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjCAAIjAAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIAAkXIDBAAIAAEXEAtPgCLIAAEXIjBAAEAqOgCLIDBAAIDBAAEAwQACMIjBAAEAhLgCLIDBAAIDBAAIAAEXAeKiLIDBAAIAAEXAeKiLIAAEXEAnNgCLIDBAAAVHiLIDBAAIDBAAIAAEXASGiLIDBAAIAAEXASGiLIAAEXAPFiLIAAEXAPFiLIDBAAAJDiLIAAEXAJDiLIDBAAIDBAAADBiLIDBAAIAAEXADBiLIAAEXAGCiLIDBAAAbJiLIDBAAAjAiLIDAAAIDBAAAjAiLIAAEXApCiLIDBAAIAAEXApCiLIAAEXAmBiLIDBAAAvEiLIAAEXAvEiLIDBAAIDBAAA1GiLIDBAAIAAEXA1GiLIAAEXAyFiLIDBAAA7IiLIAAEXA7IiLIDAAAIDCAAEghKgCLIDBAAIAAEXEghKgCLIAAEXA+JiLIDBAAEgnMgCLIDBAAIDBAAEgnMgCLIAAEXEgtOgCLIDBAAIAAEXEgqNgCLIDBAA");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAqOgCLIDBAAIAAEXIjBAAIjBAAEAqOgCLIAAEXEAtPgCLIDBAAEAwQACMIjBAAEAnNgCLIAAEXIjBAAIjBAAEAhLgCLIDBAAIDBAAIDBAAAeKiLIAAEXIjBAAEAhLgCLIAAEXIjBAAAeKiLIDBAAAbJiLIAAEXIjBAAIjBAAAVHiLIDBAAIDBAAIDBAAAPFiLIDBAAIAAEXIjBAAIjBAAIjBAAIjBAAIjBAAIjBAAIjAAAIjBAAAPFiLIAAEXAVHiLIAAEXIjBAAASGiLIDBAAAJDiLIDBAAIDBAAAJDiLIAAEXAGCiLIAAEXADBiLIAAEXADBiLIDBAAIDBAAAjAiLIAAEXAjAiLIDAAAIDBAAApCiLIAAEXIjBAAIjBAAIjBAAAmBiLIAAEXIjBAAApCiLIDBAAIDBAAAvEiLIDBAAIDBAAAvEiLIAAEXA1GiLIAAEXIjCAAIjAAAIjBAAAyFiLIAAEXIjBAAA1GiLIDBAAIDBAAA7IiLIDAAAIDCAAA7IiLIAAEXEghKgCLIAAEXIjBAAIjBAAIjBAAIjBAAA+JiLIAAEXIjBAAEghKgCLIDBAAIDBAAEgnMgCLIAAEXEgnMgCLIDBAAIDBAAEgqNgCLIAAEXEgtOgCLIAAEXIjBAAIAAkXIDBAAIDBAAIDBAA");
 	this.shape_1.setTransform(308.8,14);
 
 	this.shape_2 = new cjs.Shape();
@@ -2015,6 +2057,23 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	// timeline functions:
 	this.frame_0 = function() {
+		var sBoxBtns = [];
+		for (let i = 0; i < 8; i++) {
+			var thisSBoxBtn = this["sBoxBtn" + i];
+			sBoxBtns[i] = thisSBoxBtn;
+			
+			thisSBoxBtn.addEventListener("click", sBoxBtnClicked.bind(this));
+		}
+		
+		function sBoxBtnClicked(event) {
+			var sBoxIndexNum = sBoxBtns.indexOf(event.target);
+			if (sBoxIndexNum > -1) {
+				var sBoxEvent = new createjs.Event("sBoxRequested");
+				sBoxEvent.sBoxIndex = sBoxIndexNum;
+				this.dispatchEvent(sBoxEvent);
+			}
+		}
+		
 		this.setData = (function(cryptoObject, roundIndex) {
 			var manglerData = cryptoObject.rounds[roundIndex].manglerData;
 			
@@ -2351,7 +2410,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.finalInput0.setTransform(-532.4,-175.4,1,1,0,0,0,57.9,14);
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AFo0EMBWnAAAALkMfIlxHmEAjOAMfIxXHmEBSiAMfMgojAHmEA64AMfI89HmEhcOgUEMBV4AAAAsFMfIF1HmEgjvAMfIRbHmEg7ZAMfIdBHmEhTDAMfMAonAHm");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("AFo0EMBWnAAAALkMfIlxHmEAjOAMfIxXHmEA64AMfI89HmEBSiAMfMgojAHmEhcOgUEMBV4AAAAsFMfIF1HmEgjvAMfIRbHmEhTDAMfMAonAHmEg7ZAMfIdBHm");
 	this.shape.setTransform(0,-73.5);
 
 	this.shape_1 = new cjs.Shape();
@@ -2366,132 +2425,241 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 (lib.sBox = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// Layer 3
-	this.text = new cjs.Text("", "normal 400 14px 'Open Sans'");
+	// timeline functions:
+	this.frame_0 = function() {
+		var rowYValues = [315.6, 367.7, 419.8, 471.85];
+		var columnWidth = 55.25;
+		var columnHighlightStartX = 214.45;
+		
+		this.setData = (function(cryptoObject, roundIndex, sBoxIndex) {
+			var manglerData = cryptoObject.rounds[roundIndex].manglerData;
+			
+			this.inputTxt.text = manglerData.sBoxFinalInputs[sBoxIndex].toBinaryString();
+			
+			var rowColumnData = manglerData.rowColumnData[sBoxIndex];
+			var rowIndexBits = BitArray.fromNumber(rowColumnData.row, 2).toBinaryString();
+			var columnIndexBits = BitArray.fromNumber(rowColumnData.column, 4).toBinaryString();
+			
+			this.rowTxt.text = rowIndexBits + " = " + rowColumnData.row;
+			this.columnTxt.text = columnIndexBits + " = " + rowColumnData.column;
+			
+			var sBoxValues = DES.SBOXES[sBoxIndex];
+			
+			for (let rowIndex = 0; rowIndex < 4; rowIndex++) {
+				var startIndex = rowIndex * 16;
+				var thisRow = this["row" + rowIndex];
+				
+				thisRow.gotoAndStop(0);
+				thisRow.setValues(sBoxValues, startIndex);
+			}
+			
+			console.log(this.columnHighlight.getBounds());
+			
+			this.rowHighlight.y = rowYValues[rowColumnData.row];
+			this.columnHighlight.x = columnHighlightStartX + rowColumnData.column * columnWidth;
+			
+			this.outputTxt.text = manglerData.sBoxOutputs[sBoxIndex];
+		}).bind(this);
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// Layer 4
+	this.field3 = new cjs.Text("11", "normal 400 24px 'Inconsolata'");
+	this.field3.name = "field3";
+	this.field3.textAlign = "center";
+	this.field3.lineHeight = 32;
+	this.field3.lineWidth = 24;
+	this.field3.parent = this;
+	this.field3.setTransform(200.4,473.9);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.field3);
+	}
+
+	this.input2 = new cjs.Text("10", "normal 400 24px 'Inconsolata'");
+	this.input2.name = "input2";
+	this.input2.textAlign = "center";
+	this.input2.lineHeight = 32;
+	this.input2.lineWidth = 24;
+	this.input2.parent = this;
+	this.input2.setTransform(200.4,421.8);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.input2);
+	}
+
+	this.text = new cjs.Text("01", "normal 400 24px 'Inconsolata'");
 	this.text.textAlign = "center";
-	this.text.lineHeight = 20;
-	this.text.lineWidth = 132;
+	this.text.lineHeight = 32;
+	this.text.lineWidth = 24;
 	this.text.parent = this;
-	this.text.setTransform(365,321.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text);
+	this.text.setTransform(200.4,369.7);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.text);
 	}
 
-	this.text_1 = new cjs.Text("", "normal 400 14px 'Open Sans'");
+	this.text_1 = new cjs.Text("00", "normal 400 24px 'Inconsolata'");
 	this.text_1.textAlign = "center";
-	this.text_1.lineHeight = 20;
-	this.text_1.lineWidth = 132;
+	this.text_1.lineHeight = 32;
+	this.text_1.lineWidth = 24;
 	this.text_1.parent = this;
-	this.text_1.setTransform(365,288.4);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_1);
+	this.text_1.setTransform(200.4,317.6);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.text_1);
 	}
 
-	this.text_2 = new cjs.Text("", "normal 400 14px 'Open Sans'");
-	this.text_2.textAlign = "center";
-	this.text_2.lineHeight = 20;
-	this.text_2.lineWidth = 132;
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.text_1},{t:this.text},{t:this.input2},{t:this.field3}]}).wait(1));
+
+	// Layer 6
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EgKQglFIUhAAIAAFRI0hAAgAqQ9+IUhAAIAAFRI0hAAgAqQ22IUhAAIAAFRI0hAAgAqQf1IUhAAIAAFRI0hAAg");
+	this.shape.setTransform(722.1,341.3);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+	// Layer 3
+	this.outputTxt = new cjs.Text("0001", "normal 400 24px 'Inconsolata'");
+	this.outputTxt.name = "outputTxt";
+	this.outputTxt.lineHeight = 32;
+	this.outputTxt.parent = this;
+	this.outputTxt.setTransform(658.3,549.7);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.outputTxt);
+	}
+
+	this.text_2 = new cjs.Text("Output:", "normal 400 24px 'Open Sans'");
+	this.text_2.textAlign = "right";
+	this.text_2.lineHeight = 34;
+	this.text_2.lineWidth = 96;
 	this.text_2.parent = this;
-	this.text_2.setTransform(365,255);
+	this.text_2.setTransform(581.8,551.7);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_2);
 	}
 
-	this.text_3 = new cjs.Text("", "normal 400 14px 'Open Sans'");
+	this.columnTxt = new cjs.Text("1111 = 15", "normal 400 24px 'Inconsolata'");
+	this.columnTxt.name = "columnTxt";
+	this.columnTxt.lineHeight = 32;
+	this.columnTxt.parent = this;
+	this.columnTxt.setTransform(658.3,200);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.columnTxt);
+	}
+
+	this.text_3 = new cjs.Text("Column (bits 2 thru 5):", "normal 400 24px 'Open Sans'");
 	this.text_3.textAlign = "center";
-	this.text_3.lineHeight = 20;
-	this.text_3.lineWidth = 132;
+	this.text_3.lineHeight = 34;
+	this.text_3.lineWidth = 249;
 	this.text_3.parent = this;
-	this.text_3.setTransform(365,221.7);
+	this.text_3.setTransform(457.4,201);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_3);
 	}
 
-	this.text_4 = new cjs.Text("Output:", "normal 400 14px 'Open Sans'");
-	this.text_4.textAlign = "center";
-	this.text_4.lineHeight = 20;
-	this.text_4.lineWidth = 53;
+	this.rowTxt = new cjs.Text("10 = 2", "normal 400 24px 'Inconsolata'");
+	this.rowTxt.name = "rowTxt";
+	this.rowTxt.lineHeight = 32;
+	this.rowTxt.parent = this;
+	this.rowTxt.setTransform(658.4,154.4);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.rowTxt);
+	}
+
+	this.text_4 = new cjs.Text("Row (bits 1 and 6):", "normal 400 24px 'Open Sans'");
+	this.text_4.textAlign = "right";
+	this.text_4.lineHeight = 34;
+	this.text_4.lineWidth = 236;
 	this.text_4.parent = this;
-	this.text_4.setTransform(242.7,321.7);
+	this.text_4.setTransform(581.8,155.4);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_4);
 	}
 
-	this.text_5 = new cjs.Text("Column:", "normal 400 14px 'Open Sans'");
+	this.inputTxt = new cjs.Text("101010", "normal 400 24px 'Inconsolata'");
+	this.inputTxt.name = "inputTxt";
+	this.inputTxt.lineHeight = 32;
+	this.inputTxt.parent = this;
+	this.inputTxt.setTransform(658.3,108.7);
+	if(!lib.properties.webfonts['Inconsolata']) {
+		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
+		lib.webFontTxtInst['Inconsolata'].push(this.inputTxt);
+	}
+
+	this.text_5 = new cjs.Text("Input:", "normal 400 24px 'Open Sans'");
 	this.text_5.textAlign = "center";
-	this.text_5.lineHeight = 20;
-	this.text_5.lineWidth = 56;
+	this.text_5.lineHeight = 34;
+	this.text_5.lineWidth = 66;
 	this.text_5.parent = this;
-	this.text_5.setTransform(244.4,289.9);
+	this.text_5.setTransform(548.9,109.7);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_5);
 	}
 
-	this.text_6 = new cjs.Text("Row:", "normal 400 14px 'Open Sans'");
-	this.text_6.textAlign = "center";
-	this.text_6.lineHeight = 20;
-	this.text_6.lineWidth = 32;
-	this.text_6.parent = this;
-	this.text_6.setTransform(232.2,258);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_6);
-	}
-
-	this.text_7 = new cjs.Text("Input:", "normal 400 14px 'Open Sans'");
-	this.text_7.textAlign = "center";
-	this.text_7.lineHeight = 20;
-	this.text_7.lineWidth = 43;
-	this.text_7.parent = this;
-	this.text_7.setTransform(238,221.7);
-	if(!lib.properties.webfonts['Open Sans']) {
-		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
-		lib.webFontTxtInst['Open Sans'].push(this.text_7);
-	}
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.text_5},{t:this.inputTxt},{t:this.text_4},{t:this.rowTxt},{t:this.text_3},{t:this.columnTxt},{t:this.text_2},{t:this.outputTxt}]}).wait(1));
 
 	// Layer 2
-	this.instance = new lib.row1();
-	this.instance.parent = this;
-	this.instance.setTransform(556.3,176.1,1,1,0,0,0,342,11.2);
+	this.row3 = new lib.sBoxRow();
+	this.row3.parent = this;
+	this.row3.setTransform(556.3,483.1,1,1,0,0,0,342,11.2);
 
-	this.instance_1 = new lib.row1();
-	this.instance_1.parent = this;
-	this.instance_1.setTransform(556.3,144.1,1,1,0,0,0,342,11.2);
+	this.row2 = new lib.sBoxRow();
+	this.row2.parent = this;
+	this.row2.setTransform(556.3,431,1,1,0,0,0,342,11.2);
 
-	this.instance_2 = new lib.row1();
-	this.instance_2.parent = this;
-	this.instance_2.setTransform(556.3,112,1,1,0,0,0,342,11.2);
+	this.row1 = new lib.sBoxRow();
+	this.row1.parent = this;
+	this.row1.setTransform(556.3,378.9,1,1,0,0,0,342,11.2);
 
-	this.instance_3 = new lib.row1();
-	this.instance_3.parent = this;
-	this.instance_3.setTransform(556.3,47.8,1,1,0,0,0,342,11.2);
+	this.columnLabels = new lib.sBoxRow();
+	this.columnLabels.parent = this;
+	this.columnLabels.setTransform(555.2,277.1,1,1,0,0,0,342,11.2);
 
-	this.instance_4 = new lib.row1();
-	this.instance_4.parent = this;
-	this.instance_4.setTransform(556.3,79.9,1,1,0,0,0,342,11.2);
+	this.row0 = new lib.sBoxRow();
+	this.row0.parent = this;
+	this.row0.setTransform(556.3,326.8,1,1,0,0,0,342,11.2);
 
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Eg4/AAAMBx/AAA");
-	this.shape.setTransform(579.1,59);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.row0},{t:this.columnLabels},{t:this.row1},{t:this.row2},{t:this.row3}]}).wait(1));
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
-
-	// Layer 1
+	// Layer 5
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EA1cgNMIAAaaEAuUgNMIAAaaAR0tMIAAaaAY8tMIAAaaEAgEgNMIAAaaEAnMgNMIAAaaADktMIAAaaAKstMIAAaaAjjtMIAAaaAqrtMIAAaaEggDgNMIAAaaA47tMIAAaaAxztMIAAaaEguTgNMIAAaaEg1bgNMIAAaaEgnLgNMIAAaa");
-	this.shape_1.setTransform(556.3,110.9);
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EhFDAAAMCKHAAA");
+	this.shape_1.setTransform(656.5,302.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape_1).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.sBox, new cjs.Rectangle(213.3,25.4,731.6,316.8), null);
+	// Layer 1
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f().s("#000000").ss(1,1,1).p("AM9zOMAAAAmdAEUzOMAAAAmdAVlzOMAAAAmdEAm2gTOMAAAAmdAeOzOMAAAAmdEAvfgTOMAAAAmdEA4HgTOMAAAAmdEBAwgTOMAAAAmdEg4GgTOMAAAAmdEhAvgTOMAAAAmdEgvegTOMAAAAmdA+NzOMAAAAmdEgm1gTOMAAAAmdA1kzOMAAAAmdAs8zOMAAAAmdAkTzOMAAAAmd");
+	this.shape_2.setTransform(628.7,386.7);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape_2).wait(1));
+
+	// Row Highlighter
+	this.rowHighlight = new lib.SBoxRowHighlight();
+	this.rowHighlight.parent = this;
+	this.rowHighlight.setTransform(185.2,315.6);
+
+	this.timeline.addTween(cjs.Tween.get(this.rowHighlight).wait(1));
+
+	// Column Highlight
+	this.columnHighlight = new lib.SBoxColumnHighlight();
+	this.columnHighlight.parent = this;
+	this.columnHighlight.setTransform(214.5,265.9);
+
+	this.timeline.addTween(cjs.Tween.get(this.columnHighlight).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.sBox, new cjs.Rectangle(185.2,102.9,914.4,482.4), null);
 
 
 (lib.roundSelector = function(mode,startPosition,loop) {
@@ -2710,7 +2878,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text.lineHeight = 39;
 	this.text.lineWidth = 193;
 	this.text.parent = this;
-	this.text.setTransform(587.8,464.8,0.663,0.663);
+	this.text.setTransform(587.8,494.8,0.663,0.663);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text);
@@ -2726,7 +2894,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.text_1.lineHeight = 23;
 	this.text_1.lineWidth = 54;
 	this.text_1.parent = this;
-	this.text_1.setTransform(591.3,308.7);
+	this.text_1.setTransform(591.3,368.7);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_1);
@@ -2734,14 +2902,14 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.inputBits = new lib.bitString32();
 	this.inputBits.parent = this;
-	this.inputBits.setTransform(588.5,28.6,1,1,0,0,0,308.8,0.9);
+	this.inputBits.setTransform(588.5,88.6,1,1,0,0,0,308.8,0.9);
 
 	this.text_2 = new cjs.Text("Round Key Bits", "normal 400 16px 'Open Sans'");
 	this.text_2.textAlign = "center";
 	this.text_2.lineHeight = 23;
 	this.text_2.lineWidth = 112;
 	this.text_2.parent = this;
-	this.text_2.setTransform(590.3,204.9);
+	this.text_2.setTransform(590.3,264.9);
 	if(!lib.properties.webfonts['Open Sans']) {
 		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
 		lib.webFontTxtInst['Open Sans'].push(this.text_2);
@@ -2749,147 +2917,147 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.finalInput5 = new lib.SixBitLow();
 	this.finalInput5.parent = this;
-	this.finalInput5.setTransform(817.8,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput5.setTransform(817.8,405.8,1,1,0,0,0,57.9,14);
 
 	this.finalInput6 = new lib.SixBitLow();
 	this.finalInput6.parent = this;
-	this.finalInput6.setTransform(969.3,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput6.setTransform(969.3,405.8,1,1,0,0,0,57.9,14);
 
 	this.finalInput7 = new lib.SixBitLow();
 	this.finalInput7.parent = this;
-	this.finalInput7.setTransform(1120.8,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput7.setTransform(1120.8,405.8,1,1,0,0,0,57.9,14);
 
 	this.finalInput4 = new lib.SixBitLow();
 	this.finalInput4.parent = this;
-	this.finalInput4.setTransform(666.4,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput4.setTransform(666.4,405.8,1,1,0,0,0,57.9,14);
 
 	this.finalInput3 = new lib.SixBitLow();
 	this.finalInput3.parent = this;
-	this.finalInput3.setTransform(514.9,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput3.setTransform(514.9,405.8,1,1,0,0,0,57.9,14);
 
 	this.finalInput2 = new lib.SixBitLow();
 	this.finalInput2.parent = this;
-	this.finalInput2.setTransform(363.5,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput2.setTransform(363.5,405.8,1,1,0,0,0,57.9,14);
 
 	this.finalInput1 = new lib.SixBitLow();
 	this.finalInput1.parent = this;
-	this.finalInput1.setTransform(212,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput1.setTransform(212,405.8,1,1,0,0,0,57.9,14);
 
 	this.finalInput0 = new lib.SixBitLow();
 	this.finalInput0.parent = this;
-	this.finalInput0.setTransform(60.6,345.8,1,1,0,0,0,57.9,14);
+	this.finalInput0.setTransform(60.6,405.8,1,1,0,0,0,57.9,14);
 
 	this.keyInput5 = new lib.SixBitLow();
 	this.keyInput5.parent = this;
-	this.keyInput5.setTransform(817.8,242,1,1,0,0,0,57.9,14);
+	this.keyInput5.setTransform(817.8,302,1,1,0,0,0,57.9,14);
 
 	this.keyInput6 = new lib.SixBitLow();
 	this.keyInput6.parent = this;
-	this.keyInput6.setTransform(969.3,242,1,1,0,0,0,57.9,14);
+	this.keyInput6.setTransform(969.3,302,1,1,0,0,0,57.9,14);
 
 	this.keyInput7 = new lib.SixBitLow();
 	this.keyInput7.parent = this;
-	this.keyInput7.setTransform(1120.8,242,1,1,0,0,0,57.9,14);
+	this.keyInput7.setTransform(1120.8,302,1,1,0,0,0,57.9,14);
 
 	this.keyInput4 = new lib.SixBitLow();
 	this.keyInput4.parent = this;
-	this.keyInput4.setTransform(666.4,242,1,1,0,0,0,57.9,14);
+	this.keyInput4.setTransform(666.4,302,1,1,0,0,0,57.9,14);
 
 	this.keyInput3 = new lib.SixBitLow();
 	this.keyInput3.parent = this;
-	this.keyInput3.setTransform(514.9,242,1,1,0,0,0,57.9,14);
+	this.keyInput3.setTransform(514.9,302,1,1,0,0,0,57.9,14);
 
 	this.keyInput2 = new lib.SixBitLow();
 	this.keyInput2.parent = this;
-	this.keyInput2.setTransform(363.5,242,1,1,0,0,0,57.9,14);
+	this.keyInput2.setTransform(363.5,302,1,1,0,0,0,57.9,14);
 
 	this.keyInput1 = new lib.SixBitLow();
 	this.keyInput1.parent = this;
-	this.keyInput1.setTransform(212,242,1,1,0,0,0,57.9,14);
+	this.keyInput1.setTransform(212,302,1,1,0,0,0,57.9,14);
 
 	this.keyInput0 = new lib.SixBitLow();
 	this.keyInput0.parent = this;
-	this.keyInput0.setTransform(60.6,242,1,1,0,0,0,57.9,14);
+	this.keyInput0.setTransform(60.6,302,1,1,0,0,0,57.9,14);
 
 	this.instance = new lib.XOR();
 	this.instance.parent = this;
-	this.instance.setTransform(1127.6,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance.setTransform(1127.6,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.instance_1 = new lib.XOR();
 	this.instance_1.parent = this;
-	this.instance_1.setTransform(975.6,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance_1.setTransform(975.6,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.instance_2 = new lib.XOR();
 	this.instance_2.parent = this;
-	this.instance_2.setTransform(521.8,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance_2.setTransform(521.8,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.instance_3 = new lib.XOR();
 	this.instance_3.parent = this;
-	this.instance_3.setTransform(825,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance_3.setTransform(825,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.instance_4 = new lib.XOR();
 	this.instance_4.parent = this;
-	this.instance_4.setTransform(673,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance_4.setTransform(673,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.instance_5 = new lib.XOR();
 	this.instance_5.parent = this;
-	this.instance_5.setTransform(67.2,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance_5.setTransform(67.2,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.instance_6 = new lib.XOR();
 	this.instance_6.parent = this;
-	this.instance_6.setTransform(370.4,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance_6.setTransform(370.4,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.instance_7 = new lib.XOR();
 	this.instance_7.parent = this;
-	this.instance_7.setTransform(218.4,182.4,1,1,0,0,0,19.4,19.4);
+	this.instance_7.setTransform(218.4,242.4,1,1,0,0,0,19.4,19.4);
 
 	this.dataInput5 = new lib.SixBitLow();
 	this.dataInput5.parent = this;
-	this.dataInput5.setTransform(817.8,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput5.setTransform(817.8,189.5,1,1,0,0,0,57.9,14);
 
 	this.dataInput6 = new lib.SixBitLow();
 	this.dataInput6.parent = this;
-	this.dataInput6.setTransform(969.3,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput6.setTransform(969.3,189.5,1,1,0,0,0,57.9,14);
 
 	this.dataInput7 = new lib.SixBitLow();
 	this.dataInput7.parent = this;
-	this.dataInput7.setTransform(1120.8,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput7.setTransform(1120.8,189.5,1,1,0,0,0,57.9,14);
 
 	this.dataInput4 = new lib.SixBitLow();
 	this.dataInput4.parent = this;
-	this.dataInput4.setTransform(666.4,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput4.setTransform(666.4,189.5,1,1,0,0,0,57.9,14);
 
 	this.dataInput3 = new lib.SixBitLow();
 	this.dataInput3.parent = this;
-	this.dataInput3.setTransform(514.9,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput3.setTransform(514.9,189.5,1,1,0,0,0,57.9,14);
 
 	this.dataInput2 = new lib.SixBitLow();
 	this.dataInput2.parent = this;
-	this.dataInput2.setTransform(363.5,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput2.setTransform(363.5,189.5,1,1,0,0,0,57.9,14);
 
 	this.dataInput1 = new lib.SixBitLow();
 	this.dataInput1.parent = this;
-	this.dataInput1.setTransform(212,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput1.setTransform(212,189.5,1,1,0,0,0,57.9,14);
 
 	this.dataInput0 = new lib.SixBitLow();
 	this.dataInput0.parent = this;
-	this.dataInput0.setTransform(60.6,129.5,1,1,0,0,0,57.9,14);
+	this.dataInput0.setTransform(60.6,189.5,1,1,0,0,0,57.9,14);
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EAj5gXdIItEnEAj5gXdIOSEnEAm+gcUIPmFDINtEbAOv8UIDPE9IC+EhAR+3XIIiEhEAg9gcPIVnE+ITSEbAa38PIJCEyAU28UIPDE3AJGjOMBTJAAAEAy/gcLMAo9AJVAjY8UIDRE+IC9EgACt8PIi0E5IinEgA1b8PIvBE8ItnEdA7c8UIpAFBIoCEdAyM3XIoMEhAyM3XIioEhAgBIzIAAnOApZ8PIozE4AvV8UIi3E9Eg2dgXYItsEiEgzhgcLMgoTAJVEg2dgXYIzREiEhbyAM+MBXdAAAEhcOgDOMBTJAAAEghigcTI07E7EgnjgcUIu6E8AgBcVIAAnPAIz8PIJLE4AEqM+MBXcAAA");
-	this.shape.setTransform(590.3,236.2);
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EAj5gWhIItEnEAm+gbYIPmFDITSEbEAj5gWhIOSEnAOv7YIDPE9IC+EhAR+2bIIiEhAU27YIPDE3Aa37TIJCEyEAg9gbTIVnE+INtEbEAy/gbPMAo9AJVAJGiSMBTJAAAAjY7YIDRE+IinEgACt7TIi0E5IC9EgAyM2bIioEhAyM2bIoMEhA7c7YIpAFBIoCEdA1b7TIvBE8ItnEdAgBJvIAAj8AvV7YIi3E9ApZ7TIozE4Eg2dgWcIzREiEgzhgbPMgoTAJVEg2dgWcItsEiAgBbZIAAk5EgnjgbYIu6E8EghigbXI07E7EhcOgCSMBTJAAAEhbyAN6MBXdAAAAEqN6MBXcAAAAIz7TIJLE4");
+	this.shape.setTransform(590.3,290.2);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#1174C3").s().p("AueJiIAAgwIgBAAIAArUIACAAIAAgwIgCAAIAAmPIc+AAIAASMIABAAIAAA3g");
-	this.shape_1.setTransform(589.2,503.7);
+	this.shape_1.graphics.f("#1174C3").s().p("AueGUIAAgfIgBAAIAAngIACAAIAAggIgCAAIAAkIIc+AAIAAMDIABAAIAAAkg");
+	this.shape_1.setTransform(589.2,524.3);
 
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#000000").s().p("AhJI4IBKAAIBJAAIhKBxgAhJqoIBKAAIBJAAIhKBxg");
-	this.shape_2.setTransform(590,360.7);
+	this.shape_2.graphics.f("#000000").s().p("AhJH8IBKAAIBJAAIhKBygAhJpsIBKAAIBJAAIhKBxg");
+	this.shape_2.setTransform(590,414.7);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.dataInput0},{t:this.dataInput1},{t:this.dataInput2},{t:this.dataInput3},{t:this.dataInput4},{t:this.dataInput7},{t:this.dataInput6},{t:this.dataInput5},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance},{t:this.keyInput0},{t:this.keyInput1},{t:this.keyInput2},{t:this.keyInput3},{t:this.keyInput4},{t:this.keyInput7},{t:this.keyInput6},{t:this.keyInput5},{t:this.finalInput0},{t:this.finalInput1},{t:this.finalInput2},{t:this.finalInput3},{t:this.finalInput4},{t:this.finalInput7},{t:this.finalInput6},{t:this.finalInput5},{t:this.text_2},{t:this.inputBits},{t:this.text_1},{t:this.toSBoxesBtn},{t:this.text}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.manglerExpansion, new cjs.Rectangle(-1,0,1182.6,564.7), null);
+}).prototype = getMCSymbolPrototype(lib.manglerExpansion, new cjs.Rectangle(-1,60,1182.6,504.7), null);
 
 
 (lib.KeyGenRounds = function(mode,startPosition,loop) {
@@ -2962,7 +3130,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	// Layer 4
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(2,1,1).p("AX/hSIkAAAIkAAAIj/AAAb/kuIAADcIkAAAAX/kuIAADcAT/kuIAADcA79hSIkAAAIAAjfMA/7AAAIAADfIj/AAAX/EzIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAT/BXIAADcAX/BXIAADcAb/BXIAADcAEAhSIkAAAAEAkuIAADcAAAkuIAADcIj+AAIkAAAIkAAAAj+kuIAADcAP/kuIAADcAMAkuIAADcIkAAAAIAkuIAADcIkAAAA3+kuIAADcIj/AAA79kuIAADcAv+hSIj/AAAn+kuIAADcAr+kuIAADcIkAAAAv+kuIAADcAz9kuIAADcIkBAAAz9BXIAADcAv+BXIAADcAr+BXIAADcAn+BXIAADcA79BXIAADcA3+BXIAADcAIABXIAADcAMABXIAADcAP/BXIAADcAj+BXIAADcAAABXIAADcAEABXIAADc");
+	this.shape.graphics.f().s("#000000").ss(2,1,1).p("AX/hSIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAT/kuIAADcAX/kuIAADcAb/kuIAADcAX/EzIkAAAIkAAAIj/AAIkAAAIkAAAIkAAAIj+AAIkAAAIkAAAIkAAAIj/AAIkBAAIj/AAIkAAAIAAjfMA/7AAAIAADfIj/AAgAb/BXIAADcAX/BXIAADcAT/BXIAADcAj+kuIAADcAAAkuIAADcAEAkuIAADcAIAkuIAADcAMAkuIAADcAP/kuIAADcA79kuIAADcA3+kuIAADcAz9kuIAADcAv+kuIAADcAr+kuIAADcAn+kuIAADcAEABXIAADcAAABXIAADcAj+BXIAADcAP/BXIAADcAMABXIAADcAIABXIAADcA3+BXIAADcA79BXIAADcAn+BXIAADcAr+BXIAADcAv+BXIAADcAz9BXIAADc");
 	this.shape.setTransform(209.8,176.2);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
@@ -3541,7 +3709,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EBGjgTsIAACQEArQgRcIAAh4IAAiYIbTAAIAACAIEmAAIAAQPEBAGAC4IAAiWIAAh5INiAAIAAEPEBGjATvIAAB4EBGjATvIOQAAIAAu1EArQAVnIAAh4IAAiYIbTAAIAACYEBNogBXINxAAIAAEPEBbZAC+I7TAAEAgIgIoIAAqsIJWAAEAgIAJqIAAKFIJWAAEBGjAVtI7TAAEBGjgRWI7TAAAonhXINwAAIAACNIAACCA5lvHIKdAAIAAL0Eg04gNBIAAkRIbTAAIAACLIAACGA2KC4IAAiWIAAh5INjAAIAAEPA5lQ0IAAiFEg04AOvIAAEQIbTAAIAAiLIX4AAIAAr2AFJC+I7TAAEhbYgNBIAAkRIbTAAIAACLIJXAAEhAFgPHIAACGEhbYAOvIAAEQIbTAAIAAiLIAAiFEhAFAQ0IJXAAEhAFAOpI7TAAEhAFgM7I7TAAA5lOpI7TAAA5ls7I7TAAAFJA2IJ8gB");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EBGjgTsIAACQEArQgRcIAAh4IAAiYIbTAAIAACAIEmAAIAAQPEBAGAC4IAAiWIAAh5INiAAINxAAIAAEPEBGjATvIAAB4EArQAVnIAAh4IAAiYIbTAAIAACYIOQAAIAAu1EBbZAC+I7TAAEBNogBXIAAEPEAgIgIoIAAqsIJWAAEAgIAJqIAAKFIJWAAEBGjgRWI7TAAEBGjAVtI7TAAAonhXINwAAIAACNIAACCA5lvHIKdAAIAAL0Eg04gNBIAAkRIbTAAIAACLIAACGA2KC4IAAiWIAAh5INjAAIAAEPA5lQ0IAAiFEg04AOvIAAEQIbTAAIAAiLIX4AAIAAr2AFJC+I7TAAEhbYgNBIAAkRIbTAAIAACLIJXAAEhAFgPHIAACGEhbYAOvIAAEQIbTAAIAAiLIAAiFEhAFAQ0IJXAAEhAFgM7I7TAAEhAFAOpI7TAAA5ls7I7TAAA5lOpI7TAAAFJA2IJ8gB");
 	this.shape_1.setTransform(584.9,184.7);
 
 	this.shape_2 = new cjs.Shape();
@@ -3730,7 +3898,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EA1tgAQIGPAAADZuhIAAiLIbTAAIAACLEAnSgJIIAAlZIomAAIAACLI7TAAIAAiLADjOqIAAiTIbTAAIAACDIAACTI7TAAgEAnSAJKIAAFQIocAAAskpJIAAlYIP9AAEggogAQIAAB1Eg77ABlIAAkPIbTAAIAACaIErAAAskJSIAAFYIQHAAEggoABrI7TAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EA1tgAQIGPAAADZuhIAAiLIbTAAIAACLIAACLI7TAAgEAnSgJIIAAlZIomAAAe2OaIAACTI7TAAIAAiDIAAiTIbTAAgEAnSAJKIAAFQIocAAAskpJIAAlYIP9AAEg77ABlIAAkPIbTAAIAACaIAAB1EggogAQIErAAEggoABrI7TAAAskJSIAAFYIQHAA");
 	this.shape.setTransform(383.7,134.1);
 
 	this.shape_1 = new cjs.Shape();
@@ -3940,7 +4108,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	new cjs.ButtonHelper(this.manglerBtn, 0, 1, 1);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAtdgI/IAAiUIbTAAIAAEWI7TAAAFY4rIAAkQIbTAAIAAEWIt/AAIAAD3EgFhgiAIM7AAIAADJASs4lItUAAAFYL1IAAiXIAAh6IbTAAIAAEXI7TAAAV0g/IAAGbEAtdgHDIAAh8EAkTgI/IJKAAEAgpAYHIACAAIAACtI7TAAIAAkWIbTAAIAABpATCa3IAAHhI2hAAEgg0giAIAAiLIbTAAIAACLIAACFEgg0gf7IAAiFIu2AAIAACwEgtcga6IAACLI7TAAIAAkWIbTAAIAACLMAhJAhIAli/1I7SAAEg7FAa0ItqAAIAAkWIbTAAIAAEWItpAAIAAHkIYZAAEgFhAkMI7TAAIAAkWIbTAAgAlmJeIK+AAAntLZILFLC");
+	this.shape_1.graphics.f().s("#000000").ss(1,1,1).p("EAtdgI/IAAiUIbTAAIAAEWI7TAAAFY4rIAAkQIbTAAIAAEWIt/AAIAAD3ASs4lItUAAEgFhgiAIM7AAIAADJAFYJeIAAh6IbTAAIAAEXI7TAAAFYL1IAAiXAV0g/IAAGbEAtdgHDIAAh8EAkTgI/IJKAAEAgrAYHIAACtI7TAAIAAkWIbTAAgEAgpAYHIACAAATCa3IAAHhI2hAAEgFhgiAIAACFEgg0giAIAAiLIbTAAIAACLEgg0gf7IAAiFIu2AAIAACwEgtcga6IAACLI7TAAIAAkWIbTAAIAACLMAhJAhIAli/1I7SAAEg7FAa0ItqAAIAAkWIbTAAIAAEWItpAAIAAHkIYZAAEgFhAkMI7TAAIAAkWIbTAAgAntLZILFLCAlmJeIK+AA");
 	this.shape_1.setTransform(642.1,298.5);
 
 	this.shape_2 = new cjs.Shape();
@@ -4098,7 +4266,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EBaZAGJI7TAAIAACQIAACGIbTAAgAYDslIAAkRIbTAAIAAEREAz9AIZIJXAAEAzWgMfIt4AAIAAJWAvcJ6IAAh5IAAiYIbSAAIAACAIJWAAAL2HpIAACREAlegMfItbAAA6kIBIJWAAEhNGAC6ItSAAIAAkWIbTAAIAAEWgEg5VAFjIzxAAIAAipEhNGAMfItSAAIAAEYIbTAAIAAkYgEg5VAJ2IzxAAIAACpAL2KAI7SAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EBaZAGJI7TAAIAACQIAACGIbTAAgAYDslIAAkRIbTAAIAAEREAz9AIZIJXAAEAlegMfIAAJWEAzWgMfIt4AAItbAAAvcJ6IAAh5IAAiYIbSAAIAACAIJWAAAL2HpIAACRA6kIBIJWAAEhNGAC6ItSAAIAAkWIbTAAIAAEWgEg5VAFjIzxAAIAAipEhNGAMfItSAAIAAEYIbTAAIAAkYgEg5VAJ2IzxAAIAACpAL2KAI7SAA");
 	this.shape.setTransform(577.5,134.8);
 
 	this.shape_1 = new cjs.Shape();
@@ -4395,7 +4563,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	}
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EhKWgZIIuNAAIAAkXIbTAAIAAEXItGAAIAAFbEgkXgZRIAAkRIbTAAIAAERA2A5IIAAFbAnCbwIM4AAMAAAgvRINNAAApE5LI7TAAEg9QAbwIAABzI7TAAIAAkXIbTAAIAACkIXLAAEhKWAAaIAASUEA8HgQxIAGAAEBYkAQaI7UAAIAAB/IAACYIbUAAgEAilgVrINqAAIAAEXItqAAItpAAIAAkXINpAAIAAEXEAmzgPXIkeClIC7BsEAiUgJLIAAEXItqAAIAAkXINqAAINpAAIAAEXItpAAAd4vXIEdClIi6BsEAijAAKIAAG4EAyIASZIJXAA");
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("EhKWgZIIuNAAIAAkXIbTAAIAAEXItGAAIAAFbEgkXgZRIAAkRIbTAAIAAERA2A5IIAAFbAnCbwIM4AAMAAAgvRINNAAApE5LI7TAAEg9QAbwIAABzI7TAAIAAkXIbTAAIAACkIXLAAEhKWAAaIAASUEA8HgQxIAGAAEBYkAQaI7UAAIAAB/IAACYIbUAAgEAilgVrINqAAIAAEXItqAAItpAAIAAkXINpAAIAAEXEAmzgPXIkeClIC7BsEAiUgJLIAAEXItqAAIAAkXINqAAINpAAIAAEXItpAAEAiVgMyIi6BsEAijAAKIAAG4Ad4vXIEdClEAyIASZIJXAA");
 	this.shape.setTransform(594,171);
 
 	this.shape_1 = new cjs.Shape();
@@ -4413,7 +4581,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 // stage content:
 (lib.DESVisualizer = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{Overview:1,Internal:2,"Key Gen":3,"Key Rounds":4,Rounds:5,Mangler:6,SBoxes:7});
+	this.initialize(mode,startPosition,loop,{Overview:1,Internal:2,"Key Gen":3,"Key Rounds":4,Rounds:5,Mangler:6,SBoxes:7,SBox:8});
 
 	// timeline functions:
 	this.frame_0 = function() {
@@ -4427,6 +4595,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 			this.globalData.decryptionObject = {};
 		
 			this.globalData.roundIndex = 0;
+			this.globalData.sBoxIndex = 0;
 			this.globalData.isEncryption = true;
 		}
 		
@@ -4581,6 +4750,8 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.frame_6 = function() {
 		var cryptoObject = (this.globalData.isEncryption)? this.globalData.encryptionObject : this.globalData.decryptionObject;
 		
+		this.manglerTitleTxt.text = "Mangler (DES Round " + (this.globalData.roundIndex + 1) + ")";
+		
 		this.mangler.gotoAndStop(0);
 		this.mangler.setData(cryptoObject, this.globalData.roundIndex);
 		this.mangler.addEventListener("sBoxesRequested", gotoSBoxes.bind(this));
@@ -4602,17 +4773,39 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		this.sBoxes.gotoAndStop(0);
 		this.sBoxes.setData(cryptoObject, this.globalData.roundIndex);
 		
+		this.sBoxes.removeAllEventListeners();
+		this.sBoxes.addEventListener("sBoxRequested", toSBox.bind(this));
+		
+		function toSBox(event) {
+			this.globalData.sBoxIndex = event.sBoxIndex;
+			this.gotoAndStop("SBox");
+		}
+		
 		this.backToMangler.removeAllEventListeners();
 		this.backToMangler.addEventListener("click", backClicked.bind(this));
 		
 		function backClicked() {
-			console.log("back was clicked");
 			this.gotoAndStop("Mangler");
+		}
+	}
+	this.frame_8 = function() {
+		var cryptoObject = (this.globalData.isEncryption)? this.globalData.encryptionObject : this.globalData.decryptionObject;
+		
+		this.sBox.gotoAndStop(0);
+		this.sBox.setData(cryptoObject, this.globalData.roundIndex, this.globalData.sBoxIndex);
+		
+		this.sBoxTitleTxt.text = "S-Box " + (this.globalData.sBoxIndex + 1) + " (DES Round " + (this.globalData.roundIndex + 1) + ")";
+		
+		this.backToSBoxes.removeAllEventListeners();
+		this.backToSBoxes.addEventListener("click", backClicked.bind(this));
+		
+		function backClicked() {
+			this.gotoAndStop("SBoxes");
 		}
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1).call(this.frame_3).wait(1).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(2));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1).call(this.frame_3).wait(1).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(1).call(this.frame_8).wait(1));
 
 	// DES
 	this.text = new cjs.Text("Data Encryption Standard (DES)", "normal 400 48px 'Open Sans'", "#0066CC");
@@ -4704,16 +4897,11 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.keyGenRounds},{t:this.keyRoundsTitleTxt},{t:this.backToKeyGen}]},4).to({state:[]},1).wait(4));
 
 	// DES Rounds
-	this.back = new lib.Arrow();
-	this.back.parent = this;
-	this.back.setTransform(75,52.2,1,1,0,0,0,29.6,15.2);
-	new cjs.ButtonHelper(this.back, 0, 1, 1);
-
-	this.desRoundTitleTxt = new cjs.Text("DES Round", "normal 400 48px 'Open Sans'", "#0066CC");
+	this.desRoundTitleTxt = new cjs.Text("DES Round 1", "normal 400 48px 'Open Sans'", "#0066CC");
 	this.desRoundTitleTxt.name = "desRoundTitleTxt";
 	this.desRoundTitleTxt.textAlign = "center";
 	this.desRoundTitleTxt.lineHeight = 65;
-	this.desRoundTitleTxt.lineWidth = 420;
+	this.desRoundTitleTxt.lineWidth = 690;
 	this.desRoundTitleTxt.parent = this;
 	this.desRoundTitleTxt.setTransform(600,11.9);
 	if(!lib.properties.webfonts['Open Sans']) {
@@ -4721,11 +4909,32 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 		lib.webFontTxtInst['Open Sans'].push(this.desRoundTitleTxt);
 	}
 
+	this.back = new lib.Arrow();
+	this.back.parent = this;
+	this.back.setTransform(75,52.2,1,1,0,0,0,29.6,15.2);
+	new cjs.ButtonHelper(this.back, 0, 1, 1);
+
 	this.desRounds = new lib.DESRounds();
 	this.desRounds.parent = this;
 	this.desRounds.setTransform(-13.9,61.2,1,1,0,0,0,-0.8,3.2);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desRounds},{t:this.desRoundTitleTxt},{t:this.back}]},5).to({state:[]},1).wait(3));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.desRounds},{t:this.back},{t:this.desRoundTitleTxt}]},5).to({state:[]},1).wait(3));
+
+	// Mangler Title
+	this.manglerTitleTxt = new cjs.Text("Mangler (DES Round 1)", "normal 400 48px 'Open Sans'", "#0066CC");
+	this.manglerTitleTxt.name = "manglerTitleTxt";
+	this.manglerTitleTxt.textAlign = "center";
+	this.manglerTitleTxt.lineHeight = 65;
+	this.manglerTitleTxt.lineWidth = 690;
+	this.manglerTitleTxt.parent = this;
+	this.manglerTitleTxt.setTransform(600,11.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.manglerTitleTxt);
+	}
+	this.manglerTitleTxt._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.manglerTitleTxt).wait(6).to({_off:false},0).to({_off:true},2).wait(1));
 
 	// Mangler
 	this.backToRounds = new lib.Arrow();
@@ -4751,60 +4960,33 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,77.1,34.7);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.sBoxes},{t:this.backToMangler}]},7).to({state:[]},1).wait(1));
 
+	// S-Box Title
+	this.sBoxTitleTxt = new cjs.Text("S-Box 1 (DES Round 1)", "normal 400 48px 'Open Sans'", "#0066CC");
+	this.sBoxTitleTxt.name = "sBoxTitleTxt";
+	this.sBoxTitleTxt.textAlign = "center";
+	this.sBoxTitleTxt.lineHeight = 65;
+	this.sBoxTitleTxt.lineWidth = 690;
+	this.sBoxTitleTxt.parent = this;
+	this.sBoxTitleTxt.setTransform(600,11.9);
+	if(!lib.properties.webfonts['Open Sans']) {
+		lib.webFontTxtInst['Open Sans'] = lib.webFontTxtInst['Open Sans'] || [];
+		lib.webFontTxtInst['Open Sans'].push(this.sBoxTitleTxt);
+	}
+	this.sBoxTitleTxt._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.sBoxTitleTxt).wait(8).to({_off:false},0).wait(1));
+
 	// S-Box
-	this.field3 = new cjs.Text("11", "normal 400 14px 'Inconsolata'");
-	this.field3.name = "field3";
-	this.field3.textAlign = "center";
-	this.field3.lineHeight = 16;
-	this.field3.lineWidth = 17;
-	this.field3.parent = this;
-	this.field3.setTransform(181.7,158.5);
-	if(!lib.properties.webfonts['Inconsolata']) {
-		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
-		lib.webFontTxtInst['Inconsolata'].push(this.field3);
-	}
+	this.backToSBoxes = new lib.Arrow();
+	this.backToSBoxes.parent = this;
+	this.backToSBoxes.setTransform(75,52.2,1,1,0,0,0,29.6,15.2);
+	new cjs.ButtonHelper(this.backToSBoxes, 0, 1, 1);
 
-	this.input2 = new cjs.Text("10", "normal 400 14px 'Inconsolata'");
-	this.input2.name = "input2";
-	this.input2.textAlign = "center";
-	this.input2.lineHeight = 16;
-	this.input2.lineWidth = 17;
-	this.input2.parent = this;
-	this.input2.setTransform(181.7,126.3);
-	if(!lib.properties.webfonts['Inconsolata']) {
-		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
-		lib.webFontTxtInst['Inconsolata'].push(this.input2);
-	}
+	this.sBox = new lib.sBox();
+	this.sBox.parent = this;
+	this.sBox.setTransform(513.8,149.4,1,1,0,0,0,535.9,158);
 
-	this.input1 = new cjs.Text("01", "normal 400 14px 'Inconsolata'");
-	this.input1.name = "input1";
-	this.input1.textAlign = "center";
-	this.input1.lineHeight = 16;
-	this.input1.lineWidth = 17;
-	this.input1.parent = this;
-	this.input1.setTransform(181.7,94.2);
-	if(!lib.properties.webfonts['Inconsolata']) {
-		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
-		lib.webFontTxtInst['Inconsolata'].push(this.input1);
-	}
-
-	this.input0 = new cjs.Text("00", "normal 400 14px 'Inconsolata'");
-	this.input0.name = "input0";
-	this.input0.textAlign = "center";
-	this.input0.lineHeight = 16;
-	this.input0.lineWidth = 17;
-	this.input0.parent = this;
-	this.input0.setTransform(181.7,62.1);
-	if(!lib.properties.webfonts['Inconsolata']) {
-		lib.webFontTxtInst['Inconsolata'] = lib.webFontTxtInst['Inconsolata'] || [];
-		lib.webFontTxtInst['Inconsolata'].push(this.input0);
-	}
-
-	this.instance = new lib.sBox();
-	this.instance.parent = this;
-	this.instance.setTransform(513.8,149.4,1,1,0,0,0,535.9,158);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance},{t:this.input0},{t:this.input1},{t:this.input2},{t:this.field3}]},8).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.sBox},{t:this.backToSBoxes}]},8).wait(1));
 
 	// Round Selector
 	this.roundSelector = new lib.roundSelector();
