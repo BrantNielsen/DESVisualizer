@@ -1,6 +1,6 @@
 # DES Visualizer
 
-The application can be run by downloading the repository and visiting index.html within a web browser. The application is completely JavaScript and HTML based, so there is no backend communication with a server of any kind. The visualizer shows the encryption and decryption of a single block of data. The 64 bits of input data and the key can be specified as either an 8-character ASCII string or a 16-character Hexadecimal value on the page.
+The application can be run by downloading the repository and visiting index.html within a web browser. The application is completely JavaScript and HTML based, so there is no backend communication with a server of any kind. The visualizer is capable of showing the encryption and decryption of a single block of data. The 64 bits of input data and the key can be specified as either an 8-character ASCII string or a 16-character Hexadecimal value on the page.
 
 The interactive portion of the project uses HTML5 canvas, and was authored using Adobe Animate CC. The primary Animate source file (DES Visualizer.fla) can be found in the sources folder, along with the HTML template that it exports with.
 
